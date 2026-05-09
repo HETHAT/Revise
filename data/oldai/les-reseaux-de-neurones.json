@@ -1,0 +1,119 @@
+{
+  "source": "Les réseaux de neurones.pptx",
+  "items": [
+    {
+      "id": "les-reseaux-de-neurones_001",
+      "question": "Dans un réseau de neurones, où est stockée l'information correspondant à la 'mémoire à long terme' ?",
+      "answer": "Dans les poids des connexions",
+      "type": "mcq",
+      "topic": "Bases des ANN",
+      "difficulty": "facile",
+      "explanation": "La source précise que l'information est emmagasinée dans les poids des connexions (mémoire à long terme) et dans l'état des neurones (mémoire à court terme).",
+      "choices": [
+        "Dans l'état des neurones",
+        "Dans les poids des connexions",
+        "Dans la couche d'entrée uniquement",
+        "Dans l'algorithme de descente de gradient"
+      ]
+    },
+    {
+      "id": "les-reseaux-de-neurones_002",
+      "question": "Les neurones de la couche d'entrée effectuent les premières transformations mathématiques complexes sur les données.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Bases des ANN",
+      "difficulty": "moyen",
+      "explanation": "Les neurones de la couche d'entrée n'effectuent aucun calcul ; leur rôle est simplement de transmettre les données à traiter au reste du réseau."
+    },
+    {
+      "id": "les-reseaux-de-neurones_003",
+      "question": "Pourquoi est-il indispensable d'appliquer une fonction d'activation non-linéaire aux neurones d'un réseau ?",
+      "answer": "Pour introduire de la complexité dans le réseau.",
+      "type": "short_answer",
+      "topic": "Fonctions d’activation",
+      "difficulty": "moyen",
+      "explanation": "Sans fonction d'activation non-linéaire, le réseau ne serait qu'une 'grosse fonction linéaire', ce qui le rendrait inutile pour résoudre des problèmes complexes."
+    },
+    {
+      "id": "les-reseaux-de-neurones_004",
+      "question": "Quelle fonction d'activation est la plus populaire pour les couches cachées car elle converge et optimise plus rapidement ?",
+      "answer": "ReLU (Unité linéaire rectifiée)",
+      "type": "mcq",
+      "topic": "Fonctions d’activation",
+      "difficulty": "facile",
+      "explanation": "La source indique que ReLU est de loin la fonction la plus populaire dans les couches cachées car elle permet une convergence et une optimisation plus rapides.",
+      "choices": [
+        "Sigmoïde",
+        "Tangente hyperbolique (tanh)",
+        "ReLU (Unité linéaire rectifiée)",
+        "Softmax"
+      ]
+    },
+    {
+      "id": "les-reseaux-de-neurones_005",
+      "question": "L'utilisation de la fonction Sigmoïde en sortie est idéale pour une distribution catégorielle (plusieurs classes).",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Fonctions d’activation",
+      "difficulty": "moyen",
+      "explanation": "La Sigmoïde est utilisée pour une sortie binaire (0/1). Pour représenter une distribution catégorielle, on utilise la fonction Softmax dans la couche de sortie."
+    },
+    {
+      "id": "les-reseaux-de-neurones_006",
+      "question": "Quel est l'impact direct de l'augmentation du nombre d'entrées d'un neurone sur son apprentissage ?",
+      "answer": "L'apprentissage devient plus complexe et plus long.",
+      "type": "short_answer",
+      "topic": "Apprentissage",
+      "difficulty": "moyen",
+      "explanation": "Plus un neurone a d'entrées, plus il y a de poids à ajuster, ce qui accroît la complexité et la durée du processus d'apprentissage."
+    },
+    {
+      "id": "les-reseaux-de-neurones_007",
+      "question": "Dans l'apprentissage supervisé, quelle mesure utilise-t-on généralement pour calculer l'erreur de prédiction avant de modifier les poids ?",
+      "answer": "L'erreur quadratique moyenne (MSE)",
+      "type": "mcq",
+      "topic": "Apprentissage / Interprétation des sorties",
+      "difficulty": "moyen",
+      "explanation": "La source présente le MSE (Mean Squared Error) comme l'outil pour calculer l'erreur de prédiction lors de l'apprentissage supervisé.",
+      "choices": [
+        "L'erreur absolue moyenne",
+        "La moyenne du gradient",
+        "L'erreur quadratique moyenne (MSE)",
+        "Le coefficient de corrélation"
+      ]
+    },
+    {
+      "id": "les-reseaux-de-neurones_008",
+      "question": "Expliquez le principe de la rétropropagation (backpropagation) dans l'ajustement des paramètres.",
+      "answer": "Elle consiste à calculer l'erreur à la sortie et à la propager vers l'arrière pour calculer les deltas (Δ) de chaque nœud afin d'ajuster les poids.",
+      "type": "short_answer",
+      "topic": "Rétropropagation",
+      "difficulty": "difficile",
+      "explanation": "Le document montre que l'on calcule l'erreur finale puis les erreurs locales (δ/Δ) des couches cachées pour mettre à jour les paramètres via la descente de gradient."
+    },
+    {
+      "id": "les-reseaux-de-neurones_009",
+      "question": "Que risque-t-il d'arriver si le pas d'apprentissage (learning rate) est réglé sur une valeur trop grande ?",
+      "answer": "Le modèle fera des sauts trop importants et pourra diverger",
+      "type": "mcq",
+      "topic": "Descente de gradient",
+      "difficulty": "moyen",
+      "explanation": "Un pas d'apprentissage trop grand peut faire dépasser la solution optimale ou causer l'instabilité du modèle (divergence).",
+      "choices": [
+        "Le modèle mettra trop de temps à converger",
+        "Le modèle fera des sauts trop importants et pourra diverger",
+        "Le modèle s'arrêtera de modifier les poids",
+        "Les fonctions d'activation deviendront linéaires"
+      ]
+    },
+    {
+      "id": "les-reseaux-de-neurones_010",
+      "question": "Donnez la formule générale de mise à jour d'un poids lors d'une étape de descente de gradient.",
+      "answer": "Nouveau poids = ancien poids + (pas) * (erreur locale) * (entrée)",
+      "type": "short_answer",
+      "topic": "Descente de gradient / Apprentissage",
+      "difficulty": "difficile",
+      "explanation": "Cette formule est explicitement fournie dans la source pour illustrer comment les paramètres sont ajustés à chaque cycle après le calcul des erreurs locales."
+    }
+  ]
+}

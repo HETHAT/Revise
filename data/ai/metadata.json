@@ -1,0 +1,264 @@
+{
+  "total_files": 12,
+  "total_items": 115,
+  "all_types": [
+    "coding",
+    "comprehension",
+    "debug",
+    "fill_blank",
+    "mcq",
+    "short_answer",
+    "trace",
+    "true_false"
+  ],
+  "all_difficulties": [
+    "difficile",
+    "facile",
+    "moyen"
+  ],
+  "all_topics": [
+    "Applications par domaine",
+    "Apprentissage automatique",
+    "Fondements de l’IA",
+    "Logique et raisonnement",
+    "Programmation Prolog",
+    "Raisonnement et recherche",
+    "Systèmes experts"
+  ],
+  "sources": [
+    {
+      "source": "apprentissage supervisé.pptx",
+      "filename": "apprentissage-supervise.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Apprentissage automatique",
+        "Fondements de l’IA",
+        "Logique et raisonnement",
+        "Systèmes experts"
+      ]
+    },
+    {
+      "source": "cours-Prolog-2025.pptx",
+      "filename": "cours-prolog-2025.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Logique et raisonnement",
+        "Programmation Prolog",
+        "Systèmes experts"
+      ]
+    },
+    {
+      "source": "dev-jus-SE.pptx",
+      "filename": "dev-jus-se.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Fondements de l’IA",
+        "Raisonnement et recherche",
+        "Systèmes experts"
+      ]
+    },
+    {
+      "source": "domaines-SE.pptx",
+      "filename": "domaines-se.json",
+      "item_count": 12,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Applications par domaine",
+        "Systèmes experts"
+      ]
+    },
+    {
+      "source": "examen-logiquepred.docx",
+      "filename": "examen-logiquepred.json",
+      "item_count": 7,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Logique et raisonnement"
+      ]
+    },
+    {
+      "source": "généralités-IA2-nv.pptx",
+      "filename": "generalites-ia2-nv.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Fondements de l’IA"
+      ]
+    },
+    {
+      "source": "La logique des prédicats.pptx",
+      "filename": "la-logique-des-predicats.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Logique et raisonnement"
+      ]
+    },
+    {
+      "source": "Les réseaux de neurones.pptx",
+      "filename": "les-reseaux-de-neurones.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Apprentissage automatique"
+      ]
+    },
+    {
+      "source": "logique-propositions.pptx",
+      "filename": "logique-propositions.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Logique et raisonnement",
+        "Raisonnement et recherche"
+      ]
+    },
+    {
+      "source": "SE-chainage.pptx",
+      "filename": "se-chainage.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Systèmes experts"
+      ]
+    },
+    {
+      "source": "TP1-IASE.docx",
+      "filename": "tp1-iase.json",
+      "item_count": 7,
+      "types": [
+        "coding",
+        "comprehension",
+        "debug",
+        "fill_blank",
+        "trace"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Logique et raisonnement",
+        "Programmation Prolog",
+        "Raisonnement et recherche",
+        "Systèmes experts"
+      ]
+    },
+    {
+      "source": "TP2-IA.docx",
+      "filename": "tp2-ia.json",
+      "item_count": 9,
+      "types": [
+        "coding",
+        "comprehension",
+        "debug",
+        "fill_blank",
+        "trace"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Programmation Prolog",
+        "Raisonnement et recherche",
+        "Systèmes experts"
+      ]
+    }
+  ]
+}

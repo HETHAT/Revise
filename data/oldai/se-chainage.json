@@ -1,0 +1,119 @@
+{
+  "source": "SE-chainage.pptx",
+  "items": [
+    {
+      "id": "se-chainage_001",
+      "question": "Quel composant d'un Système Expert est considéré comme le 'cœur' du programme, appliquant une stratégie de résolution en mettant en relation les règles et les faits ?",
+      "answer": "Le Moteur d'Inférence",
+      "type": "mcq",
+      "topic": "Architecture d'un système expert",
+      "difficulty": "facile",
+      "explanation": "Le moteur d'inférence est le programme central qui assure l'enchaînement de l'application des règles aux faits pour produire de nouvelles déductions.",
+      "choices": [
+        "La Base de Faits",
+        "Le Moteur d'Inférence",
+        "L'Interface Utilisateur",
+        "La Base de Connaissances"
+      ]
+    },
+    {
+      "id": "se-chainage_002",
+      "question": "Le chaînage arrière est qualifié de système 'data-driven' car il part des données connues pour aboutir à un état inconnu.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Comparaison des stratégies de raisonnement",
+      "difficulty": "moyen",
+      "explanation": "C'est le chaînage avant qui est 'data-driven' (piloté par les données). Le chaînage arrière est 'goal-driven' (piloté par les buts) car il part du résultat souhaité pour remonter aux conditions."
+    },
+    {
+      "id": "se-chainage_003",
+      "question": "Dans le cycle de base d'un moteur d'inférence, comment appelle-t-on l'ensemble des règles jugées compatibles avec la base de faits après la phase de filtrage ?",
+      "answer": "Le conflit set (ou ensemble de conflit)",
+      "type": "short_answer",
+      "topic": "Moteur d'inférence",
+      "difficulty": "difficile",
+      "explanation": "Lors de la phase d'évaluation, le moteur compare la partie condition des règles avec les faits et sélectionne un sous-ensemble de règles compatibles appelé 'conflit set'."
+    },
+    {
+      "id": "se-chainage_004",
+      "question": "Un étudiant souhaite concevoir un système qui aide un médecin à trouver une maladie à partir d'une liste de symptômes observés. Quelle stratégie de raisonnement est la plus naturelle ici ?",
+      "answer": "Chaînage avant",
+      "type": "mcq",
+      "topic": "Application du chaînage",
+      "difficulty": "moyen",
+      "explanation": "Le chaînage avant part d'un état connu (les faits/symptômes) pour déduire de nouvelles conclusions, ce qui correspond à la démarche diagnostique partant des signes vers la pathologie.",
+      "choices": [
+        "Chaînage arrière",
+        "Chaînage avant",
+        "Parcours en largeur uniquement",
+        "Contrôle irrévocable"
+      ]
+    },
+    {
+      "id": "se-chainage_005",
+      "question": "Dans un système expert 'monotone', il est impossible de supprimer un fait de la base de faits une fois qu'il a été établi.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Base de faits",
+      "difficulty": "facile",
+      "explanation": "La monotonie définit un système où aucun fait ne peut être éliminé de la base de faits. Les systèmes non-monotones permettent quant à eux la suppression de faits."
+    },
+    {
+      "id": "se-chainage_006",
+      "question": "Quelle règle de logique formelle est décrite comme étant le fondement du chaînage avant par son application répétée ?",
+      "answer": "Le Modus Ponens",
+      "type": "short_answer",
+      "topic": "Chaînage avant",
+      "difficulty": "moyen",
+      "explanation": "Le chaînage avant peut être décrit logiquement comme l'application répétée de la règle du Modus Ponens : si P est vrai et que P → Q est une règle, alors on déduit Q."
+    },
+    {
+      "id": "se-chainage_007",
+      "question": "Quelles informations composent la 'Mémoire de travail' (Working Memory) d'un système expert ?",
+      "answer": "La base de faits et l'agenda",
+      "type": "mcq",
+      "topic": "Architecture d'un système expert",
+      "difficulty": "difficile",
+      "explanation": "Le document précise que l'agenda (liste des tâches ou sous-objectifs) et la base de faits constituent la mémoire de travail du système.",
+      "choices": [
+        "Les règles de production et les méta-règles",
+        "L'interface utilisateur et le moteur d'inférence",
+        "La base de faits et l'agenda",
+        "Les heuristiques et la base de connaissances"
+      ]
+    },
+    {
+      "id": "se-chainage_008",
+      "question": "Quel est le rôle spécifique d'une 'méta-règle' au sein de la base de connaissances ?",
+      "answer": "Guider le fonctionnement du moteur d'inférence et choisir les stratégies de résolution.",
+      "type": "short_answer",
+      "topic": "Base de connaissances",
+      "difficulty": "moyen",
+      "explanation": "Les méta-règles sont des connaissances sur la façon de résoudre le problème ; elles manipulent les règles de production pour orienter les stratégies du moteur."
+    },
+    {
+      "id": "se-chainage_009",
+      "question": "En chaînage arrière, si les conditions d'une règle menant au but ne sont pas encore satisfaites, elles deviennent automatiquement de nouveaux 'sous-buts' à démontrer.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Chaînage arrière",
+      "difficulty": "moyen",
+      "explanation": "C'est le principe même du chaînage arrière (top-down) : les conditions nécessaires à l'application d'un opérateur deviennent des buts intermédiaires à réaliser jusqu'à obtenir la solution."
+    },
+    {
+      "id": "se-chainage_010",
+      "question": "Pourquoi privilégie-t-on un système expert plutôt qu'un programme classique (algorithmique) pour certains problèmes ?",
+      "answer": "Pour les domaines où il n'existe pas de méthode de raisonnement sûre ou d'algorithme connu",
+      "type": "mcq",
+      "topic": "Définition d'un système expert",
+      "difficulty": "facile",
+      "explanation": "Les systèmes experts sont conçus pour des domaines complexes où l'expertise humaine est nécessaire mais où aucune méthode algorithmique n'est disponible.",
+      "choices": [
+        "Parce que les systèmes experts sont plus rapides à exécuter",
+        "Pour les domaines où il n'existe pas de méthode de raisonnement sûre ou d'algorithme connu",
+        "Parce que les systèmes experts ne font jamais d'erreurs",
+        "Uniquement pour économiser de la mémoire de stockage"
+      ]
+    }
+  ]
+}

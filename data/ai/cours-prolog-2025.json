@@ -1,0 +1,119 @@
+{
+  "source": "cours-Prolog-2025.pptx",
+  "items": [
+    {
+      "id": "cours-prolog-2025_001",
+      "question": "Quelle est la différence de résultat entre les requêtes '?- X = 3 + 2.' et '?- X is 3 + 2.' ?",
+      "answer": "La première retourne X = 3 + 2 (terme) et la seconde X = 5 (calcul)",
+      "type": "mcq",
+      "topic": "Logique et raisonnement",
+      "difficulty": "moyen",
+      "explanation": "L'opérateur '=' effectue une unification de termes sans évaluation, tandis que 'is' force l'évaluation arithmétique de l'expression à droite.",
+      "choices": [
+        "Les deux retournent X = 5",
+        "La première retourne X = 3 + 2 (terme) et la seconde X = 5 (calcul)",
+        "La première retourne X = 5 et la seconde provoque une erreur",
+        "Les deux retournent une erreur car 3 + 2 n'est pas un atome"
+      ]
+    },
+    {
+      "id": "cours-prolog-2025_002",
+      "question": "En Prolog, une variable qui reçoit une valeur au cours de l'exécution peut changer de valeur plus tard par une nouvelle affectation, comme dans un langage impératif.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Programmation Prolog",
+      "difficulty": "facile",
+      "explanation": "Une variable Prolog est comme une inconnue mathématique. Une fois liée (instanciée) à une valeur, elle est considérée comme une constante pour toute sa durée de vie dans la clause. Elle ne peut changer de valeur que par le mécanisme de retour arrière (backtracking)."
+    },
+    {
+      "id": "cours-prolog-2025_003",
+      "question": "Soit la règle : 'meme_pere(X, Y) :- pere(P, X), pere(P, Y)'. Quel est le mode de quantification (universel ou existentiel) pour la variable 'P' ?",
+      "answer": "Existentielle",
+      "type": "short_answer",
+      "topic": "Programmation Prolog",
+      "difficulty": "difficile",
+      "explanation": "Une variable apparaissant dans le corps d'une clause mais pas dans sa tête est quantifiée existentiellement (il doit exister un P tel que...)."
+    },
+    {
+      "id": "cours-prolog-2025_004",
+      "question": "Que se passe-t-il si vous exécutez la requête '?- element(a, [a, b, a, c]).' avec la définition standard (sans cut) : \nelement(X, [X|_]). \nelement(X, [_|L]) :- element(X, L).",
+      "answer": "Prolog répond 'true ; true ; false.' en proposant plusieurs solutions via le retour arrière",
+      "type": "mcq",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "Sans le prédicat cut (!), Prolog explore toutes les branches de l'arbre de recherche. Il trouve 'a' à la première position, puis continue et le retrouve à la troisième.",
+      "choices": [
+        "Prolog répond 'true' une seule fois et s'arrête",
+        "Prolog répond 'true ; true ; false.' en proposant plusieurs solutions via le retour arrière",
+        "Prolog provoque une erreur car 'a' apparaît deux fois",
+        "Prolog répond 'false' car la liste n'est pas triée"
+      ]
+    },
+    {
+      "id": "cours-prolog-2025_005",
+      "question": "L'utilisation du prédicat cut (!) dans la règle 'element(X, [X|_]) :- !.' rend la recherche déterministe.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Programmation Prolog",
+      "difficulty": "moyen",
+      "explanation": "Le cut empêche le développement des autres branches de l'arbre (les choix en attente). Dès que Prolog trouve la première occurrence, il s'arrête et ne cherchera pas d'autres solutions par retour arrière."
+    },
+    {
+      "id": "cours-prolog-2025_006",
+      "question": "Quelle est la structure de la liste résultante de l'unification suivante : [Tete | Queue] = [pomme, banane, cerise] ?",
+      "answer": "Tete = pomme, Queue = [banane, cerise]",
+      "type": "short_answer",
+      "topic": "Programmation Prolog",
+      "difficulty": "facile",
+      "explanation": "Dans la notation [X|Y], X représente le premier élément (la tête) et Y représente le reste de la liste (la queue)."
+    },
+    {
+      "id": "cours-prolog-2025_007",
+      "question": "L'implémentation de la négation en Prolog 'not(p) :- p, !, fail. not(p).' repose sur quel principe ?",
+      "answer": "La négation par l'échec (tout ce qui n'est pas prouvable est faux)",
+      "type": "mcq",
+      "topic": "Logique et raisonnement",
+      "difficulty": "difficile",
+      "explanation": "Prolog considère comme faux tout fait qui ne peut être déduit de la base de connaissance. Le cut combiné au prédicat 'fail' permet de simuler ce comportement.",
+      "choices": [
+        "La logique du second ordre",
+        "La négation par l'échec (tout ce qui n'est pas prouvable est faux)",
+        "L'unification forcée",
+        "Le principe de tiers exclu impératif"
+      ]
+    },
+    {
+      "id": "cours-prolog-2025_008",
+      "question": "Dans une requête de comparaison de termes, '1 + 2 == 2 + 1' retourne 'true'.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Logique et raisonnement",
+      "difficulty": "difficile",
+      "explanation": "L'opérateur '==' teste si les termes sont strictement identiques. Ici, le terme '1 + 2' est structurellement différent du terme '2 + 1', même si leur valeur arithmétique est la même."
+    },
+    {
+      "id": "cours-prolog-2025_009",
+      "question": "Pourquoi dit-on que Prolog est un langage non déterministe ?",
+      "answer": "Parce qu'il parcourt automatiquement toutes les possibilités du problème et peut retourner plusieurs solutions pour une même question.",
+      "type": "short_answer",
+      "topic": "Programmation Prolog",
+      "difficulty": "moyen",
+      "explanation": "Contrairement au mode impératif qui suit une série d'actions figées, Prolog explore un espace de recherche via le retour arrière."
+    },
+    {
+      "id": "cours-prolog-2025_010",
+      "question": "Lors de l'écriture d'un programme récursif (comme la factorielle), que se passe-t-il si l'on oublie de définir le cas d'arrêt ?",
+      "answer": "Le programme entre dans une boucle infinie ou provoque un dépassement de pile",
+      "type": "mcq",
+      "topic": "Programmation Prolog",
+      "difficulty": "moyen",
+      "explanation": "Sans cas d'arrêt, l'appel récursif continue indéfiniment car Prolog tente de satisfaire le but sans jamais rencontrer de condition de fin.",
+      "choices": [
+        "Prolog devine automatiquement le cas d'arrêt le plus logique",
+        "Le programme s'arrête immédiatement en retournant 'false'",
+        "Le programme entre dans une boucle infinie ou provoque un dépassement de pile",
+        "Prolog transforme automatiquement la récursion en itération"
+      ]
+    }
+  ]
+}

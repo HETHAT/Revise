@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizLab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            mono: ['DM Mono', 'monospace'],
+          },
+          colors: {
+            surface: '#0f0f11',
+            panel: '#17171a',
+            border: '#2a2a30',
+            accent: '#d4f24c',
+            muted: '#6b6b75',
+            light: '#e8e8ee',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.4s ease both',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(12px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0f0f11;
+      color: #e8e8ee;
+      font-family: 'Syne', sans-serif;
+    }
+
+    /* Chip / pill toggle */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      border: 1px solid #2a2a30;
+      background: #17171a;
+      color: #6b6b75;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .chip:hover {
+      border-color: #4a4a55;
+      color: #e8e8ee;
+    }
+
+    .chip.active {
+      background: #d4f24c;
+      border-color: #d4f24c;
+      color: #0f0f11;
+    }
+
+    /* Topic tag (selected topics shown as removable pills) */
+    .topic-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      background: #d4f24c;
+      color: #0f0f11;
+    }
+
+    .topic-tag button {
+      background: none;
+      border: none;
+      color: #0f0f11;
+      cursor: pointer;
+      font-size: 0.9rem;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+
+    .topic-tag button:hover {
+      opacity: 1;
+    }
+
+    /* Topic autocomplete input */
+    #topic-input {
+      background: #17171a;
+      border: 1px solid #2a2a30;
+      color: #e8e8ee;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.15s;
+    }
+
+    #topic-input:focus {
+      border-color: #d4f24c;
+    }
+
+    #topic-input::placeholder {
+      color: #6b6b75;
+    }
+
+    /* Autocomplete dropdown */
+    .autocomplete-dropdown {
+      position: absolute;
+      z-index: 10;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin-top: 4px;
+      background: #1e1e23;
+      border: 1px solid #2a2a30;
+      border-radius: 8px;
+      max-height: 200px;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .autocomplete-item {
+      padding: 8px 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: #e8e8ee;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+
+    .autocomplete-item:hover,
+    .autocomplete-item.selected {
+      background: #2a2a30;
+    }
+
+    .autocomplete-item mark {
+      background: #d4f24c;
+      color: #0f0f11;
+      padding: 0 2px;
+    }
+
+    /* Mode card */
+    .mode-card {
+      border: 1px solid #2a2a30;
+      border-radius: 12px;
+      padding: 20px;
+      background: #17171a;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .mode-card:hover {
+      border-color: #4a4a55;
+    }
+
+    .mode-card.selected {
+      border-color: #d4f24c;
+      background: #1d1f12;
+    }
+
+    .mode-card.selected .mode-icon {
+      color: #d4f24c;
+    }
+
+    /* Scrollable chip row */
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Animated count badge */
+    .count-badge {
+      display: inline-block;
+      background: #d4f24c;
+      color: #0f0f11;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* Stagger delays for filter sections */
+    .animate-1 {
+      animation: fadeUp 0.35s 0.05s ease both;
+    }
+
+    .animate-2 {
+      animation: fadeUp 0.35s 0.10s ease both;
+    }
+
+    .animate-3 {
+      animation: fadeUp 0.35s 0.15s ease both;
+    }
+
+    .animate-4 {
+      animation: fadeUp 0.35s 0.20s ease both;
+    }
+
+    .animate-5 {
+      animation: fadeUp 0.35s 0.25s ease both;
+    }
+
+    .animate-6 {
+      animation: fadeUp 0.35s 0.30s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Divider */
+    hr {
+      border-color: #2a2a30;
+    }
+
+    /* Number input */
+    input[type=number] {
+      background: #17171a;
+      border: 1px solid #2a2a30;
+      color: #e8e8ee;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      width: 90px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    input[type=number]:focus {
+      border-color: #d4f24c;
+    }
+
+    input[type=number]::-webkit-inner-spin-button {
+      opacity: 0.4;
+    }
+
+    /* Select dropdown */
+    select {
+      background: #17171a;
+      border: 1px solid #2a2a30;
+      color: #e8e8ee;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.15s;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6b75' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 30px;
+    }
+
+    select:focus {
+      border-color: #d4f24c;
+    }
+
+    /* CTA button */
+    #start-btn {
+      transition: transform 0.1s, box-shadow 0.15s;
+    }
+
+    #start-btn:active {
+      transform: scale(0.97);
+    }
+
+    #start-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Error state */
+    .error-msg {
+      color: #f87171;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+    }
+
+    /* Skeleton loader */
+    .skeleton {
+      background: linear-gradient(90deg, #1e1e23 25%, #26262c 50%, #1e1e23 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 999px;
+      height: 30px;
+      width: 100px;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #start-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- Top bar -->
+  <header class="border-b border-border px-5 py-4 flex items-center justify-between">
+    <span class="font-display font-bold text-xl tracking-tight">
+      Quiz<span class="text-accent">Lab</span>
+    </span>
+    <span class="text-muted text-sm font-mono hidden sm:block">v1.0</span>
+  </header>
+
+  <!-- Hero -->
+  <div class="max-w-2xl mx-auto px-5 pt-10 pb-4 animate-1">
+    <h1 class="font-display font-extrabold text-3xl sm:text-4xl leading-tight">
+      What are we<br />studying <span class="text-accent">today?</span>
+    </h1>
+    <p class="text-muted mt-2 text-sm">Pick your filters, choose a mode, start your session.</p>
+  </div>
+
+  <!-- Main card -->
+  <main class="max-w-2xl mx-auto px-5 pb-20">
+
+    <!-- ── Class picker ── -->
+    <section class="mt-6 animate-2">
+      <label class="block text-xs font-mono text-muted uppercase tracking-widest mb-3">Class</label>
+      <div id="class-chips" class="chip-row">
+        <div class="skeleton"></div>
+        <div class="skeleton" style="width:130px"></div>
+      </div>
+      <p id="class-error" class="error-msg mt-2 hidden"></p>
+    </section>
+
+    <hr class="my-6" />
+
+    <!-- ── Source filter ── -->
+    <section class="animate-3">
+      <div class="flex items-center justify-between mb-3">
+        <label class="block text-xs font-mono text-muted uppercase tracking-widest">Source file</label>
+        <button id="clear-sources" class="text-xs text-muted hover:text-light font-mono hidden">clear</button>
+      </div>
+      <div id="source-chips" class="chip-row">
+        <span class="text-muted text-sm font-mono">← pick a class first</span>
+      </div>
+    </section>
+
+    <hr class="my-6" />
+
+    <!-- ── Topic filter ── -->
+    <section class="relative z-50 animate-3">
+      <div class="flex items-center justify-between mb-3">
+        <label class="block text-xs font-mono text-muted uppercase tracking-widest">Topics</label>
+        <button id="clear-topics" class="text-xs text-muted hover:text-light font-mono hidden">clear all</button>
+      </div>
+
+      <!-- Selected topics as tags -->
+      <div id="selected-topics" class="flex flex-wrap gap-2 mb-3 hidden"></div>
+
+      <!-- Autocomplete input -->
+      <div class="relative">
+        <input type="text" id="topic-input" placeholder="Type to search topics..." autocomplete="off" disabled />
+        <div id="topic-dropdown" class="autocomplete-dropdown hidden"></div>
+      </div>
+    </section>
+
+    <hr class="my-6" />
+
+    <!-- ── Type & Difficulty ── -->
+    <section class="animate-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-xs font-mono text-muted uppercase tracking-widest mb-3">Question type</label>
+        <div id="type-chips" class="chip-row">
+          <span class="text-muted text-sm font-mono">← pick a class first</span>
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-mono text-muted uppercase tracking-widest mb-3">Difficulty</label>
+        <div id="diff-chips" class="chip-row">
+          <span class="text-muted text-sm font-mono">← pick a class first</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-6" />
+
+    <!-- ── Quiz settings ── -->
+    <section class="animate-5">
+      <label class="block text-xs font-mono text-muted uppercase tracking-widest mb-3">Quiz settings</label>
+      <div class="flex flex-wrap items-center gap-4 font-mono text-sm">
+        <label class="flex items-center gap-2 text-muted">
+          Questions
+          <input type="number" id="question-count" min="1" max="200" value="20" />
+        </label>
+        <label class="flex items-center gap-2 text-muted">
+          Time limit (min)
+          <input type="number" id="timer-minutes" min="1" max="180" value="0" placeholder="none" />
+        </label>
+      </div>
+      <p class="text-xs text-muted mt-2 font-mono">Set to 0 or leave empty for no time limit.</p>
+    </section>
+
+    <hr class="my-6" />
+
+    <!-- ── Summary + CTA ── -->
+    <section class="animate-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="text-sm font-mono text-muted">
+          <span id="question-preview">—</span> questions available
+          <span id="match-badge" class="ml-2 hidden"></span>
+        </div>
+        <button id="start-btn"
+          class="bg-accent text-surface font-display font-bold text-sm px-7 py-3 rounded-full hover:brightness-110 disabled:opacity-30 disabled:cursor-not-allowed"
+          disabled>
+          Start session →
+        </button>
+      </div>
+      <p id="start-error" class="error-msg mt-2 hidden"></p>
+    </section>
+
+  </main>
+
+  <script type="module">
+    import { loadClasses, loadMetadata, filterItems, loadItems } from './js/dataLoader.js';
+
+    // ── State ──────────────────────────────────────────────────────────────
+    let classes = [];
+    let metadata = null;
+    let allItems = [];
+
+    let selectedClass = null;
+    let selectedSources = new Set();
+    let selectedTopics = new Set();
+    let selectedTypes = new Set();
+    let selectedDifficulties = new Set();
+
+    // ── DOM refs ───────────────────────────────────────────────────────────
+    const classChips = document.getElementById('class-chips');
+    const sourceChips = document.getElementById('source-chips');
+    const topicInput = document.getElementById('topic-input');
+    const topicDropdown = document.getElementById('topic-dropdown');
+    const selectedTopicsContainer = document.getElementById('selected-topics');
+    const typeChips = document.getElementById('type-chips');
+    const diffChips = document.getElementById('diff-chips');
+    const modeCards = document.querySelectorAll('.mode-card');
+    const modeOptions = document.getElementById('mode-options');
+    const timerLabel = document.getElementById('timer-label');
+    const questionCount = document.getElementById('question-count');
+    const timerMinutes = document.getElementById('timer-minutes');
+    const startBtn = document.getElementById('start-btn');
+    const preview = document.getElementById('question-preview');
+    const classError = document.getElementById('class-error');
+    const startError = document.getElementById('start-error');
+
+    // ── Helpers ─────────────────────────────────────────────────────────────
+
+    function makeChip(label, set, onToggle) {
+      const el = document.createElement('button');
+      el.className = 'chip';
+      el.textContent = label;
+      el.addEventListener('click', () => {
+        if (set.has(label)) { set.delete(label); el.classList.remove('active'); }
+        else { set.add(label); el.classList.add('active'); }
+        onToggle();
+      });
+      return el;
+    }
+
+    function renderChips(container, items, set, onToggle, clearBtn) {
+      container.innerHTML = '';
+      if (!items.length) {
+        container.innerHTML = '<span class="text-muted text-sm font-mono">none available</span>';
+        return;
+      }
+      items.forEach(item => container.appendChild(makeChip(item, set, onToggle)));
+      if (clearBtn) {
+        clearBtn.classList.remove('hidden');
+        clearBtn.onclick = () => {
+          set.clear();
+          container.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+          onToggle();
+        };
+      }
+    }
+
+    // ── Topic autocomplete ──────────────────────────────────────────────────
+
+    let allTopics = [];
+    let dropdownIndex = -1;
+
+    function renderSelectedTopics() {
+      selectedTopicsContainer.innerHTML = '';
+      if (selectedTopics.size === 0) {
+        selectedTopicsContainer.classList.add('hidden');
+        return;
+      }
+      selectedTopicsContainer.classList.remove('hidden');
+      selectedTopics.forEach(topic => {
+        const tag = document.createElement('div');
+        tag.className = 'topic-tag';
+        tag.innerHTML = `${topic} <button>&times;</button>`;
+        tag.querySelector('button').addEventListener('click', () => {
+          selectedTopics.delete(topic);
+          renderSelectedTopics();
+          updatePreview();
+        });
+        selectedTopicsContainer.appendChild(tag);
+      });
+    }
+
+    function filterTopics(query) {
+      if (!query) return [];
+      const q = query.toLowerCase();
+      return allTopics.filter(t => t.toLowerCase().includes(q));
+    }
+
+    function highlightMatch(text, query) {
+      const idx = text.toLowerCase().indexOf(query.toLowerCase());
+      if (idx === -1) return text;
+      return text.slice(0, idx) + '<mark>' + text.slice(idx, idx + query.length) + '</mark>' + text.slice(idx + query.length);
+    }
+
+    function renderDropdown(matches) {
+      topicDropdown.innerHTML = '';
+      if (matches.length === 0) {
+        topicDropdown.classList.add('hidden');
+        return;
+      }
+      topicDropdown.classList.remove('hidden');
+      dropdownIndex = -1;
+      matches.forEach((topic, i) => {
+        const item = document.createElement('div');
+        item.className = 'autocomplete-item';
+        item.innerHTML = highlightMatch(topic, topicInput.value);
+        item.dataset.index = i;
+        item.addEventListener('click', () => selectTopic(topic));
+        topicDropdown.appendChild(item);
+      });
+    }
+
+    function selectTopic(topic) {
+      if (selectedTopics.has(topic)) return;
+      selectedTopics.add(topic);
+      renderSelectedTopics();
+      topicInput.value = '';
+      topicDropdown.classList.add('hidden');
+      updatePreview();
+      topicInput.focus();
+    }
+
+    function navigateDropdown(dir) {
+      const items = topicDropdown.querySelectorAll('.autocomplete-item');
+      if (items.length === 0) return;
+
+      items[dropdownIndex]?.classList.remove('selected');
+      dropdownIndex = (dropdownIndex + dir + items.length) % items.length;
+      items[dropdownIndex].classList.add('selected');
+      items[dropdownIndex].scrollIntoView({ block: 'nearest' });
+    }
+
+    topicInput.addEventListener('input', (e) => {
+      const matches = filterTopics(e.target.value);
+      renderDropdown(matches);
+    });
+
+    topicInput.addEventListener('keydown', (e) => {
+      const items = topicDropdown.querySelectorAll('.autocomplete-item');
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateDropdown(1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigateDropdown(-1);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (dropdownIndex >= 0 && items[dropdownIndex]) {
+          const topic = items[dropdownIndex].textContent;
+          selectTopic(topic);
+        }
+      } else if (e.key === 'Escape') {
+        topicDropdown.classList.add('hidden');
+      }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!topicInput.contains(e.target) && !topicDropdown.contains(e.target)) {
+        topicDropdown.classList.add('hidden');
+      }
+    });
+
+    document.getElementById('clear-topics').addEventListener('click', () => {
+      selectedTopics.clear();
+      renderSelectedTopics();
+      updatePreview();
+    });
+
+    function matchingItems() {
+      return filterItems(allItems, {
+        sources: selectedSources.size ? [...selectedSources] : null,
+        topics: selectedTopics.size ? [...selectedTopics] : null,
+        types: selectedTypes.size ? [...selectedTypes] : null,
+        difficulties: selectedDifficulties.size ? [...selectedDifficulties] : null,
+      });
+    }
+
+    function updatePreview() {
+      const count = matchingItems().length;
+      preview.textContent = count;
+      startBtn.disabled = (count === 0 || !selectedClass);
+      startError.classList.add('hidden');
+    }
+
+    // ── Class loading ──────────────────────────────────────────────────────
+
+    async function init() {
+      try {
+        const data = await loadClasses();
+        classes = data.classes;
+        renderClassChips();
+
+        // ── Auto‑select from URL (for weak spot retry) ──
+        const urlParams = new URLSearchParams(window.location.search);
+        const presetClass = urlParams.get('class');
+        if (presetClass) {
+          const chip = document.querySelector(`.chip[data-slug="${presetClass}"]`);
+          if (chip) {
+            // simulate a click on the class chip
+            selectClass(classes.find(c => c.slug === presetClass), chip);
+            // After class loads, we'll need to wait for metadata and then add preset topics.
+            // We'll use an interval to watch for the topic input enabling.
+            const waitForTopics = setInterval(() => {
+              if (!topicInput.disabled) {
+                clearInterval(waitForTopics);
+                const presetTopics = urlParams.get('topics');
+                if (presetTopics) {
+                  presetTopics.split(',').forEach(t => {
+                    if (!selectedTopics.has(t)) {
+                      selectedTopics.add(t);
+                      renderSelectedTopics();
+                      updatePreview();
+                    }
+                  });
+                }
+              }
+            }, 100);
+          }
+        }
+      } catch (e) {
+        classChips.innerHTML = '';
+        classError.textContent = 'Could not load classes.json — ' + e.message;
+        classError.classList.remove('hidden');
+      }
+    }
+    function renderClassChips() {
+      classChips.innerHTML = '';
+      classes.forEach(cls => {
+        const el = document.createElement('button');
+        el.className = 'chip';
+        el.textContent = cls.label;
+        el.dataset.slug = cls.slug;
+        el.addEventListener('click', () => selectClass(cls, el));
+        classChips.appendChild(el);
+      });
+    }
+
+    async function selectClass(cls, el) {
+      // Toggle off if already selected
+      if (selectedClass === cls.slug) {
+        selectedClass = null;
+        el.classList.remove('active');
+        resetFilters();
+        updatePreview();
+        return;
+      }
+
+      // Deselect previous
+      classChips.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      selectedClass = cls.slug;
+
+      // Reset dependent state
+      resetFilters();
+
+      // Load metadata + items
+      try {
+        classError.classList.add('hidden');
+        sourceChips.innerHTML = '<div class="skeleton"></div><div class="skeleton" style="width:140px"></div>';
+
+        metadata = await loadMetadata(cls.slug);
+        allItems = await loadItems(cls.slug);
+
+        // Render source chips
+        const sourceNames = metadata.sources.map(s => s.filename);
+        const sourceLabels = metadata.sources.map(s => s.source); // human-readable
+        sourceChips.innerHTML = '';
+        metadata.sources.forEach(s => {
+          const chip = makeChip(s.source, selectedSources, updatePreview);
+          // store real filename for URL
+          chip.dataset.filename = s.filename;
+          // Override toggle to use filename as key, not label
+          chip.onclick = null;
+          chip.addEventListener('click', () => {
+            if (selectedSources.has(s.filename)) {
+              selectedSources.delete(s.filename);
+              chip.classList.remove('active');
+            } else {
+              selectedSources.add(s.filename);
+              chip.classList.add('active');
+            }
+            updatePreview();
+          });
+          sourceChips.appendChild(chip);
+        });
+
+        document.getElementById('clear-sources').classList.remove('hidden');
+        document.getElementById('clear-sources').onclick = () => {
+          selectedSources.clear();
+          sourceChips.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+          updatePreview();
+        };
+
+        // Enable topic autocomplete
+        allTopics = metadata.all_topics;
+        topicInput.disabled = false;
+        topicInput.placeholder = `Search ${allTopics.length} topics...`;
+        document.getElementById('clear-topics').classList.remove('hidden');
+
+        renderChips(typeChips, metadata.all_types, selectedTypes, updatePreview, null);
+        renderChips(diffChips, metadata.all_difficulties, selectedDifficulties, updatePreview, null);
+
+        updatePreview();
+      } catch (e) {
+        classError.textContent = 'Failed to load class data: ' + e.message;
+        classError.classList.remove('hidden');
+      }
+    }
+
+    function resetFilters() {
+      selectedSources.clear();
+      selectedTopics.clear();
+      selectedTypes.clear();
+      selectedDifficulties.clear();
+      allItems = [];
+      metadata = null;
+      allTopics = [];
+
+      const placeholder = '<span class="text-muted text-sm font-mono">← pick a class first</span>';
+      sourceChips.innerHTML = placeholder;
+      typeChips.innerHTML = placeholder;
+      diffChips.innerHTML = placeholder;
+
+      topicInput.disabled = true;
+      topicInput.value = '';
+      topicInput.placeholder = 'Type to search topics...';
+      topicDropdown.classList.add('hidden');
+      selectedTopicsContainer.innerHTML = '';
+      selectedTopicsContainer.classList.add('hidden');
+
+      ['clear-sources', 'clear-topics'].forEach(id => document.getElementById(id).classList.add('hidden'));
+    }
+
+    // ── Start session ──────────────────────────────────────────────────────
+
+    startBtn.addEventListener('click', () => {
+      const items = matchingItems();
+      if (!items.length) {
+        startError.textContent = 'No questions match your filters.';
+        startError.classList.remove('hidden');
+        return;
+      }
+
+      const params = new URLSearchParams();
+      params.set('class', selectedClass);
+
+      if (selectedSources.size)
+        params.set('sources', [...selectedSources].join(','));
+      if (selectedTopics.size)
+        params.set('topics', [...selectedTopics].join(','));
+      if (selectedTypes.size)
+        params.set('types', [...selectedTypes].join(','));
+      if (selectedDifficulties.size)
+        params.set('difficulties', [...selectedDifficulties].join(','));
+
+      // Always send count and timer (0 or empty can be ignored by session)
+      const count = parseInt(questionCount.value, 10);
+      if (count > 0) params.set('count', count);
+      const timer = parseInt(timerMinutes.value, 10);
+      if (timer > 0) params.set('timer', timer);
+
+      window.location.href = `session.html?${params.toString()}`;
+    });
+
+    // ── Boot ───────────────────────────────────────────────────────────────
+    init();
+    // Check for pre‑selected filters from URL (e.g. from "Retry weak spots")
+    (function prefillFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      const classParam = params.get('class');
+      const topicsParam = params.get('topics');
+
+      if (!classParam) return;
+
+      // Find the class chip and "click" it
+      const classChip = document.querySelector(`.chip[data-slug="${classParam}"]`);
+      if (!classChip) return;
+
+      // Wait for classes to load, then select it
+      // We'll piggyback on the existing init flow: after classes are rendered and the chip is present,
+      // we set a flag to trigger selection after loading completes.
+      // To keep it simple, we'll do it inside a small delay or after the init finishes.
+      // Better: modify init to accept an optional callback or use a promise.
+      // Quick approach: set a timeout that checks for the chip, then clicks it.
+      const attempt = setInterval(() => {
+        const chip = document.querySelector(`.chip[data-slug="${classParam}"]`);
+        if (chip) {
+          chip.click();
+          clearInterval(attempt);
+
+          // After the class is selected, we need to wait for metadata to load and topics to be populated,
+          // then add the preselected topics.
+          const checkTopics = setInterval(() => {
+            // Once topic-input is enabled, we can add topics
+            const topicInput = document.getElementById('topic-input');
+            if (!topicInput.disabled && topicsParam) {
+              topicsParam.split(',').forEach(topic => {
+                const alreadyExists = [...selectedTopics].includes(topic);
+                if (!alreadyExists) {
+                  selectedTopics.add(topic);
+                  renderSelectedTopics();
+                  updatePreview();
+                }
+              });
+              clearInterval(checkTopics);
+            }
+          }, 200);
+        }
+      }, 200);
+    })();
+  </script>
+</body>
+
+</html>

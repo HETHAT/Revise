@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results · QuizLab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['DM Mono', 'monospace'],
+                    },
+                    colors: {
+                        surface: '#0f0f11',
+                        panel: '#17171a',
+                        border: '#2a2a30',
+                        accent: '#d4f24c',
+                        muted: '#6b6b75',
+                        light: '#e8e8ee',
+                        correct: '#4ade80',
+                        wrong: '#f87171',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f0f11;
+            color: #e8e8ee;
+            font-family: 'Syne', sans-serif;
+        }
+
+        .metric {
+            font-family: 'DM Mono', monospace;
+        }
+
+        .topic-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a30;
+        }
+
+        .weak-chip {
+            background: #450a0a;
+            color: #f87171;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .action-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.15s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #d4f24c;
+            color: #0f0f11;
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            background: #17171a;
+            color: #e8e8ee;
+            border: 1px solid #2a2a30;
+        }
+
+        .btn-secondary:hover {
+            border-color: #4a4a55;
+        }
+
+        hr {
+            border-color: #2a2a30;
+        }
+
+        @media (max-width: 640px) {
+            .action-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <header class="border-b border-border px-5 py-4 flex items-center justify-between">
+        <a href="index.html" class="font-display font-bold text-xl tracking-tight hover:opacity-80">
+            Quiz<span class="text-accent">Lab</span>
+        </a>
+        <span class="text-muted text-sm font-mono">results</span>
+    </header>
+
+    <main class="max-w-2xl mx-auto px-5 py-10">
+        <!-- Loading / error states -->
+        <div id="loading-msg" class="text-center text-muted font-mono text-sm">Loading results…</div>
+        <div id="error-msg" class="text-center text-wrong font-mono text-sm hidden"></div>
+
+        <!-- Results (hidden until data is ready) -->
+        <div id="results-content" class="hidden">
+            <!-- Score circle -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-32 h-32 rounded-full border-4 border-accent mb-4">
+                    <span id="score-percent" class="font-display text-3xl font-bold">0%</span>
+                </div>
+                <p class="text-muted text-sm font-mono">
+                    <span id="correct-num">0</span> / <span id="total-num">0</span> correct
+                    · <span id="duration-display">—</span>
+                </p>
+            </div>
+
+            <!-- Topic breakdown -->
+            <h2 class="font-display font-semibold text-sm text-muted uppercase tracking-widest mb-4">By Topic</h2>
+            <div id="topic-breakdown" class="mb-8"></div>
+
+            <!-- Weak spots -->
+            <div id="weak-spots-section" class="mb-8 hidden">
+                <h2 class="font-display font-semibold text-sm text-wrong uppercase tracking-widest mb-4">Weak Spots</h2>
+                <div id="weak-spots-list" class="flex flex-wrap gap-2 mb-4"></div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                <button id="retry-weak-btn" class="action-btn btn-primary flex-1 hidden">
+                    Retry weak spots
+                </button>
+                <a href="index.html" class="action-btn btn-secondary flex-1 text-center">
+                    Back to home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { loadWeakSpots } from './js/storage.js';
+
+        // ── Read result data ──
+        let resultData = null;
+        try {
+            const stored = localStorage.getItem('currentResult');
+            if (stored) {
+                resultData = JSON.parse(stored);
+                localStorage.removeItem('currentResult'); // clean up
+            }
+        } catch (e) { }
+
+        const loadingMsg = document.getElementById('loading-msg');
+        const errorMsg = document.getElementById('error-msg');
+        const content = document.getElementById('results-content');
+
+        if (!resultData) {
+            loadingMsg.classList.add('hidden');
+            errorMsg.classList.remove('hidden');
+            errorMsg.textContent = 'No session results found. Start a new quiz.';
+            throw new Error('No results');
+        }
+
+        // Unpack
+        const { total, correct, score, duration, answers, classSlug } = resultData;
+
+        // Render
+        loadingMsg.classList.add('hidden');
+        content.classList.remove('hidden');
+
+        document.getElementById('score-percent').textContent = score + '%';
+        document.getElementById('correct-num').textContent = correct;
+        document.getElementById('total-num').textContent = total;
+        document.getElementById('duration-display').textContent = formatDuration(duration);
+
+        // Build topic stats
+        const topicStats = {};
+        answers.forEach(a => {
+            const topic = a.topic || 'uncategorized';
+            if (!topicStats[topic]) topicStats[topic] = { total: 0, correct: 0 };
+            topicStats[topic].total++;
+            if (a.isCorrect === true) topicStats[topic].correct++;
+        });
+
+        const breakdown = document.getElementById('topic-breakdown');
+        breakdown.innerHTML = '';
+        Object.entries(topicStats).forEach(([topic, stats]) => {
+            const pct = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
+            const row = document.createElement('div');
+            row.className = 'topic-row';
+            row.innerHTML = `
+        <span class="font-mono text-sm flex-1">${escapeHTML(topic)}</span>
+        <span class="font-mono text-sm text-muted mr-4">${stats.correct}/${stats.total}</span>
+        <span class="font-mono text-sm font-semibold ${pct >= 70 ? 'text-correct' : 'text-wrong'}">${pct}%</span>
+      `;
+            breakdown.appendChild(row);
+        });
+
+        // Identify weak spots: topics with at least one wrong AND success rate < 60%
+        const weakTopics = Object.entries(topicStats)
+            .filter(([_, s]) => s.total > 0 && (s.correct / s.total) < 0.6)
+            .map(([topic]) => topic);
+
+        const weakSection = document.getElementById('weak-spots-section');
+        const weakList = document.getElementById('weak-spots-list');
+        const retryBtn = document.getElementById('retry-weak-btn');
+
+        if (weakTopics.length > 0) {
+            weakSection.classList.remove('hidden');
+            weakTopics.forEach(topic => {
+                const chip = document.createElement('span');
+                chip.className = 'weak-chip';
+                chip.textContent = topic;
+                weakList.appendChild(chip);
+            });
+
+            // Enable retry button – builds a link back to index with preselected topics
+            retryBtn.classList.remove('hidden');
+            retryBtn.addEventListener('click', () => {
+                const params = new URLSearchParams();
+                params.set('class', classSlug);
+                params.set('topics', weakTopics.join(','));
+                window.location.href = `index.html?${params.toString()}`;
+            });
+        }
+
+        /* ─── Helpers ─── */
+        function formatDuration(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            return `${m}m ${s}s`;
+        }
+
+        function escapeHTML(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

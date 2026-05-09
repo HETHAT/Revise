@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session • QuizLab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            mono: ['DM Mono', 'monospace'],
+          },
+          colors: {
+            surface: '#0f0f11',
+            panel: '#17171a',
+            border: '#2a2a30',
+            accent: '#d4f24c',
+            muted: '#6b6b75',
+            light: '#e8e8ee',
+            correct: '#4ade80',
+            wrong: '#f87171',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0f0f11;
+      color: #e8e8ee;
+      font-family: 'Syne', sans-serif;
+    }
+
+    /* Question card */
+    .question-container {
+      background: #17171a;
+      border: 1px solid #2a2a30;
+      border-radius: 12px;
+      padding: 28px;
+      min-height: 300px;
+    }
+
+    @media (max-width: 640px) {
+      .question-container {
+        padding: 18px;
+      }
+
+      .action-btn {
+        width: 100%;
+      }
+    }
+
+    .question-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      color: #e8e8ee;
+      font-weight: 500;
+    }
+
+    /* MCQ choices */
+    .choices-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .choice-label {
+      display: flex;
+      align-items: start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: #0f0f11;
+      border: 1px solid #2a2a30;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .choice-label:hover {
+      border-color: #4a4a55;
+    }
+
+    .choice-label:has(input:checked) {
+      border-color: #d4f24c;
+      background: #1d1f12;
+    }
+
+    .choice-label input[type="radio"] {
+      margin-top: 2px;
+      accent-color: #d4f24c;
+      cursor: pointer;
+    }
+
+    /* True/False buttons */
+    .tf-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .tf-btn {
+      padding: 18px;
+      border: 2px solid #2a2a30;
+      border-radius: 10px;
+      background: #0f0f11;
+      color: #e8e8ee;
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .tf-btn:hover {
+      border-color: #4a4a55;
+    }
+
+    .tf-btn.selected {
+      border-color: #d4f24c;
+      background: #1d1f12;
+      color: #d4f24c;
+    }
+
+    /* Text answer input */
+    .text-answer-input {
+      width: 100%;
+      min-height: 120px;
+      padding: 14px;
+      background: #0f0f11;
+      border: 1px solid #2a2a30;
+      border-radius: 8px;
+      color: #e8e8ee;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .text-answer-input:focus {
+      border-color: #d4f24c;
+    }
+
+    .text-answer-input.code-input {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    /* Reveal button */
+    .reveal-btn {
+      margin-top: 16px;
+      padding: 10px 20px;
+      background: #d4f24c;
+      color: #0f0f11;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: brightness 0.15s;
+    }
+
+    .reveal-btn:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Answer reveal */
+    .answer-reveal {
+      margin-top: 20px;
+      padding: 16px;
+      background: #0f0f11;
+      border-left: 3px solid #d4f24c;
+      border-radius: 4px;
+    }
+
+    .answer-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6b6b75;
+      margin-bottom: 6px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .answer-value {
+      font-size: 0.95rem;
+      color: #e8e8ee;
+      margin-bottom: 10px;
+      font-family: 'DM Mono', monospace;
+      line-height: 1.5;
+    }
+
+    .answer-value.code-block {
+      background: #17171a;
+      padding: 12px;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      font-size: 0.85rem;
+    }
+
+    .explanation {
+      font-size: 0.85rem;
+      color: #a0a0aa;
+      margin-top: 8px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* Self-assessment */
+    .self-assess {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #2a2a30;
+    }
+
+    .self-assess-label {
+      font-size: 0.85rem;
+      color: #a0a0aa;
+      margin-bottom: 10px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .self-assess-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .self-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid;
+      border-radius: 6px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .self-correct {
+      background: #052e16;
+      border-color: #4ade80;
+      color: #4ade80;
+    }
+
+    .self-correct:hover {
+      background: #14532d;
+    }
+
+    .self-wrong {
+      background: #450a0a;
+      border-color: #f87171;
+      color: #f87171;
+    }
+
+    .self-wrong:hover {
+      background: #7f1d1d;
+    }
+
+    /* Progress bar */
+    .progress-bar {
+      height: 4px;
+      background: #2a2a30;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #d4f24c;
+      transition: width 0.3s ease;
+    }
+
+    /* Timer */
+    .timer {
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #17171a;
+      border: 1px solid #2a2a30;
+      font-size: 0.85rem;
+    }
+
+    .timer.warning {
+      color: #f87171;
+      border-color: #f87171;
+    }
+
+    /* Action buttons */
+    .action-btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: #d4f24c;
+      color: #0f0f11;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: #17171a;
+      color: #e8e8ee;
+      border: 1px solid #2a2a30;
+    }
+
+    .btn-secondary:hover {
+      border-color: #4a4a55;
+    }
+
+    /* Meta badges */
+    .meta-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-easy {
+      background: #14532d;
+      color: #4ade80;
+    }
+
+    .badge-medium {
+      background: #78350f;
+      color: #fbbf24;
+    }
+
+    .badge-hard {
+      background: #7f1d1d;
+      color: #f87171;
+    }
+
+    /* Loading skeleton */
+    .skeleton {
+      background: linear-gradient(90deg, #1e1e23 25%, #26262c 50%, #1e1e23 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 8px;
+      height: 300px;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    hr {
+      border-color: #2a2a30;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- Top bar -->
+  <header class="border-b border-border px-5 py-4 flex items-center justify-between">
+    <a href="index.html" class="font-display font-bold text-xl tracking-tight hover:opacity-80">
+      Quiz<span class="text-accent">Lab</span>
+    </a>
+    <div id="timer-display" class="timer hidden"></div>
+  </header>
+
+  <!-- Progress bar -->
+  <div class="progress-bar">
+    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+  </div>
+
+  <!-- Main content -->
+  <main class="max-w-3xl mx-auto px-5 py-8">
+
+    <!-- Session header -->
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span id="mode-badge" class="meta-badge" style="background: #d4f24c; color: #0f0f11;"></span>
+          <span id="difficulty-badge" class="meta-badge hidden"></span>
+        </div>
+        <div class="text-sm text-muted font-mono">
+          Question <span id="current-num">1</span> of <span id="total-num">—</span>
+          <span id="topic-label" class="ml-3 text-accent"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question render area -->
+    <div id="question-area">
+      <div class="skeleton"></div>
+    </div>
+
+    <!-- Action buttons -->
+    <div id="action-buttons" class="mt-6 flex flex-col sm:flex-row gap-3 hidden">
+      <button id="next-btn" class="action-btn btn-primary flex-1">
+        Next question →
+      </button>
+      <button id="finish-btn" class="action-btn btn-primary flex-1 hidden">
+        Finish session →
+      </button>
+      <button id="quit-btn" class="action-btn btn-secondary">
+        Quit
+      </button>
+    </div>
+
+    <!-- Loading state message -->
+    <div id="loading-msg" class="text-center text-muted font-mono text-sm mt-8">
+      Loading your session...
+    </div>
+
+  </main>
+
+  <script type="module">
+    import { loadItems, filterItems, shuffle } from './js/dataLoader.js';
+    import { SessionManager } from './js/sessionManager.js';
+    import { renderQuestion } from './js/ui.js';
+    import { saveWeakSpots } from './js/storage.js';
+
+    // ── Parse URL params ────────────────────────────────────────────────────
+    const params = new URLSearchParams(window.location.search);
+    const classSlug = params.get('class');
+    const sources = params.get('sources')?.split(',').filter(Boolean) || null;
+    const topics = params.get('topics')?.split(',').filter(Boolean) || null;
+    const types = params.get('types')?.split(',').filter(Boolean) || null;
+    const difficulties = params.get('difficulties')?.split(',').filter(Boolean) || null;
+    const maxCount = params.get('count') ? parseInt(params.get('count'), 10) : null;
+    const timerMinutes = params.get('timer') ? parseInt(params.get('timer'), 10) : null;
+
+    if (!classSlug) {
+      window.location.href = 'index.html';
+    }
+
+    // ── DOM refs ────────────────────────────────────────────────────────────
+    const questionArea = document.getElementById('question-area');
+    const actionButtons = document.getElementById('action-buttons');
+    const nextBtn = document.getElementById('next-btn');
+    const finishBtn = document.getElementById('finish-btn');
+    const quitBtn = document.getElementById('quit-btn');
+    const progressFill = document.getElementById('progress-fill');
+    const currentNum = document.getElementById('current-num');
+    const totalNum = document.getElementById('total-num');
+    const topicLabel = document.getElementById('topic-label');
+    const modeBadge = document.getElementById('mode-badge');
+    const difficultyBadge = document.getElementById('difficulty-badge');
+    const timerDisplay = document.getElementById('timer-display');
+    const loadingMsg = document.getElementById('loading-msg');
+
+    // ── State ───────────────────────────────────────────────────────────────
+    let session = null;
+    let currentQuestionRenderer = null;
+
+    // ── Init ────────────────────────────────────────────────────────────────
+    async function init() {
+      try {
+        // Load and filter items
+        const allItems = await loadItems(classSlug, sources);
+        let items = filterItems(allItems, { sources, topics, types, difficulties });
+
+        // Always shuffle the question order for every session
+        items = shuffle([...items]);
+
+        // Apply count cap only for quiz/exam
+        if (maxCount && items.length > maxCount) {
+          items = items.slice(0, maxCount);
+        }
+
+        if (items.length === 0) {
+          questionArea.innerHTML = '<div class="text-center text-muted font-mono">No questions match your filters.</div>';
+          loadingMsg.classList.add('hidden');
+          return;
+        }
+
+        // Create session
+        session = new SessionManager(items, { timerMinutes });
+
+        // Setup UI
+        modeBadge.textContent = 'QUIZ';  // fixed label
+        totalNum.textContent = items.length;
+        loadingMsg.classList.add('hidden');
+        actionButtons.classList.remove('hidden');
+
+        if (timerMinutes) {
+          timerDisplay.classList.remove('hidden');
+          session.startTimer(
+            (remaining) => {
+              timerDisplay.textContent = session.formatTime(remaining);
+              if (remaining <= 60) timerDisplay.classList.add('warning');
+            },
+            () => finishSession()
+          );
+        }
+        renderCurrentQuestion();
+        updateProgress();
+
+      } catch (e) {
+        questionArea.innerHTML = `<div class="text-wrong font-mono text-sm">Error loading session: ${e.message}</div>`;
+        loadingMsg.classList.add('hidden');
+      }
+    }
+
+    // ── Render question ─────────────────────────────────────────────────────
+    function renderCurrentQuestion() {
+      const q = session.getCurrentQuestion();
+      currentNum.textContent = session.currentIndex + 1;
+      topicLabel.textContent = q.topic;
+      difficultyBadge.className = `meta-badge badge-${q.difficulty}`;
+      difficultyBadge.textContent = q.difficulty;
+      difficultyBadge.classList.remove('hidden');
+
+      const { container, getAnswer } = renderQuestion(q, true, handleAnswer);
+      questionArea.innerHTML = '';
+      questionArea.appendChild(container);
+      currentQuestionRenderer = getAnswer;
+
+      // Always enable Next/Finish
+      nextBtn.disabled = false;
+      finishBtn.disabled = false;
+      if (session.isLastQuestion()) {
+        nextBtn.classList.add('hidden');
+        finishBtn.classList.remove('hidden');
+      } else {
+        nextBtn.classList.remove('hidden');
+        finishBtn.classList.add('hidden');
+      }
+    }
+    // ── Handle answer (from UI renderers) ───────────────────────────────────
+    function handleAnswer(answer, isCorrect) {
+      session.recordAnswer(answer, isCorrect);
+    }
+    // ── Next question ───────────────────────────────────────────────────────
+    nextBtn.addEventListener('click', () => {
+      // If no answer has been recorded for this question, treat as skipped → wrong
+      if (!session.answers[session.currentIndex]) {
+        session.recordAnswer('');
+      }
+      if (session.nextQuestion()) {
+        renderCurrentQuestion();
+        updateProgress();
+      } else {
+        finishSession();
+      }
+    });
+
+    finishBtn.addEventListener('click', () => {
+      // Record skipped answer for the current question if not already answered
+      if (!session.answers[session.currentIndex]) {
+        session.recordAnswer('');
+      }
+      finishSession();
+    });
+
+    function finishSession() {
+      session.stopTimer();
+      const results = session.getResults();
+      results.classSlug = classSlug;                     // needed for retry link
+      localStorage.setItem('currentResult', JSON.stringify(results));
+
+      // Save wrong answers for weak spot tracking
+      saveWeakSpots(results.answers, classSlug);
+
+      window.location.href = 'results.html';
+    }
+
+    // ── Quit ────────────────────────────────────────────────────────────────
+    quitBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to quit? Your progress will be lost.')) {
+        window.location.href = 'index.html';
+      }
+    });
+
+    // ── Progress ────────────────────────────────────────────────────────────
+    function updateProgress() {
+      const percent = ((session.currentIndex + 1) / session.items.length) * 100;
+      progressFill.style.width = `${percent}%`;
+    }
+
+    // ── Boot ────────────────────────────────────────────────────────────────
+    init();
+  </script>
+</body>
+
+</html>

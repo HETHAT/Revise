@@ -1,0 +1,119 @@
+{
+  "source": "La logique des prédicats.pptx",
+  "items": [
+    {
+      "id": "la-logique-des-predicats_001",
+      "question": "L'expression logique ∃ x ∀ y aimer(x,y) est rigoureusement équivalente à ∀ y ∃ x aimer(x,y).",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Propriétés des quantificateurs",
+      "difficulty": "moyen",
+      "explanation": "Bien que l'ordre des quantificateurs de même nature (∀∀ ou ∃∃) puisse être inversé, l'inversion de quantificateurs différents change le sens. ∃ x ∀ y signifie qu'une seule personne aime tout le monde, alors que ∀ y ∃ x signifie que tout le monde est aimé par au moins une personne."
+    },
+    {
+      "id": "la-logique-des-predicats_002",
+      "question": "Quelle est l'équivalence correcte pour la négation d'un quantificateur universel (∀ x p) ?",
+      "answer": "˥ ∃ x ˥ p",
+      "type": "mcq",
+      "topic": "Négation des quantificateurs",
+      "difficulty": "moyen",
+      "explanation": "Selon les sources, Ɐ x p ≡ ˥ ꓱ x ˥ p. Dire que 'tous aiment la crème' revient à dire qu'il 'n'existe personne qui n'aime pas la crème'.",
+      "choices": [
+        "∃ x p",
+        "˥ ∃ x p",
+        "˥ ∃ x ˥ p",
+        "∃ x ˥ p"
+      ]
+    },
+    {
+      "id": "la-logique-des-predicats_003",
+      "question": "Traduisez en logique des prédicats la phrase : 'Mohamed a au moins 2 frères' en utilisant l'égalité.",
+      "answer": "ꓱ x ꓱ y frere(x, mohamed) ꓥ frere(y, mohamed) ꓥ ˥(x=y)",
+      "type": "short_answer",
+      "topic": "Traduction du langage naturel / Égalité",
+      "difficulty": "difficile",
+      "explanation": "Il faut non seulement affirmer l'existence de deux frères, mais aussi préciser qu'ils sont distincts (x ≠ y) pour qu'il y en ait au moins deux."
+    },
+    {
+      "id": "la-logique-des-predicats_004",
+      "question": "Si l'on possède la règle 'Tout homme est mortel' et le fait 'Mohamed est un homme', quelle règle d'inférence permet de déduire que 'Mohamed est mortel' ?",
+      "answer": "Modus Ponens",
+      "type": "mcq",
+      "topic": "Règles d'inférence",
+      "difficulty": "facile",
+      "explanation": "Le Modus Ponens stipule que si (P → Q) et P sont vrais, alors Q est vrai. C'est le fondement du chaînage avant.",
+      "choices": [
+        "Modus Tollens",
+        "Unification",
+        "Modus Ponens",
+        "Principe de contradiction"
+      ]
+    },
+    {
+      "id": "la-logique-des-predicats_005",
+      "question": "Appliquez le Modus Tollens à l'exemple suivant : 'Tous les algériens sont des musulmans' et 'You n'est pas musulman'. Quelle est la conclusion ?",
+      "answer": "You n'est pas algérien (˥ algerien(you))",
+      "type": "short_answer",
+      "topic": "Règles d'inférence / Modus Tollens",
+      "difficulty": "moyen",
+      "explanation": "Le Modus Tollens dit que si (P → Q) est vrai et que (non Q) est vrai, alors (non P) est vrai. Ici, P=algerien et Q=musulman."
+    },
+    {
+      "id": "la-logique-des-predicats_006",
+      "question": "Dans le principe de résolution avec unification, si on a 'P(x) ou Q(y)' et 'non P(f(z)) ou R(x)', quelle est la condition pour obtenir la conclusion 'Q(y) ou R(f(z))' ?",
+      "answer": "x = f(z)",
+      "type": "mcq",
+      "topic": "Unification / Résolution",
+      "difficulty": "difficile",
+      "explanation": "L'unification doit rendre les prédicats opposés identiques (A1 = A2). Ici, P(x) doit être égal à P(f(z)), d'où x = f(z).",
+      "choices": [
+        "x = y",
+        "x = f(z)",
+        "y = f(z)",
+        "x = z"
+      ]
+    },
+    {
+      "id": "la-logique-des-predicats_007",
+      "question": "Le Modus Tollens est une règle d'inférence plus spécifiquement utilisée pour le chaînage avant.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Règles d'inférence",
+      "difficulty": "moyen",
+      "explanation": "La source indique explicitement que le Modus Tollens est plus spécifique au chaînage arrière, tandis que le Modus Ponens est le fondement du chaînage avant."
+    },
+    {
+      "id": "la-logique-des-predicats_008",
+      "question": "Traduisez en logique des prédicats la phrase suivante : 'Ali va n'importe où Mohamed va'.",
+      "answer": "∀ x (va(mohamed, x) → va(ali, x))",
+      "type": "short_answer",
+      "topic": "Traduction du langage naturel",
+      "difficulty": "moyen",
+      "explanation": "Cela exprime que pour tout lieu x, si Mohamed va à ce lieu, alors Ali y va aussi."
+    },
+    {
+      "id": "la-logique-des-predicats_009",
+      "question": "Comment se traduit en logique des prédicats : 'Chaque chat connaît un chien qui le déteste' ?",
+      "answer": "∀ x (chat(x) → ∃ y (chien(y) ∧ connait(x,y) ∧ deteste(y,x)))",
+      "type": "mcq",
+      "topic": "Traduction du langage naturel",
+      "difficulty": "difficile",
+      "explanation": "Pour tout x, si x est un chat, alors il existe un chien y tel que x connaît y et y déteste x.",
+      "choices": [
+        "∀ x (chat(x) ∧ ∃ y (chien(y) ∧ connait(x,y) ∧ deteste(y,x)))",
+        "∀ x (chat(x) → ∃ y (chien(y) ∧ connait(x,y) ∧ deteste(y,x)))",
+        "∃ y (chien(y) ∧ ∀ x (chat(x) → connait(x,y) ∧ deteste(y,x)))",
+        "∀ x ∀ y (chat(x) ∧ chien(y) → connait(x,y))"
+      ]
+    },
+    {
+      "id": "la-logique-des-predicats_010",
+      "question": "Dans une règle Prolog 'mortel(x) :- homme(x)', la variable x est quantifiée existentiellement.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Manipulation de formules / Prolog",
+      "difficulty": "moyen",
+      "explanation": "Une variable apparaissant dans la tête d'une règle (et éventuellement dans son corps) est quantifiée universellement (∀ x)."
+    }
+  ]
+}

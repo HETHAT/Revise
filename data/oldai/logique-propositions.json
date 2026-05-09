@@ -1,0 +1,119 @@
+{
+  "source": "logique-propositions.pptx",
+  "items": [
+    {
+      "id": "logique-propositions_001",
+      "question": "Un étudiant affirme : 'Si je travaille, alors je réussis l'examen'. Dans quel cas précis cette promesse (implication p → q) est-elle considérée comme fausse ?",
+      "answer": "L'étudiant travaille et rate l'examen",
+      "type": "mcq",
+      "topic": "Connecteurs logiques / Tables de vérité",
+      "difficulty": "facile",
+      "explanation": "Selon la table de vérité de l'implication, p → q est fausse uniquement si l'antécédent (p) est vrai et la conséquence (q) est fausse.",
+      "choices": [
+        "L'étudiant travaille et réussit l'examen",
+        "L'étudiant ne travaille pas et réussit l'examen",
+        "L'étudiant travaille et rate l'examen",
+        "L'étudiant ne travaille pas et rate l'examen"
+      ]
+    },
+    {
+      "id": "logique-propositions_002",
+      "question": "Pour démontrer logiquement l'implication P → Q par contraposée, il suffit de prouver que ¬P → ¬Q.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Transformations logiques",
+      "difficulty": "moyen",
+      "explanation": "La contraposée de P → Q est ¬Q → ¬P. L'expression ¬P → ¬Q est l'inverse, qui n'est pas logiquement équivalente à l'implication originale."
+    },
+    {
+      "id": "logique-propositions_003",
+      "question": "En utilisant les lois de De Morgan, quelle est la forme équivalente de la négation d'une disjonction : ¬(P ∨ Q) ?",
+      "answer": "¬P ∧ ¬Q",
+      "type": "short_answer",
+      "topic": "Lois de De Morgan",
+      "difficulty": "moyen",
+      "explanation": "Les lois de De Morgan stipulent que la négation d'un 'OU' devient un 'ET' de négations."
+    },
+    {
+      "id": "logique-propositions_004",
+      "question": "La formule (P ∨ ¬Q) ∧ (¬P ∨ R ∨ Q) est structurée comme une conjonction de disjonctions. Comment appelle-t-on cette forme standard ?",
+      "answer": "Forme Normale Conjonctive (FNC / CNF)",
+      "type": "mcq",
+      "topic": "Formes normales",
+      "difficulty": "moyen",
+      "explanation": "La FNC est définie comme une conjonction (∧) de clauses, où chaque clause est une disjonction (∨) de littéraux.",
+      "choices": [
+        "Forme Normale Disjonctive (FND / DNF)",
+        "Forme Normale Conjonctive (FNC / CNF)",
+        "Tautologie absolue",
+        "Principe de contradiction"
+      ]
+    },
+    {
+      "id": "logique-propositions_005",
+      "question": "Dans le principe de résolution (Herbrand, Robinson), si l'on veut prouver qu'une proposition F est vraie à partir d'un ensemble de faits E, que cherche-t-on à démontrer concernant l'ensemble E ∪ {¬F} ?",
+      "answer": "On cherche à montrer que cet ensemble est contradictoire (mène à une contradiction).",
+      "type": "short_answer",
+      "topic": "Transformations logiques",
+      "difficulty": "difficile",
+      "explanation": "Si l'ajout de ¬F aux faits établis mène à une contradiction (ex: P ∧ ¬P), alors ¬F ne peut être vrai, validant ainsi F."
+    },
+    {
+      "id": "logique-propositions_006",
+      "question": "La formule (p ∨ ¬p) est une tautologie.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Validité et satisfiabilité",
+      "difficulty": "facile",
+      "explanation": "Une tautologie est une formule toujours vraie quelle que soit l'interprétation. Ici, soit p est vrai, soit son contraire l'est, rendant le 'OU' toujours vrai."
+    },
+    {
+      "id": "logique-propositions_007",
+      "question": "Quelle loi logique permet de transformer l'expression P ∧ (Q ∨ R) en (P ∧ Q) ∨ (P ∧ R) ?",
+      "answer": "La distributivité",
+      "type": "mcq",
+      "topic": "Équivalences logiques",
+      "difficulty": "moyen",
+      "explanation": "La conjonction est distributive par rapport à la disjonction, tout comme la multiplication l'est par rapport à l'addition en algèbre.",
+      "choices": [
+        "L'associativité",
+        "La distributivité",
+        "L'idempotence",
+        "La commutativité"
+      ]
+    },
+    {
+      "id": "logique-propositions_008",
+      "question": "Si l'on vous demande de mettre une formule sous Forme Normale Disjonctive (FND), quel est l'objectif de structure final ?",
+      "answer": "Obtenir une disjonction de conjonctions (un 'OU' de plusieurs 'ET').",
+      "type": "short_answer",
+      "topic": "Formes normales",
+      "difficulty": "moyen",
+      "explanation": "La FND est une disjonction de termes, où chaque terme est une conjonction de littéraux."
+    },
+    {
+      "id": "logique-propositions_009",
+      "question": "La négation de la phrase 'Si un nombre n'est pas pair, alors il n'est pas divisible par 2' est sa contraposée.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Transformations logiques",
+      "difficulty": "moyen",
+      "explanation": "La contraposée est une équivalence logique (elle dit la même chose), alors que la négation dit le contraire."
+    },
+    {
+      "id": "logique-propositions_010",
+      "question": "Lors d'une preuve par contradiction, vous arrivez à l'état final (V(x) ∧ ¬V(x)). Quelle est la conclusion correcte ?",
+      "answer": "La supposition ¬F est impossible, donc F est vraie",
+      "type": "mcq",
+      "topic": "Raisonnement",
+      "difficulty": "difficile",
+      "explanation": "La contradiction démontre que l'hypothèse inverse ne peut pas exister dans le système de faits donné.",
+      "choices": [
+        "La proposition initiale est indécidable",
+        "La supposition ¬F est impossible, donc F est vraie",
+        "L'ensemble des faits de départ est faux",
+        "La règle utilisée est invalide"
+      ]
+    }
+  ]
+}

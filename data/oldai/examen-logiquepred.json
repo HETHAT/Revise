@@ -1,0 +1,80 @@
+{
+  "source": "examen-logiquepred.docx",
+  "items": [
+    {
+      "id": "examen-logiquepred_001",
+      "question": "Traduisez en logique des prédicats la phrase suivante : 'Tous les étudiants utilisent au moins un PC'.",
+      "answer": "∀x (Etudiant(x) → ∃y (PC(y) ∧ Utilise(x, y)))",
+      "type": "short_answer",
+      "topic": "Traduction en logique des prédicats",
+      "difficulty": "facile",
+      "explanation": "Pour chaque individu x, s'il est un étudiant, alors il existe au moins un objet y tel que y est un PC et x utilise y."
+    },
+    {
+      "id": "examen-logiquepred_002",
+      "question": "Quelle est la traduction correcte de : 'Tout logiciel installé sur un PC est soit licencié, soit contient un virus' ?",
+      "answer": "∀x ∀s ∀y ((Installe(x,s,y) ∧ Logiciel(s)) → (LicenceValide(s) ∨ Virus(s)))",
+      "type": "mcq",
+      "topic": "Traduction en logique des prédicats",
+      "difficulty": "moyen",
+      "explanation": "On doit quantifier universellement l'étudiant (x), le logiciel (s) et le PC (y). Si le logiciel est installé, alors il remplit l'une des deux conditions.",
+      "choices": [
+        "∀x ∀s ∀y ((Installe(x,s,y) ∧ Logiciel(s)) → (LicenceValide(s) ∨ Virus(s)))",
+        "∃x ∃s ∃y ((Installe(x,s,y) ∧ Logiciel(s)) → (LicenceValide(s) ∧ Virus(s)))",
+        "∀s (Logiciel(s) → (LicenceValide(s) ∨ Virus(s)))",
+        "∀x ∀s ∀y (Installe(x,s,y) ∧ (LicenceValide(s) ∨ Virus(s)))"
+      ]
+    },
+    {
+      "id": "examen-logiquepred_003",
+      "question": "La phrase 'Aucun étudiant n’installe volontairement un logiciel contenant un virus' peut se traduire par : ∀x∀s∀y((Etudiant(x) ∧ Installe(x,s,y)) → ¬Virus(s)).",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Contraintes logiques et négation",
+      "difficulty": "moyen",
+      "explanation": "Cette formule exprime que pour tout étudiant et tout logiciel qu'il installe, ce logiciel n'est pas un virus, ce qui traduit l'absence d'installation (volontaire) de virus par les étudiants."
+    },
+    {
+      "id": "examen-logiquepred_004",
+      "question": "Si l'on sait que 'Si un étudiant installe un virus sur un PC, alors il est infecté' et qu'il existe un fait confirmant qu'un étudiant a installé un tel logiciel, que peut-on déduire pour le PC ?",
+      "answer": "On peut déduire que le PC est infecté (Infecte(y)).",
+      "type": "short_answer",
+      "topic": "Raisonnement logique",
+      "difficulty": "facile",
+      "explanation": "En utilisant la règle d'inférence Modus Ponens sur la règle (Etudiant(x) ∧ Installe(x,s,y) ∧ Virus(s)) → Infecte(y), la présence du fait déclenche la conclusion."
+    },
+    {
+      "id": "examen-logiquepred_005",
+      "question": "Comment traduire : 'Il existe un logiciel installé sur tous les PC des étudiants' ?",
+      "answer": "∃s (Logiciel(s) ∧ ∀x ∀y ((Etudiant(x) ∧ PC(y) ∧ Utilise(x,y)) → Installe(x,s,y)))",
+      "type": "mcq",
+      "topic": "Quantificateurs et portée",
+      "difficulty": "difficile",
+      "explanation": "Le 'il existe' porte sur le logiciel (quantificateur existentiel en tête), et la condition s'applique à tous les PC utilisés par les étudiants (quantificateur universel).",
+      "choices": [
+        "∀s (Logiciel(s) ∧ ∃y PC(y))",
+        "∃s (Logiciel(s) ∧ ∀x ∀y ((Etudiant(x) ∧ PC(y) ∧ Utilise(x,y)) → Installe(x,s,y)))",
+        "∀x ∀y ∃s (Logiciel(s) ∧ Installe(x,s,y))",
+        "∃s (Logiciel(s) → ∀y PC(y))"
+      ]
+    },
+    {
+      "id": "examen-logiquepred_006",
+      "question": "Peut-on conclure que 'Tout PC utilisé par un étudiant est sûr (non infecté)' à partir des faits de l'exercice ?",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Raisonnement et contre-exemples",
+      "difficulty": "moyen",
+      "explanation": "L'exercice montre qu'il suffit qu'un étudiant installe un logiciel malveillant pour qu'un PC soit infecté. On ne peut donc pas généraliser que tous les PC sont sûrs ; un seul contre-exemple suffit à invalider la généralité."
+    },
+    {
+      "id": "examen-logiquepred_007",
+      "question": "Proposez une règle Prolog indicative correspondant à : 'Un PC est infecté si un étudiant y installe un logiciel contenant un virus'.",
+      "answer": "infecte(Y) :- etudiant(X), installe(X, S, Y), virus(S).",
+      "type": "short_answer",
+      "topic": "Manipulation de formules / Prolog",
+      "difficulty": "moyen",
+      "explanation": "En Prolog, la conclusion (tête) est placée à gauche, et les conditions (corps) sont à droite séparées par des virgules (représentant le ET logique)."
+    }
+  ]
+}

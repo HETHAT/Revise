@@ -1,0 +1,119 @@
+{
+  "source": "dev-jus-SE.pptx",
+  "items": [
+    {
+      "id": "dev-jus-se_001",
+      "question": "Lequel des énoncés suivants décrit le mieux le 'paradoxe de l'expertise' ?",
+      "answer": "Plus un expert devient performant, moins il est capable de décrire les connaissances qu'il utilise pour résoudre un problème.",
+      "type": "mcq",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "La source indique explicitement que le paradoxe de l'expertise réside dans l'incapacité croissante de l'expert à structurer et expliquer son savoir-faire à mesure qu'il gagne en expérience.",
+      "choices": [
+        "Plus un expert est compétent, plus ses services sont coûteux pour l'entreprise.",
+        "Plus un expert devient performant, moins il est capable de décrire les connaissances qu'il utilise pour résoudre un problème.",
+        "Un expert ne peut jamais être remplacé par une machine, quel que soit son niveau.",
+        "L'expertise humaine diminue avec le temps si elle n'est pas pratiquée quotidiennement."
+      ]
+    },
+    {
+      "id": "dev-jus-se_002",
+      "question": "Le développement d'un système expert est justifié lorsque le problème peut être facilement résolu par un algorithme classique.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Systèmes experts",
+      "difficulty": "facile",
+      "explanation": "Un système expert est privilégié pour les problèmes non algorithmiques nécessitant des heuristiques. Si une solution algorithmique simple est possible, le recours à un système expert n'est pas justifié."
+    },
+    {
+      "id": "dev-jus-se_003",
+      "question": "Citez deux exemples d'environnements dits 'hostiles' où l'utilisation d'un système expert est particulièrement justifiée selon le document.",
+      "answer": "Le milieu militaire, l'espace ou le domaine nucléaire.",
+      "type": "short_answer",
+      "topic": "Raisonnement et recherche",
+      "difficulty": "facile",
+      "explanation": "Ces environnements sont qualifiés de dangereux ou inaccessibles, rendant la présence humaine difficile et justifiant l'usage d'un système expert."
+    },
+    {
+      "id": "dev-jus-se_004",
+      "question": "Quelle est l'une des motivations principales liées à la 'perte de l'expertise' pour développer un système expert ?",
+      "answer": "Pérenniser le savoir-faire avant le départ ou la disparition d'un expert rare.",
+      "type": "mcq",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "Le document mentionne la perte de l'expertise, son coût élevé et sa rareté comme des justifications majeures pour le développement de ces systèmes.",
+      "choices": [
+        "Réduire le salaire des experts actuels.",
+        "Pérenniser le savoir-faire avant le départ ou la disparition d'un expert rare.",
+        "Remplacer tous les employés par des robots.",
+        "Augmenter la complexité des tâches administratives."
+      ]
+    },
+    {
+      "id": "dev-jus-se_005",
+      "question": "Pour construire un système expert, il ne suffit pas qu'un expert existe ; il faut aussi qu'il soit disponible et favorable au projet.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Systèmes experts",
+      "difficulty": "facile",
+      "explanation": "La source précise que parmi les conditions de possibilité, les experts doivent être disponibles, favorables et capables de formuler leur savoir."
+    },
+    {
+      "id": "dev-jus-se_006",
+      "question": "Quels sont les problèmes fréquents liés à la nature de la connaissance experte lors de la constitution d'une base de connaissances ?",
+      "answer": "La connaissance peut être non fiable, contradictoire (entre experts ou chez un même expert), inconsciente, non formalisée ou diffuse.",
+      "type": "short_answer",
+      "topic": "Systèmes experts",
+      "difficulty": "difficile",
+      "explanation": "Ces caractéristiques rendent l'extraction et la structuration du savoir complexes pour l'informaticien ou l'expert lui-même."
+    },
+    {
+      "id": "dev-jus-se_007",
+      "question": "Dans quel cas la réponse à l'intérêt d'un recours à un système expert est-elle négative ?",
+      "answer": "Lorsque la complexité du raisonnement est faible.",
+      "type": "mcq",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "Une faible complexité de raisonnement ou une solution algorithmique possible rendent l'usage d'un système expert inutile.",
+      "choices": [
+        "Lorsque le domaine nécessite des mises à jour fréquentes.",
+        "Lorsque la tâche fait appel à des connaissances intellectuelles expertes.",
+        "Lorsque la complexité du raisonnement est faible.",
+        "Lorsque le coût de développement est élevé."
+      ]
+    },
+    {
+      "id": "dev-jus-se_008",
+      "question": "Pourquoi la rareté de l'expertise est-elle une motivation financière pour une entreprise ?",
+      "answer": "Car l'expertise rare a un coût élevé et son utilisation via un système expert peut engendrer un gain financier important.",
+      "type": "short_answer",
+      "topic": "Fondements de l’IA",
+      "difficulty": "moyen",
+      "explanation": "Le document lie directement le coût élevé et la rareté de l'expertise à la justification économique du développement d'un SE."
+    },
+    {
+      "id": "dev-jus-se_009",
+      "question": "L'expert est toujours la personne la mieux placée pour décrire précisément et de manière structurée l'ensemble de ses processus de décision.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "À cause du paradoxe de l'expertise, l'expert a souvent une connaissance 'inconsciente' ou 'diffuse' qu'il a du mal à formaliser seul."
+    },
+    {
+      "id": "dev-jus-se_010",
+      "question": "Parmi ces méthodes d'acquisition des connaissances, laquelle consiste à faire 'penser à voix haute' l'expert ?",
+      "answer": "Les interviews oraux.",
+      "type": "mcq",
+      "topic": "Systèmes experts",
+      "difficulty": "facile",
+      "explanation": "La source suggère explicitement d'utiliser les interviews oraux pour faire réfléchir l'expert à voix haute.",
+      "choices": [
+        "Les questionnaires écrits.",
+        "L'analyse de rapports empiriques.",
+        "Les interviews oraux.",
+        "Le développement de modèles par l'informaticien seul."
+      ]
+    }
+  ]
+}

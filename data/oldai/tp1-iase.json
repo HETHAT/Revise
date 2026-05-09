@@ -1,0 +1,68 @@
+{
+  "source": "TP1-IASE.docx",
+  "items": [
+    {
+      "id": "tp1-iase_001",
+      "question": "En utilisant les prédicats de base parent(x,y), male(x) et femelle(x), écrivez la règle Prolog permettant de définir la relation frère(X, Y). Assurez-vous que X et Y sont deux personnes distinctes.",
+      "answer": "frere(X, Y) :- parent(P, X), parent(P, Y), male(X), X \\== Y.",
+      "type": "coding",
+      "topic": "Logique des relations familiales",
+      "difficulty": "facile",
+      "explanation": "La règle doit identifier un parent commun P pour X et Y, vérifier que X est de sexe masculin, et utiliser l'opérateur de distinction (\\==) pour éviter que quelqu'un soit son propre frère."
+    },
+    {
+      "id": "tp1-iase_002",
+      "question": "Complétez le programme 'Au Restaurant' en écrivant la règle repas_sans_viande(E, P, D) qui définit un repas composé d'une entrée, d'un plat de poisson (au lieu de la viande) et d'un dessert.",
+      "answer": "repas_sans_viande(E, P, D) :- entree(E), poisson(P), dessert(D).",
+      "type": "fill_blank",
+      "topic": "Sélection de repas au restaurant",
+      "difficulty": "facile",
+      "explanation": "Il faut lier les variables E, P et D aux faits existants dans la base de connaissances : entree/1, poisson/1 et dessert/1."
+    },
+    {
+      "id": "tp1-iase_003",
+      "question": "Écrivez une règle repas_regime(E, P, D) qui ne sélectionne que les repas dont le total des calories est inférieur à 600. Note : On suppose l'existence de faits de type calories(Met, Valeur).",
+      "answer": "repas_regime(E, P, D) :- entree(E), plat_principal(P), dessert(D), calories(E, C1), calories(P, C2), calories(D, C3), Total is C1 + C2 + C3, Total < 600.",
+      "type": "coding",
+      "topic": "Écriture de règles Prolog",
+      "difficulty": "moyen",
+      "explanation": "La règle doit instancier chaque composant du repas, récupérer les valeurs caloriques associées via un prédicat de données, effectuer la somme avec l'opérateur 'is' et appliquer une condition de comparaison (<)."
+    },
+    {
+      "id": "tp1-iase_004",
+      "question": "On veut forcer une règle de service : 'Ne servir que du Coca avec de la viande'. Un étudiant a écrit : boisson_viande(V, B) :- viande(V), limonade(B). Pourquoi cette règle est-elle insuffisante selon les contraintes du TP ?",
+      "answer": "Cette règle est insuffisante car elle permet de servir n'importe quelle limonade (Hamoud ou Coca) avec la viande, alors que la consigne spécifie uniquement le Coca.",
+      "type": "debug",
+      "topic": "Débogage",
+      "difficulty": "moyen",
+      "explanation": "Il faut restreindre la variable B à la valeur 'coca' soit par unification directe boisson_viande(V, coca) :- viande(V), soit par un test d'identité."
+    },
+    {
+      "id": "tp1-iase_005",
+      "question": "Écrivez le prédicat récursif chemin(A, B, L) qui permet de déterminer un itinéraire entre deux villes A et B et de calculer la longueur totale L. On utilise des faits de type route(Ville1, Ville2, Distance).",
+      "answer": "chemin(A, B, D) :- route(A, B, D).\nchemin(A, B, D) :- route(A, X, D1), chemin(X, B, D2), D is D1 + D2.",
+      "type": "coding",
+      "topic": "Recherche de chemin entre villes",
+      "difficulty": "difficile",
+      "explanation": "Le prédicat nécessite un cas de base (liaison directe entre A et B) et un cas récursif (aller de A vers une ville intermédiaire X, puis trouver un chemin de X vers B en additionnant les distances)."
+    },
+    {
+      "id": "tp1-iase_006",
+      "question": "Considérant les faits : entree(salade), entree(pizza), viande(mouton), viande(poulet), dessert(fruit). Quelle serait la trace des solutions pour la requête ?- repas(E, mouton, D). ?",
+      "answer": "1. E = salade, D = fruit ;\n2. E = pizza, D = fruit.",
+      "type": "trace",
+      "topic": "Traces d’exécution",
+      "difficulty": "facile",
+      "explanation": "Prolog va unifier le deuxième argument avec 'mouton', puis chercher toutes les combinaisons possibles pour entree(E) et dessert(D)."
+    },
+    {
+      "id": "tp1-iase_007",
+      "question": "Expliquez comment le programme de l'exercice 5 peut reconnaître un carré à l'aide du paramètre de compacité (c = 4 * Π * S / P²).",
+      "answer": "Le programme calcule la compacité de la forme donnée. Pour un carré, le rapport entre la surface (côté²) et le périmètre (4*côté) est constant. Si la valeur calculée correspond à celle d'un carré théorique, la forme est reconnue.",
+      "type": "comprehension",
+      "topic": "Raisonnement sur les résultats",
+      "difficulty": "moyen",
+      "explanation": "Le raisonnement repose sur l'utilisation d'une formule mathématique intégrée dans une règle Prolog qui compare le résultat calculé à une valeur de référence pour chaque forme géométrique."
+    }
+  ]
+}

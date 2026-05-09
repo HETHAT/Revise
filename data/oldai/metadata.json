@@ -1,0 +1,423 @@
+{
+  "total_files": 12,
+  "total_items": 115,
+  "all_types": [
+    "fill_blank",
+    "comprehension",
+    "debug",
+    "coding",
+    "mcq",
+    "short_answer",
+    "trace",
+    "true_false"
+  ],
+  "all_difficulties": [
+    "difficile",
+    "facile",
+    "moyen"
+  ],
+  "all_topics": [
+    "Agronomie",
+    "Algorithme de minimisation",
+    "Application du chaînage",
+    "Apprentissage",
+    "Apprentissage / Interprétation des sorties",
+    "Architecture d'un système expert",
+    "Arithmétique et Unification",
+    "Base de connaissances",
+    "Base de faits",
+    "Bases des ANN",
+    "Bases scientifiques de l’IA",
+    "Catégories génériques",
+    "Chaînage arrière",
+    "Chaînage avant",
+    "Chimie",
+    "Comparaison de termes",
+    "Comparaison des stratégies de raisonnement",
+    "Comportement d'exécution / Retour arrière",
+    "Connecteurs logiques / Tables de vérité",
+    "Contraintes logiques et négation",
+    "Descente de gradient",
+    "Descente de gradient / Apprentissage",
+    "Débogage",
+    "Définition d'un système expert",
+    "Définition de l’IA",
+    "Définition des domaines",
+    "Environnements hostiles",
+    "Faits et règles",
+    "Fonction de coût",
+    "Fonctions d’activation",
+    "Formes normales",
+    "Gestion",
+    "Géologie",
+    "IA vs Informatique classique",
+    "Informatique",
+    "Jeux de données (DataSet)",
+    "Justification du développement",
+    "La négation",
+    "Listes",
+    "Logique des relations familiales",
+    "Logique d’entraînement",
+    "Lois de De Morgan",
+    "Manipulation de formules / Prolog",
+    "Mathématiques",
+    "Modèle et paramètres",
+    "Moteur d'inférence",
+    "Motivations principales",
+    "Médecine",
+    "Médecine / Comparaison",
+    "Méthodes d'acquisition",
+    "Notions fondamentales",
+    "Négation des quantificateurs",
+    "Paradoxe de l'expertise",
+    "Perte de l'expertise humaine",
+    "Pipeline d’apprentissage",
+    "Possibilité de développement",
+    "Problème de la connaissance experte",
+    "Programmation déclarative",
+    "Propriétés des quantificateurs",
+    "Prédicat cut (!)",
+    "Quantificateurs et portée",
+    "Raisonnement",
+    "Raisonnement et contre-exemples",
+    "Raisonnement logique",
+    "Raisonnement sur les résultats",
+    "Recherche de chemin entre villes",
+    "Règles d'inférence",
+    "Règles d'inférence / Modus Tollens",
+    "Récursion",
+    "Rétropropagation",
+    "Simulation / Sciences sociales",
+    "Stratégies de validation",
+    "Sélection de repas au restaurant",
+    "Test de Turing",
+    "Tour de Hanoï",
+    "Tour de Hanoï / récursion",
+    "Traces d’exécution",
+    "Traduction du langage naturel",
+    "Traduction du langage naturel / Égalité",
+    "Traduction en logique des prédicats",
+    "Transformations logiques",
+    "Unification / Résolution",
+    "Validité et satisfiabilité",
+    "Variables",
+    "coloriage de carte",
+    "débogage / récursion",
+    "raisonnement par règles / débogage",
+    "récursion",
+    "système de diagnostic médical / raisonnement par règles",
+    "système de diagnostic médical / recherche de solution",
+    "système de diagnostic médical / représentation d’états",
+    "Écriture de règles Prolog",
+    "Électronique / Télécoms",
+    "Équivalences logiques",
+    "Étapes de construction"
+  ],
+  "sources": [
+    {
+      "source": "apprentissage supervisé.pptx",
+      "filename": "apprentissage-supervise.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Algorithme de minimisation",
+        "Fonction de coût",
+        "Jeux de données (DataSet)",
+        "Logique d’entraînement",
+        "Modèle et paramètres",
+        "Notions fondamentales",
+        "Pipeline d’apprentissage",
+        "Stratégies de validation"
+      ]
+    },
+    {
+      "source": "cours-Prolog-2025.pptx",
+      "filename": "cours-prolog-2025.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Arithmétique et Unification",
+        "Comparaison de termes",
+        "Comportement d'exécution / Retour arrière",
+        "Faits et règles",
+        "La négation",
+        "Listes",
+        "Programmation déclarative",
+        "Prédicat cut (!)",
+        "Récursion",
+        "Variables"
+      ]
+    },
+    {
+      "source": "dev-jus-SE.pptx",
+      "filename": "dev-jus-se.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Environnements hostiles",
+        "Justification du développement",
+        "Motivations principales",
+        "Méthodes d'acquisition",
+        "Paradoxe de l'expertise",
+        "Perte de l'expertise humaine",
+        "Possibilité de développement",
+        "Problème de la connaissance experte",
+        "Étapes de construction"
+      ]
+    },
+    {
+      "source": "domaines-SE.pptx",
+      "filename": "domaines-se.json",
+      "item_count": 12,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Agronomie",
+        "Catégories génériques",
+        "Chimie",
+        "Définition des domaines",
+        "Gestion",
+        "Géologie",
+        "Informatique",
+        "Mathématiques",
+        "Médecine",
+        "Médecine / Comparaison",
+        "Simulation / Sciences sociales",
+        "Électronique / Télécoms"
+      ]
+    },
+    {
+      "source": "examen-logiquepred.docx",
+      "filename": "examen-logiquepred.json",
+      "item_count": 7,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Contraintes logiques et négation",
+        "Manipulation de formules / Prolog",
+        "Quantificateurs et portée",
+        "Raisonnement et contre-exemples",
+        "Raisonnement logique",
+        "Traduction en logique des prédicats"
+      ]
+    },
+    {
+      "source": "généralités-IA2-nv.pptx",
+      "filename": "generalites-ia2-nv.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Bases scientifiques de l’IA",
+        "Définition de l’IA",
+        "IA vs Informatique classique",
+        "Notions fondamentales",
+        "Test de Turing"
+      ]
+    },
+    {
+      "source": "La logique des prédicats.pptx",
+      "filename": "la-logique-des-predicats.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Manipulation de formules / Prolog",
+        "Négation des quantificateurs",
+        "Propriétés des quantificateurs",
+        "Règles d'inférence",
+        "Règles d'inférence / Modus Tollens",
+        "Traduction du langage naturel",
+        "Traduction du langage naturel / Égalité",
+        "Unification / Résolution"
+      ]
+    },
+    {
+      "source": "Les réseaux de neurones.pptx",
+      "filename": "les-reseaux-de-neurones.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Apprentissage",
+        "Apprentissage / Interprétation des sorties",
+        "Bases des ANN",
+        "Descente de gradient",
+        "Descente de gradient / Apprentissage",
+        "Fonctions d’activation",
+        "Rétropropagation"
+      ]
+    },
+    {
+      "source": "logique-propositions.pptx",
+      "filename": "logique-propositions.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Connecteurs logiques / Tables de vérité",
+        "Formes normales",
+        "Lois de De Morgan",
+        "Raisonnement",
+        "Transformations logiques",
+        "Validité et satisfiabilité",
+        "Équivalences logiques"
+      ]
+    },
+    {
+      "source": "SE-chainage.pptx",
+      "filename": "se-chainage.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Application du chaînage",
+        "Architecture d'un système expert",
+        "Base de connaissances",
+        "Base de faits",
+        "Chaînage arrière",
+        "Chaînage avant",
+        "Comparaison des stratégies de raisonnement",
+        "Définition d'un système expert",
+        "Moteur d'inférence"
+      ]
+    },
+    {
+      "source": "TP1-IASE.docx",
+      "filename": "tp1-iase.json",
+      "item_count": 7,
+      "types": [
+        "fill_blank",
+        "comprehension",
+        "debug",
+        "coding",
+        "trace"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Débogage",
+        "Logique des relations familiales",
+        "Raisonnement sur les résultats",
+        "Recherche de chemin entre villes",
+        "Sélection de repas au restaurant",
+        "Traces d’exécution",
+        "Écriture de règles Prolog"
+      ]
+    },
+    {
+      "source": "TP2-IA.docx",
+      "filename": "tp2-ia.json",
+      "item_count": 9,
+      "types": [
+        "fill_blank",
+        "comprehension",
+        "debug",
+        "coding",
+        "trace"
+      ],
+      "difficulties": [
+        "difficile",
+        "facile",
+        "moyen"
+      ],
+      "topics": [
+        "Tour de Hanoï",
+        "Tour de Hanoï / récursion",
+        "coloriage de carte",
+        "débogage / récursion",
+        "raisonnement par règles / débogage",
+        "récursion",
+        "système de diagnostic médical / raisonnement par règles",
+        "système de diagnostic médical / recherche de solution",
+        "système de diagnostic médical / représentation d’états"
+      ]
+    }
+  ]
+}

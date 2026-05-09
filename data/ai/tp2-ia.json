@@ -1,0 +1,86 @@
+{
+  "source": "TP2-IA.docx",
+  "items": [
+    {
+      "id": "tp2-ia_001",
+      "question": "En vous basant sur l'exercice 1, écrivez un programme Prolog permettant d'attribuer une couleur parmi (rouge, jaune, vert, bleu) à deux régions adjacentes R1 et R2, de telle sorte qu'elles ne partagent pas la même couleur.",
+      "answer": "couleur(rouge). couleur(jaune). couleur(vert). couleur(bleu). \nsolution(R1, R2) :- couleur(R1), couleur(R2), R1 \\== R2.",
+      "type": "coding",
+      "topic": "Raisonnement et recherche",
+      "difficulty": "facile",
+      "explanation": "Il faut définir les couleurs comme des faits individuels, puis créer une règle de solution qui instancie les variables R1 et R2 et vérifie leur différence avec l'opérateur \\==."
+    },
+    {
+      "id": "tp2-ia_002",
+      "question": "Expliquez les deux règles fondamentales à respecter pour résoudre le problème de la Tour de Hanoï tel que décrit dans le document.",
+      "answer": "1. On ne peut déplacer qu'un seul disque à la fois. \n2. Un disque plus grand ne peut jamais être placé sur un disque plus petit.",
+      "type": "comprehension",
+      "topic": "Programmation Prolog",
+      "difficulty": "facile",
+      "explanation": "Ces contraintes dictent la logique récursive du programme : déplacer un sous-ensemble de n-1 disques pour libérer le plus grand."
+    },
+    {
+      "id": "tp2-ia_003",
+      "question": "Écrivez le prédicat récursif `hanoi(N, A, B, C)` qui déplace N disques de la tour A vers la tour C en utilisant la tour B comme intermédiaire.",
+      "answer": "hanoi(1, A, _, C) :- write('Deplace de '), write(A), write(' vers '), write(C), nl.\nhanoi(N, A, B, C) :- N > 1, M is N-1, hanoi(M, A, C, B), hanoi(1, A, _, C), hanoi(M, B, A, C).",
+      "type": "coding",
+      "topic": "Programmation Prolog",
+      "difficulty": "difficile",
+      "explanation": "Le programme utilise la récursion : déplacer n-1 disques vers la tour intermédiaire, déplacer le disque restant vers la cible, puis déplacer les n-1 disques de l'intermédiaire vers la cible."
+    },
+    {
+      "id": "tp2-ia_004",
+      "question": "Complétez la règle suivante pour diagnostiquer la 'Grippe' en utilisant les symptômes exacts listés dans le TP : \ngrippe :- symptome(brusque_fievre_et_frissons), symptome(mal_tete_severe), ...",
+      "answer": "grippe :- symptome(brusque_fievre_et_frissons), symptome(mal_tete_severe), symptome(courbatures), symptome(conjonctivite), symptome(toux_moderee), symptome(ecoulement_nasal), symptome(eternuement), symptome(faiblesse).",
+      "type": "fill_blank",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "La règle doit lister l'intégralité des symptômes mentionnés à la page du document pour cette maladie."
+    },
+    {
+      "id": "tp2-ia_005",
+      "question": "Réalisez l'exercice 4 du TP : Écrivez un programme qui décrémente un nombre N jusqu'à 0 en affichant chaque étape.",
+      "answer": "decremente(0) :- write(0), !.\ndecremente(N) :- write(N), nl, M is N - 1, decremente(M).",
+      "type": "coding",
+      "topic": "Programmation Prolog",
+      "difficulty": "facile",
+      "explanation": "Le prédicat nécessite un cas de base pour 0 (avec un cut pour arrêter la récursion) et un cas général qui affiche N et s'appelle lui-même avec N-1."
+    },
+    {
+      "id": "tp2-ia_006",
+      "question": "Selon l'exercice 3, comment simuler une structure de test 'si Action alors Condition1 sinon Condition2' en utilisant le prédicat cut (!) ?",
+      "answer": "test(Action) :- Action, !, condition1. \ntest(_) :- condition2.",
+      "type": "fill_blank",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "Le cut (!) empêche le retour arrière vers la seconde clause si l'Action de la première clause réussit."
+    },
+    {
+      "id": "tp2-ia_007",
+      "question": "Si un patient présente les symptômes 'Eruption avec boutons et cloques' et 'démangeaisons', quel diagnostic le système expert doit-il retourner selon les données de l'exercice 5 ?",
+      "answer": "Varicelle",
+      "type": "trace",
+      "topic": "Systèmes experts",
+      "difficulty": "facile",
+      "explanation": "En consultant la liste des maladies infantiles, on voit que seule la Varicelle associe ces deux symptômes spécifiques."
+    },
+    {
+      "id": "tp2-ia_008",
+      "question": "Pourquoi le prédicat `hanoi(N, A, B, C) :- hanoi(N, A, B, C).` est-il incorrect pour résoudre le problème des tours de Hanoï ?",
+      "answer": "Ce prédicat crée une boucle infinie car il ne comporte pas de cas d'arrêt (cas de base) et le paramètre N ne diminue jamais vers une solution.",
+      "type": "debug",
+      "topic": "Programmation Prolog",
+      "difficulty": "moyen",
+      "explanation": "Pour qu'une récursion fonctionne, elle doit converger vers un cas de base (N=1) en réduisant la complexité à chaque appel."
+    },
+    {
+      "id": "tp2-ia_009",
+      "question": "Quelles sont les caractéristiques spécifiques des symptômes de la Méningite qui la distinguent des autres maladies dans ce document ?",
+      "answer": "Les yeux sensibles à la lumière et les vomissements.",
+      "type": "comprehension",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "L'étudiant doit identifier les symptômes uniques à la Méningite listés à la page pour permettre un diagnostic différentiel."
+    }
+  ]
+}

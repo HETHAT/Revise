@@ -1,0 +1,119 @@
+{
+  "source": "apprentissage supervisé.pptx",
+  "items": [
+    {
+      "id": "apprentissage-supervise_001",
+      "question": "Dans le cadre de l'apprentissage supervisé, qui est responsable du choix de la forme du modèle (ex: f(x) = ax + b) et qui détermine les valeurs finales des paramètres ?",
+      "answer": "L'humain choisit le modèle et la machine apprend les paramètres",
+      "type": "mcq",
+      "topic": "Apprentissage automatique",
+      "difficulty": "moyen",
+      "explanation": "La source précise que c'est l'utilisateur qui décide quel modèle utiliser (linéaire, quadratique, etc.), mais c'est la machine qui doit apprendre les paramètres optimaux.",
+      "choices": [
+        "L'humain choisit le modèle et les paramètres",
+        "La machine choisit le modèle et l'humain les paramètres",
+        "L'humain choisit le modèle et la machine apprend les paramètres",
+        "La machine choisit à la fois le modèle et les paramètres"
+      ]
+    },
+    {
+      "id": "apprentissage-supervise_002",
+      "question": "Si vous disposez d'un dataset sur des appartements contenant le prix, la surface et le quartier, identifiez la variable 'Target' et les 'Features'.",
+      "answer": "Target : Prix ; Features : Surface et Quartier (Code commune).",
+      "type": "short_answer",
+      "topic": "Apprentissage automatique",
+      "difficulty": "facile",
+      "explanation": "Le Target est l'objectif à prédire (le prix), tandis que les caractéristiques utilisées pour la prédiction sont les features (surface, qualité, code commune)."
+    },
+    {
+      "id": "apprentissage-supervise_003",
+      "question": "Le but de l'algorithme de descente de gradient est d'augmenter la fonction de coût pour explorer plus de solutions.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Apprentissage automatique",
+      "difficulty": "moyen",
+      "explanation": "La descente de gradient est un algorithme de minimisation. Son but est de minimiser la fonction de coût, c'est-à-dire de réduire les erreurs entre les prédictions et les vraies valeurs."
+    },
+    {
+      "id": "apprentissage-supervise_004",
+      "question": "Quelle phase est spécifiquement utilisée pour ajuster les 'hyperparamètres' (comme le taux d'apprentissage ou le nombre de neurones) afin d'éviter le surapprentissage ?",
+      "answer": "Phase de validation (Validation set)",
+      "type": "mcq",
+      "topic": "Logique et raisonnement",
+      "difficulty": "difficile",
+      "explanation": "Le jeu de validation sert à contrôler l'apprentissage et à ajuster les hyperparamètres sans que le modèle n'apprenne directement sur ces données.",
+      "choices": [
+        "Phase d'entraînement (Training set)",
+        "Phase de validation (Validation set)",
+        "Phase de test (Test set)",
+        "Phase d'importation des données"
+      ]
+    },
+    {
+      "id": "apprentissage-supervise_005",
+      "question": "Expliquez l'analogie de la 'Phase de test' présentée dans le document.",
+      "answer": "C'est comme un examen final.",
+      "type": "short_answer",
+      "topic": "Logique et raisonnement",
+      "difficulty": "facile",
+      "explanation": "Le document compare le Test set à un examen final car il sert à évaluer la performance réelle du modèle sur des données qu'il n'a jamais vues auparavant."
+    },
+    {
+      "id": "apprentissage-supervise_006",
+      "question": "La méthode K-Fold Cross Validation est généralement plus fiable que la méthode Hold-out (simple split).",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "Bien que plus coûteuse en calcul, la validation croisée utilise mieux les données et fournit une évaluation plus fiable de la performance du modèle."
+    },
+    {
+      "id": "apprentissage-supervise_007",
+      "question": "Dans le pipeline de la régression linéaire, quelle étape suit immédiatement le développement du modèle avec ses paramètres ?",
+      "answer": "Développement d'une fonction coût associée",
+      "type": "mcq",
+      "topic": "Apprentissage automatique",
+      "difficulty": "moyen",
+      "explanation": "Après avoir défini le modèle, il faut développer une fonction coût pour mesurer les erreurs de prédiction avant de pouvoir passer à la phase de minimisation.",
+      "choices": [
+        "Minimisation par descente de gradient",
+        "Développement d'une fonction coût associée",
+        "Évaluation finale sur le test set",
+        "Division du dataset en K-folds"
+      ]
+    },
+    {
+      "id": "apprentissage-supervise_008",
+      "question": "Citez les quatre notions fondamentales de l'apprentissage supervisé présentées dans la source.",
+      "answer": "1. DataSet, 2. Modèle, 3. Fonction coût, 4. Algorithme de minimisation.",
+      "type": "short_answer",
+      "topic": "Fondements de l’IA",
+      "difficulty": "facile",
+      "explanation": "Ces quatre éléments constituent les piliers de l'apprentissage supervisé selon le document."
+    },
+    {
+      "id": "apprentissage-supervise_009",
+      "question": "Un modèle qui donne de petites erreurs sur le dataset est considéré comme un bon modèle.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Apprentissage automatique",
+      "difficulty": "facile",
+      "explanation": "La source indique explicitement qu'un bon modèle est celui qui donne de petites erreurs lorsqu'on l'utilise avec notre dataset."
+    },
+    {
+      "id": "apprentissage-supervise_010",
+      "question": "Lors d'une validation K-Fold avec 5 parties (K=5), comment sont utilisées les données à chaque itération ?",
+      "answer": "On utilise 4 parties pour l'entraînement et 1 pour le test",
+      "type": "mcq",
+      "topic": "Systèmes experts",
+      "difficulty": "difficile",
+      "explanation": "Le principe du K-Fold est d'utiliser K-1 parties pour entraîner et la partie restante pour tester, en répétant l'opération K fois.",
+      "choices": [
+        "On utilise les 5 parties pour l'entraînement",
+        "On utilise 4 parties pour l'entraînement et 1 pour le test",
+        "On utilise 1 partie pour l'entraînement et 4 pour le test",
+        "On utilise 2 parties pour l'entraînement, 2 pour la validation et 1 pour le test"
+      ]
+    }
+  ]
+}

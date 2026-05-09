@@ -1,0 +1,137 @@
+{
+  "source": "domaines-SE.pptx",
+  "items": [
+    {
+      "id": "domaines-se_001",
+      "question": "Quel est le rôle spécifique du système expert MYCIN ?",
+      "answer": "Le diagnostic et le traitement des maladies bactériennes du sang.",
+      "type": "short_answer",
+      "topic": "Applications par domaine",
+      "difficulty": "facile",
+      "explanation": "D'après le document, MYCIN (1974) est spécialisé dans le domaine médical pour les infections sanguines."
+    },
+    {
+      "id": "domaines-se_002",
+      "question": "Dans quel domaine d'application le système DENDRAL intervient-il ?",
+      "answer": "Chimie",
+      "type": "mcq",
+      "topic": "Applications par domaine",
+      "difficulty": "facile",
+      "explanation": "DENDRAL est utilisé pour l'identification de structures moléculaires organiques à partir de spectrogrammes de masse.",
+      "choices": [
+        "Médecine",
+        "Géologie",
+        "Chimie",
+        "Informatique"
+      ]
+    },
+    {
+      "id": "domaines-se_003",
+      "question": "Le système expert PROSPECTOR est utilisé pour le diagnostic des maladies pulmonaires.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Applications par domaine",
+      "difficulty": "facile",
+      "explanation": "PROSPECTOR est utilisé en géologie pour l'évaluation du potentiel minéral d'une région géologique."
+    },
+    {
+      "id": "domaines-se_004",
+      "question": "À quoi sert le système expert XCON dans le domaine de l'informatique ?",
+      "answer": "À la conception de configurations particulières pour les systèmes VAX-11 de DEC.",
+      "type": "short_answer",
+      "topic": "Applications par domaine",
+      "difficulty": "moyen",
+      "explanation": "Le document précise que XCON est un outil de conception de configuration informatique."
+    },
+    {
+      "id": "domaines-se_005",
+      "question": "Quel système expert est spécialisé dans le diagnostic des maladies des plantes de tomate ?",
+      "answer": "TOM",
+      "type": "mcq",
+      "topic": "Applications par domaine",
+      "difficulty": "facile",
+      "explanation": "TOM (1985) est classé dans le domaine de l'agronomie pour le traitement des maladies des tomates.",
+      "choices": [
+        "PEACE",
+        "TOM",
+        "PUFF",
+        "DART"
+      ]
+    },
+    {
+      "id": "domaines-se_006",
+      "question": "Quelle est la différence d'application médicale entre les systèmes MYCIN et PUFF ?",
+      "answer": "MYCIN traite les infections bactériennes du sang, tandis que PUFF diagnostique les maladies pulmonaires.",
+      "type": "short_answer",
+      "topic": "Applications par domaine",
+      "difficulty": "moyen",
+      "explanation": "Les deux sont des systèmes médicaux, mais ils ciblent des organes et des types de données (tests fonctionnels vs analyses de sang) différents."
+    },
+    {
+      "id": "domaines-se_007",
+      "question": "Le système MACSYMA permet d'effectuer des calculs symboliques intégraux et différentiels.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Applications par domaine",
+      "difficulty": "facile",
+      "explanation": "C'est sa fonction principale dans le domaine des mathématiques selon la source."
+    },
+    {
+      "id": "domaines-se_008",
+      "question": "Quelle catégorie générique de système expert correspond à la 'création d'objets sous contraintes' ?",
+      "answer": "Conception",
+      "type": "mcq",
+      "topic": "Applications par domaine",
+      "difficulty": "moyen",
+      "explanation": "Le document définit la conception comme la création d'objets sous contraintes.",
+      "choices": [
+        "Diagnostic",
+        "Interprétation",
+        "Conception",
+        "Planification"
+      ]
+    },
+    {
+      "id": "domaines-se_009",
+      "question": "Quel système expert est utilisé pour localiser les pannes dans les réseaux et lignes téléphoniques ?",
+      "answer": "ACE",
+      "type": "short_answer",
+      "topic": "Applications par domaine",
+      "difficulty": "facile",
+      "explanation": "ACE (1980) est un système utilisé en électronique/télécoms pour la maintenance des lignes."
+    },
+    {
+      "id": "domaines-se_010",
+      "question": "Dans quel but le système expert MANAGER a-t-il été conçu ?",
+      "answer": "Gérer le personnel paramédical d'un hôpital",
+      "type": "mcq",
+      "topic": "Applications par domaine",
+      "difficulty": "moyen",
+      "explanation": "MANAGER est utilisé pour la gestion en temps réel des personnels paramédicaux à Toulouse.",
+      "choices": [
+        "Gérer le personnel paramédical d'un hôpital",
+        "Simuler des comportements politiques",
+        "Analyser des circuits électroniques",
+        "Conseiller des placements boursiers"
+      ]
+    },
+    {
+      "id": "domaines-se_011",
+      "question": "Les systèmes experts sont privilégiés lorsqu'il existe une méthode algorithmique sûre et complète.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Systèmes experts",
+      "difficulty": "moyen",
+      "explanation": "Au contraire, ils sont utilisés là où il n'existe PAS de méthode de raisonnement sûre (algorithmique) transposable en programme classique."
+    },
+    {
+      "id": "domaines-se_012",
+      "question": "Que simule le système expert nommé POLITICS ?",
+      "answer": "Le comportement humain avec ses préjugés et ses croyances face à des événements politiques.",
+      "type": "short_answer",
+      "topic": "Applications par domaine",
+      "difficulty": "difficile",
+      "explanation": "C'est une application particulière de simulation comportementale citée dans le document."
+    }
+  ]
+}

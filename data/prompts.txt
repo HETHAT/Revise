@@ -1,0 +1,150 @@
+NotebookLM                    Gemini/Claude                 NotebookLM
+──────────────────────────────────────────────────────────────────────
+Prompt 1: get all filenames        │
+         + key titles/concepts     │
+                                   ▼
+                         Prompt 2: analyze each file
+                         → question type strategy
+                         → quantity estimate
+                         → high priority concepts
+                         → generates final prompt
+                                   │
+                                   ▼
+                         You get N ready-to-paste prompts
+                                   │
+         ┌─────────────────────────┘
+         ▼
+Prompt 3..N: paste each prompt
+→ copy JSON → save to file
+
+
+=================================================================================
+
+
+List all source files available in this notebook.
+For each file provide:
+- filename (exact, including extension)
+- language of the content
+- main subject/domain
+- key concepts and titles covered (be exhaustive, include all major sections)
+- approximate content density: light | medium | dense
+- estimated page/slide count if inferrable
+
+Return strict JSON only, no text before or after.
+
+{
+  "subject": "...",
+  "files": [
+    {
+      "filename": "...",
+      "language": "...",
+      "domain": "...",
+      "key_concepts": ["..."],
+      "density": "light | medium | dense",
+      "estimated_pages": null
+    }
+  ]
+}
+
+
+=================================================================================
+
+
+You are helping build a question bank for a student quiz app.
+The app supports filtering by: subject, topic, difficulty, and question type.
+
+Given this file inventory, for each file:
+
+1. Decide if it needs chunking:
+   - density "dense" OR estimated_pages > 40 → split into logical concept chunks
+   - each chunk = one coherent concept group (not a page range)
+   - name chunks as: "FILENAME — Part: [CONCEPT GROUP]"
+   - aim for 3-5 chunks per large file
+
+2. For each file (or chunk), decide:
+   - Best subset of question types from this list:
+       mcq         → concept recognition, comparisons, common mistakes
+                     exactly 4 choices, no A/B/C prefix, answer is exact text of one choice
+       true_false  → misconceptions, subtle distinctions
+                     always include explanation
+       short_answer → reasoning, explanations, 1-2 sentence answer
+       fill_blank  → formulas, syntax, key terms, answer is the missing word/phrase
+       comprehension → reading a paragraph/diagram/table then answering,
+                       include the passage in the question field
+       debug       → spot the error in code or logic,
+                     include the buggy code in the question field
+       coding      → write a function or algorithm from scratch
+       trace       → trace code execution step by step,
+                     include the code in the question field
+
+     Pick based on content:
+       theory-heavy     → mcq, true_false, short_answer
+       algorithm/logic  → trace, debug, short_answer
+       programming      → coding, debug, trace, fill_blank
+       mixed            → use judgment
+
+   - Recommended quantity:
+       light  → 10–15 questions
+       medium → 15–20 questions
+       dense / chunk → 20–30 questions
+
+   - High priority concepts (most exam-relevant from key_concepts)
+   - Low priority concepts (history, anecdotes, secondary details)
+   - Difficulty distribution (adjust to domain complexity, default: 30% easy, 50% medium, 20% hard)
+   - Type mix percentages
+
+3. Generate one ready-to-paste NotebookLM prompt per file or chunk using this exact template:
+
+─── TEMPLATE START ───
+Work only on the source named "[FILENAME]".
+Answer in the same language as the source content.
+[IF CHUNK: Focus exclusively on the following concepts: [CONCEPT GROUP LIST]. Ignore everything else in the document.]
+
+Read the entire document and generate a question bank about [DOMAIN].
+
+High priority concepts:
+[LIST]
+
+Low priority concepts:
+- history, anecdotes, secondary details
+[LIST ANY FILE-SPECIFIC LOW PRIORITY]
+
+Avoid purely definitional questions. Favor:
+- reasoning and comparison between concepts
+- application on concrete examples
+- common student mistakes
+- useful trick questions for exams
+
+Question types to use:
+[LIST CHOSEN TYPES WITH THEIR RULES, COPIED FROM ABOVE]
+
+Recommended mix: [X]% mcq, [Y]% true_false, [Z]% short_answer ... (only list chosen types)
+Generate between [MIN] and [MAX] questions.
+Target distribution: [A]% easy, [B]% medium, [C]% hard
+
+Do not invent anything not present in the source.
+Return strict JSON only, no text before or after.
+
+{
+  "source": "[FILENAME]",
+  "items": [
+    {
+      "question": "...",
+      "answer": "...",
+      "type": "mcq | true_false | short_answer | fill_blank | comprehension | debug | coding | trace",
+      "topic": "...",
+      "difficulty": "easy | medium | hard",
+      "choices": ["...", "...", "...", "..."],
+      "explanation": "..."
+    }
+  ]
+}
+
+Rules:
+- "choices" only present for mcq, omit entirely for all other types
+- "explanation" required for true_false and trick mcq, optional otherwise
+- "topic" must be one of the high priority concepts listed above
+- "answer" for mcq must be the exact text of one of the choices
+─── TEMPLATE END ───
+
+Return all prompts sequentially, clearly labeled with the filename or chunk name, separated by a divider line.

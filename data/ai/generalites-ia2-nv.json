@@ -1,0 +1,113 @@
+{
+  "source": "généralités-IA2-nv.pptx",
+  "items": [
+    {
+      "id": "generalites-ia2-nv_001",
+      "question": "Quelle est la définition globale de l'intelligence artificielle (IA) selon le document ?",
+      "answer": "L'IA s'intéresse à la reproduction, par des moyens artificiels, de toutes les formes de l'intelligence humaine avec pour objectif final la conception d'ordinateurs intelligents.",
+      "type": "short_answer",
+      "topic": "Fondements de l’IA",
+      "difficulty": "facile",
+      "explanation": "Le document définit l'IA comme la science visant à reproduire l'intelligence humaine pour créer des machines capables de raisonner,."
+    },
+    {
+      "id": "generalites-ia2-nv_002",
+      "question": "Selon le cours, où se situe la frontière entre l'informatique classique et l'intelligence artificielle ?",
+      "answer": "L'IA commence là où l'informatique classique s'arrête, pour les problèmes sans algorithme connu ou raisonnable.",
+      "type": "mcq",
+      "topic": "Fondements de l’IA",
+      "difficulty": "moyen",
+      "explanation": "Le document précise que tout problème pour lequel il n’existe pas d’algorithme connu ou dont la complexité est exponentielle relève de l’IA,.",
+      "choices": [
+        "L'IA commence là où l'informatique classique s'arrête, pour les problèmes sans algorithme connu ou raisonnable.",
+        "L'IA remplace totalement l'informatique classique dans tous les domaines.",
+        "L'IA ne s'occupe que du matériel (hardware) alors que l'informatique gère le logiciel.",
+        "Il n'y a aucune différence, ce sont deux termes pour la même discipline."
+      ]
+    },
+    {
+      "id": "generalites-ia2-nv_003",
+      "question": "En quoi consiste l'expérience proposée par Alan Turing en 1950 ?",
+      "answer": "Le test de Turing consiste à interroger un ordinateur et une personne situés dans des locaux isolés afin de déterminer si un interrogateur humain peut distinguer la machine de l'homme.",
+      "type": "short_answer",
+      "topic": "Fondements de l’IA",
+      "difficulty": "facile",
+      "explanation": "Alan Turing a proposé ce test pour déterminer à partir de quand une machine pourrait être considérée comme consciente ou capable de 'penser'."
+    },
+    {
+      "id": "generalites-ia2-nv_004",
+      "question": "L'approche 'pragmatiste' de l'IA impose que la machine doit raisonner exactement de la même manière que l'homme.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Fondements de l’IA",
+      "difficulty": "moyen",
+      "explanation": "L'approche pragmatiste stipule que la machine doit aboutir aux mêmes solutions que l'homme, peu importe la méthode. C'est l'approche 'cognitive' qui cherche à imiter les mécanismes humains."
+    },
+    {
+      "id": "generalites-ia2-nv_005",
+      "question": "Quelles sont les racines scientifiques fondamentales de l'IA citées dans le document ?",
+      "answer": "La logique (théorie du raisonnement) et les travaux sur les automates et la calculabilité.",
+      "type": "mcq",
+      "topic": "Fondements de l’IA",
+      "difficulty": "moyen",
+      "explanation": "Le document mentionne deux branches : la logique (Boole, Hilbert, Gödel) et les automates/calculabilité (Pascal, Turing, Von Neumann),.",
+      "choices": [
+        "Uniquement la psychologie et la sociologie.",
+        "La logique (théorie du raisonnement) et les travaux sur les automates et la calculabilité.",
+        "La mécanique et l'électricité.",
+        "La littérature et le dessin."
+      ]
+    },
+    {
+      "id": "generalites-ia2-nv_006",
+      "question": "Qu'est-ce qu'un programme 'heuristique' en IA ?",
+      "answer": "C'est un programme incorporant un jeu de règles (heuristiques) permettant de trouver une solution acceptable dans une proportion acceptable de cas, même sans garantie de résultat à 100%.",
+      "type": "short_answer",
+      "topic": "Fondements de l’IA",
+      "difficulty": "difficile",
+      "explanation": "Les heuristiques sont utilisées pour résoudre des problèmes où aucun algorithme efficace n'est connu, en utilisant des connaissances incomplètes ou empiriques,."
+    },
+    {
+      "id": "generalites-ia2-nv_007",
+      "question": "Un ordinateur est considéré comme intelligent car il peut prendre des décisions de manière totalement autonome sans programme préalable.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Fondements de l’IA",
+      "difficulty": "facile",
+      "explanation": "Le document affirme que l'ordinateur n'est pas intelligent car il ne fait qu'exécuter les instructions d'un programme préparé par un humain et ne peut pas innover de lui-même."
+    },
+    {
+      "id": "generalites-ia2-nv_008",
+      "question": "Quelles sont les trois lois de la robotique proposées par Isaac Asimov ?",
+      "answer": "Ne pas blesser un humain, obéir aux ordres (sauf conflit avec la loi 1), protéger sa propre existence (sauf conflit avec lois 1 ou 2).",
+      "type": "mcq",
+      "topic": "Fondements de l’IA",
+      "difficulty": "moyen",
+      "explanation": "Ces lois ont été formulées par Asimov en 1950 pour définir le cadre éthique et sécuritaire des robots.",
+      "choices": [
+        "Ne pas blesser un humain, obéir aux ordres (sauf conflit avec la loi 1), protéger sa propre existence (sauf conflit avec lois 1 ou 2).",
+        "Travailler vite, ne jamais tomber en panne, coûter peu cher.",
+        "Toujours dire la vérité, aider les pauvres, ne pas voler.",
+        "Apprendre seul, ne pas parler aux inconnus, rester branché."
+      ]
+    },
+    {
+      "id": "generalites-ia2-nv_009",
+      "question": "Quels sont les deux piliers au cœur de l'IA pour traiter les problèmes ?",
+      "answer": "La représentation des connaissances (comment structurer l'information) et l'utilisation des connaissances (comment trouver et combiner les informations pour déduire).",
+      "type": "short_answer",
+      "topic": "Fondements de l’IA",
+      "difficulty": "moyen",
+      "explanation": "Ces deux aspects permettent au moteur d'inférence d'exploiter la base de connaissances pour résoudre des problèmes."
+    },
+    {
+      "id": "generalites-ia2-nv_010",
+      "question": "La 'science cognitive' considère la cognition comme un ensemble de processus mentaux incluant la mémoire, le langage et la résolution de problèmes.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Fondements de l’IA",
+      "difficulty": "facile",
+      "explanation": "Le document définit la cognition comme l'ensemble des processus mentaux se rapportant à la connaissance et mettant en jeu des fonctions comme le raisonnement et la perception."
+    }
+  ]
+}
