@@ -3,6 +3,10 @@
     {
       "slug": "ai",
       "label": "Artificial Intelligence"
+    },
+    {
+      "slug": "cloud-computing",
+      "label": "Cloud Computing"
     }
   ]
 }

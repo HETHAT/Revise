@@ -1,0 +1,227 @@
+{
+  "source": "Cloud-Computing-04.pptx",
+  "items": [
+    {
+      "id": "cloud-computing-04_001",
+      "question": "What is the primary role of Nova within the OpenStack ecosystem?",
+      "answer": "Nova is responsible for managing compute resources, which involves the creation and management of virtual machines.",
+      "type": "short_answer",
+      "topic": "OpenStack Components",
+      "difficulty": "easy",
+      "explanation": "Nova serves as the core compute engine of OpenStack, handling the lifecycle of virtual machine instances."
+    },
+    {
+      "id": "cloud-computing-04_002",
+      "question": "In OpenStack, ___________ is the component responsible for providing networking as a service.",
+      "answer": "Neutron",
+      "type": "fill_blank",
+      "topic": "OpenStack Components",
+      "difficulty": "easy",
+      "explanation": "Neutron provides the networking capabilities for the cloud, such as IP address management and VLANs."
+    },
+    {
+      "id": "cloud-computing-04_003",
+      "question": "Which OpenStack component is specifically designed to manage block storage?",
+      "answer": "Cinder",
+      "type": "mcq",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Cinder provides persistent block-level storage devices for use with OpenStack compute instances.",
+      "choices": [
+        "Swift",
+        "Cinder",
+        "Glance",
+        "Nova"
+      ]
+    },
+    {
+      "id": "cloud-computing-04_004",
+      "question": "Explain the difference between the functions of Glance and Swift in an OpenStack environment.",
+      "answer": "Glance is used specifically for storing and retrieving virtual machine images, whereas Swift is an object storage service designed for general unstructured data.",
+      "type": "short_answer",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Glance provides a discovery service for VM images, while Swift handles high-volume data storage like photos, emails, and backups."
+    },
+    {
+      "id": "cloud-computing-04_005",
+      "question": "The OpenStack service that handles identity management and authentication across all components is called ___________.",
+      "answer": "Keystone",
+      "type": "fill_blank",
+      "topic": "OpenStack Components",
+      "difficulty": "easy",
+      "explanation": "Keystone acts as a central registry and provides a common authentication system for the cloud."
+    },
+    {
+      "id": "cloud-computing-04_006",
+      "question": "Which component provides the web-based user interface for managing OpenStack services?",
+      "answer": "Horizon",
+      "type": "mcq",
+      "topic": "OpenStack Components",
+      "difficulty": "easy",
+      "explanation": "Horizon is the dashboard that provides administrators and users a graphical interface to access and provision cloud resources.",
+      "choices": [
+        "Heat",
+        "Keystone",
+        "Horizon",
+        "Neutron"
+      ]
+    },
+    {
+      "id": "cloud-computing-04_007",
+      "question": "Describe the purpose of OpenStack Heat and how it helps cloud administrators.",
+      "answer": "Heat provides orchestration services, allowing administrators to define and manage complex cloud resources as a single unit through templates.",
+      "type": "short_answer",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Heat simplifies the deployment of multi-service applications by automating the creation of various cloud components in a structured way."
+    },
+    {
+      "id": "cloud-computing-04_008",
+      "question": "___________ is used in OpenStack to monitor and meter cloud resource usage, providing data for billing or telemetry purposes.",
+      "answer": "Ceilometer",
+      "type": "fill_blank",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Ceilometer collects measurements of usage across the OpenStack cloud for monitoring and potential monetization."
+    },
+    {
+      "id": "cloud-computing-04_009",
+      "question": "Which service provides 'Database as a Service' (DBaaS) within an OpenStack cloud?",
+      "answer": "Trove",
+      "type": "mcq",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Trove allows users to run relational and non-relational database engines without the overhead of manual installation or management.",
+      "choices": [
+        "Trove",
+        "Ceilometer",
+        "Glance",
+        "Cinder"
+      ]
+    },
+    {
+      "id": "cloud-computing-04_010",
+      "question": "What is the main technical difference between the storage handled by Cinder and that handled by Swift?",
+      "answer": "Cinder manages block storage, which is used for persistent disks for VMs, while Swift manages object storage for unstructured data.",
+      "type": "short_answer",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Block storage (Cinder) behaves like a virtual hard drive, while object storage (Swift) allows for storing data as discrete objects accessible via APIs."
+    },
+    {
+      "id": "cloud-computing-04_011",
+      "question": "The management of compute resources and virtual machines in an OpenStack infrastructure is handled by the ___________ component.",
+      "answer": "Nova",
+      "type": "fill_blank",
+      "topic": "OpenStack Components",
+      "difficulty": "easy",
+      "explanation": "Nova is the primary controller for cloud instances and hypervisors."
+    },
+    {
+      "id": "cloud-computing-04_012",
+      "question": "Which OpenStack component is intended for object storage of unstructured data?",
+      "answer": "Swift",
+      "type": "mcq",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Swift provides highly available, distributed, eventually consistent object storage.",
+      "choices": [
+        "Cinder",
+        "Swift",
+        "Nova",
+        "Neutron"
+      ]
+    },
+    {
+      "id": "cloud-computing-04_013",
+      "question": "Explain how the interaction between Neutron and Keystone contributes to cloud security.",
+      "answer": "Keystone authenticates a user's identity, and Neutron uses that identity to apply specific networking permissions and isolation for that user's resources.",
+      "type": "short_answer",
+      "topic": "OpenStack Components",
+      "difficulty": "hard",
+      "explanation": "Integration between identity (Keystone) and networking (Neutron) is vital for multi-tenant isolation and security enforcement."
+    },
+    {
+      "id": "cloud-computing-04_014",
+      "question": "Virtual machine images are stored, retrieved, and managed using the ___________ component.",
+      "answer": "Glance",
+      "type": "fill_blank",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Glance provides an image service that includes discovery, registration, and delivery of VM images."
+    },
+    {
+      "id": "cloud-computing-04_015",
+      "question": "Technical difference: Which storage type is typically slower for frequent read/write operations but scales indefinitely for storing static files?",
+      "answer": "Object Storage (Swift)",
+      "type": "mcq",
+      "topic": "Storage Types",
+      "difficulty": "medium",
+      "explanation": "Object storage is highly scalable and durable for static content, whereas block storage is optimized for performance and low latency.",
+      "choices": [
+        "Block Storage (Cinder)",
+        "Object Storage (Swift)",
+        "Ephemeral Storage (Nova)",
+        "Database Storage (Trove)"
+      ]
+    },
+    {
+      "id": "cloud-computing-04_016",
+      "question": "Why is Ceilometer critical for a commercial cloud provider using OpenStack for public services?",
+      "answer": "It is critical because it provides the metering data necessary to accurately bill customers based on their actual consumption of cloud resources.",
+      "type": "short_answer",
+      "topic": "OpenStack Components",
+      "difficulty": "hard",
+      "explanation": "Without the monitoring and metering data from Ceilometer, a provider could not implement a 'pay-as-you-go' revenue model."
+    },
+    {
+      "id": "cloud-computing-04_017",
+      "question": "To automate the deployment of multiple cloud resources (like VMs, networks, and storage) as a single unified stack, one would use ___________.",
+      "answer": "Heat",
+      "type": "fill_blank",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Heat templates allow for 'Infrastructure as Code' management within OpenStack."
+    },
+    {
+      "id": "cloud-computing-04_018",
+      "question": "Which of these components is responsible for identity and authentication?",
+      "answer": "Keystone",
+      "type": "mcq",
+      "topic": "OpenStack Components",
+      "difficulty": "easy",
+      "explanation": "Keystone is the standard identity service for all OpenStack projects.",
+      "choices": [
+        "Keystone",
+        "Horizon",
+        "Nova",
+        "Heat"
+      ]
+    },
+    {
+      "id": "cloud-computing-04_019",
+      "question": "If an OpenStack user needs a relational database like MySQL without having to manage the underlying operating system, they would use the ___________ service.",
+      "answer": "Trove",
+      "type": "fill_blank",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Trove automates complex database tasks like provisioning, patching, and backups."
+    },
+    {
+      "id": "cloud-computing-04_020",
+      "question": "Which storage architecture type consists entirely of Solid-State Drives (SSDs)?",
+      "answer": "All-Flash Storage",
+      "type": "mcq",
+      "topic": "Storage Architecture",
+      "difficulty": "easy",
+      "explanation": "All-Flash storage uses only SSDs, offering high speed and performance without spinning disks.",
+      "choices": [
+        "HDD-Based Storage",
+        "Hybrid Storage",
+        "All-Flash Storage",
+        "General-Purpose Cloud"
+      ]
+    }
+  ]
+}

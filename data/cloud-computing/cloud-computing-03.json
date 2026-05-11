@@ -1,0 +1,275 @@
+{
+  "source": "Cloud-Computing-03.pptx",
+  "items": [
+    {
+      "id": "cloud-computing-03_001",
+      "question": "What is the primary difference between a PC and a Workstation in terms of hardware grade and user focus?",
+      "answer": "A PC uses consumer-grade hardware for general use (1 user), while a Workstation uses professional-grade hardware optimized for heavy applications and power users.",
+      "type": "short_answer",
+      "topic": "Hardware Concepts",
+      "difficulty": "easy",
+      "explanation": "According to the hardware comparison table, PCs are for basic tasks like web and office, whereas workstations handle demanding tasks like 3D rendering and design."
+    },
+    {
+      "id": "cloud-computing-03_002",
+      "question": "Explain the physical and logical definitions of a 'Server' in the context of cloud computing.",
+      "answer": "Physically, a server is a powerful computer designed for 24/7 reliability; logically, it is a system serving users with specific types of services based on their needs.",
+      "type": "short_answer",
+      "topic": "Server Definitions",
+      "difficulty": "medium",
+      "explanation": "The source distinguishes between the physical hardware build for uptime and the logical role of providing services."
+    },
+    {
+      "id": "cloud-computing-03_003",
+      "question": "If a datacenter rack is 42U high and you need to install 2U servers with no gaps, how many servers can it accommodate?",
+      "answer": "21 servers.",
+      "type": "calculation",
+      "topic": "Rack Units",
+      "difficulty": "medium",
+      "explanation": "A rack unit (U) is a standard height measurement. A 42U rack can hold 42 units of height. 42 / 2 = 21."
+    },
+    {
+      "id": "cloud-computing-03_004",
+      "question": "True or False: A blade server is a standalone unit that can function without a chassis or enclosure.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Server Form Factors",
+      "difficulty": "medium",
+      "explanation": "Blade servers are modular and must slide into a blade enclosure/chassis to access shared power, cooling, and networking."
+    },
+    {
+      "id": "cloud-computing-03_005",
+      "question": "What is the purpose of a 'Hot Aisle / Cold Aisle' configuration in a datacenter?",
+      "answer": "It is a cooling mechanism designed to manage airflow by separating the intake of cold air from the exhaust of hot air to prevent overheating.",
+      "type": "short_answer",
+      "topic": "Datacenter Cooling",
+      "difficulty": "medium",
+      "explanation": "This configuration optimizes cooling efficiency by ensuring servers pull in cold air from one aisle and exhaust heat into another."
+    },
+    {
+      "id": "cloud-computing-03_006",
+      "question": "Describe the difference between a UPS and a PDU.",
+      "answer": "A UPS (Uninterruptible Power Supply) provides emergency power during a loss of input power, while a PDU (Power Distribution Unit) distributes electricity to multiple devices within a rack.",
+      "type": "short_answer",
+      "topic": "Power Infrastructure",
+      "difficulty": "easy",
+      "explanation": "One provides backup power for uptime, while the other is responsible for power distribution across hardware."
+    },
+    {
+      "id": "cloud-computing-03_007",
+      "question": "Explain the function of an 'HA Cluster' versus a 'Load-Balancing Cluster'.",
+      "answer": "An HA (High Availability) cluster provides redundancy and failover to ensure service continuity, whereas a Load-Balancing cluster aims to distribute incoming traffic evenly across multiple nodes.",
+      "type": "short_answer",
+      "topic": "Cluster Types",
+      "difficulty": "medium",
+      "explanation": "HA focuses on reliability/uptime, while load-balancing focuses on performance and traffic management."
+    },
+    {
+      "id": "cloud-computing-03_008",
+      "question": "True or False: In an N-Tier architecture, the Data Tier is responsible for the user interface and presentation.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "N-Tier Architecture",
+      "difficulty": "easy",
+      "explanation": "The Presentation Tier handles UI/UX, while the Data Tier manages databases and storage."
+    },
+    {
+      "id": "cloud-computing-03_009",
+      "question": "How does N-Tier architecture improve the scalability of cloud-native applications?",
+      "answer": "It allows each logical layer (Presentation, Business Logic, Data) to be scaled independently based on its specific resource demands.",
+      "type": "short_answer",
+      "topic": "N-Tier Architecture",
+      "difficulty": "hard",
+      "explanation": "By decoupling layers, a cloud architect can add more resources to the web tier without needing to scale the database tier, and vice versa."
+    },
+    {
+      "id": "cloud-computing-03_010",
+      "question": "Explain the principle of 'Loose Coupling' in Service-Oriented Architecture (SOA).",
+      "answer": "Loose coupling means that services are designed to be independent and interoperable, communicating via standardized protocols without being dependent on each other's internal configurations.",
+      "type": "short_answer",
+      "topic": "SOA",
+      "difficulty": "hard",
+      "explanation": "This allows services to be reusable, platform-independent, and easily replaced or updated without breaking the whole system."
+    },
+    {
+      "id": "cloud-computing-03_011",
+      "question": "True or False: Services in an SOA must be platform-dependent to ensure interoperability.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "SOA",
+      "difficulty": "medium",
+      "explanation": "SOA services are designed to be platform-independent and communicate via standardized protocols like SOAP or REST."
+    },
+    {
+      "id": "cloud-computing-03_012",
+      "question": "Identify the three main components of the Virtual Machine (VM) concept.",
+      "answer": "The Host OS, the Hypervisor, and the Guest OS.",
+      "type": "short_answer",
+      "topic": "Virtualization",
+      "difficulty": "easy",
+      "explanation": "The Host manages hardware, the Hypervisor manages the VMs, and the Guest OS runs inside the VM."
+    },
+    {
+      "id": "cloud-computing-03_013",
+      "question": "What is the primary role of 'File Virtualization' in cloud storage solutions?",
+      "answer": "It abstracts file storage from physical devices, decoupling file access from physical management and providing a unified view of distributed systems.",
+      "type": "short_answer",
+      "topic": "File Virtualization",
+      "difficulty": "medium",
+      "explanation": "This allows data to be moved between storage devices without changing the access path for users."
+    },
+    {
+      "id": "cloud-computing-03_014",
+      "question": "True or False: A guest operating system in a standard VM usually shares the same kernel as the host OS.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Virtualization",
+      "difficulty": "hard",
+      "explanation": "A VM includes its own independent Guest OS, which is isolated from the host."
+    },
+    {
+      "id": "cloud-computing-03_015",
+      "question": "List the three main stages of the Cloud Deployment Lifecycle in chronological order.",
+      "answer": "(1) Pilot Phase, (2) Deployment & Integration Phase, (3) Load Driving Phase.",
+      "type": "short_answer",
+      "topic": "Cloud Deployment",
+      "difficulty": "medium",
+      "explanation": "The source outlines these as the standard structured phases for cloud rollout."
+    },
+    {
+      "id": "cloud-computing-03_016",
+      "question": "What are the primary objectives of the 'Pilot Phase' in cloud deployment?",
+      "answer": "The objectives are to validate core functionalities, identify initial issues, and gather user feedback in a small-scale, controlled rollout.",
+      "type": "short_answer",
+      "topic": "Deployment Lifecycle",
+      "difficulty": "medium",
+      "explanation": "It is the first real-world test and aims to reduce risk by involving limited users."
+    },
+    {
+      "id": "cloud-computing-03_017",
+      "question": "Explain the key focus of the 'Load Driving Phase' in the cloud deployment lifecycle.",
+      "answer": "The key focus is to ensure scalability and reliability by performing stress testing and monitoring system behavior under real or simulated full-scale traffic conditions.",
+      "type": "short_answer",
+      "topic": "Deployment Lifecycle",
+      "difficulty": "medium",
+      "explanation": "This phase identifies resource needs and fine-tunes auto-scaling before the final rollout."
+    },
+    {
+      "id": "cloud-computing-03_018",
+      "question": "True or False: Load driving is typically performed after the cloud system is already in full production for the entire organization.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Deployment Lifecycle",
+      "difficulty": "medium",
+      "explanation": "Load driving is performed before final rollout to identify bottlenecks and resource needs."
+    },
+    {
+      "id": "cloud-computing-03_019",
+      "question": "Define 'Distributed Cloud' architecture and its benefits for edge computing.",
+      "answer": "Distributed cloud is where services are geographically distributed but centrally managed, which improves performance by placing services closer to users, reducing latency.",
+      "type": "short_answer",
+      "topic": "Cloud Typology",
+      "difficulty": "hard",
+      "explanation": "It addresses locational and regulatory requirements while being ideal for latency-sensitive applications."
+    },
+    {
+      "id": "cloud-computing-03_020",
+      "question": "What is an 'Inter-Cloud' and what does it promote?",
+      "answer": "Inter-Cloud is a network of clouds linked together (private, public, hybrid) that provides a seamless exchange of data and promotes interoperability and resource sharing.",
+      "type": "short_answer",
+      "topic": "Cloud Typology",
+      "difficulty": "hard",
+      "explanation": "It acts as a global 'cloud of clouds' for collaboration across heterogeneous environments."
+    },
+    {
+      "id": "cloud-computing-03_021",
+      "question": "Explain the concept of 'Multi-Cloud' and why an organization might adopt it.",
+      "answer": "Multi-Cloud is the use of services from at least two cloud providers; organizations adopt it to avoid vendor lock-in and increase system resilience.",
+      "type": "short_answer",
+      "topic": "Cloud Typology",
+      "difficulty": "hard",
+      "explanation": "It allows organizations to optimize services by selecting the best provider for specific tasks."
+    },
+    {
+      "id": "cloud-computing-03_022",
+      "question": "True or False: Multi-Cloud simplifies integration because all services come from the same provider.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Cloud Typology",
+      "difficulty": "medium",
+      "explanation": "Multi-Cloud actually requires more integration effort because services are coming from different providers."
+    },
+    {
+      "id": "cloud-computing-03_023",
+      "question": "What is an 'Industry-Specific-Purpose Cloud' and give one example.",
+      "answer": "A cloud tailored for specific sectors with pre-configured tools (e.g., Google Cloud for Healthcare).",
+      "type": "short_answer",
+      "topic": "Cloud Typology",
+      "difficulty": "medium",
+      "explanation": "These clouds enhance efficiency and regulatory alignment for industries like healthcare or finance."
+    },
+    {
+      "id": "cloud-computing-03_024",
+      "question": "Assume you have a 42U rack. If 1U equals 1.75 inches, how tall is the interior of the rack in inches?",
+      "answer": "73.5 inches.",
+      "type": "calculation",
+      "topic": "Hardware Concepts",
+      "difficulty": "easy",
+      "explanation": "Calculation: 42 * 1.75 = 73.5."
+    },
+    {
+      "id": "cloud-computing-03_025",
+      "question": "True or False: A standard rack width is approximately 19 inches (0.483 meters).",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Hardware Concepts",
+      "difficulty": "easy",
+      "explanation": "19 inches is the industry standard width for server racks."
+    },
+    {
+      "id": "cloud-computing-03_026",
+      "question": "Which cloud typology is defined as classification based on geographic distribution with central management?",
+      "answer": "Distributed Cloud.",
+      "type": "short_answer",
+      "topic": "Cloud Typology",
+      "difficulty": "medium",
+      "explanation": "Distributed Cloud focuses on performance by locational distribution."
+    },
+    {
+      "id": "cloud-computing-03_027",
+      "question": "Explain how SOA architecture facilitates smooth integration in multi-cloud strategies.",
+      "answer": "Since services in SOA communicate via standardized APIs and are platform-independent, they can be easily moved or connected across different cloud providers.",
+      "type": "short_answer",
+      "topic": "Cloud Typology / SOA",
+      "difficulty": "hard",
+      "explanation": "The modular and interoperable nature of SOA is a backbone for modern hybrid and multi-cloud systems."
+    },
+    {
+      "id": "cloud-computing-03_028",
+      "question": "True or False: Load-balancing clusters are primarily aimed at eliminating data loss during a server failure.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Cluster Types",
+      "difficulty": "medium",
+      "explanation": "Load-balancing aims to distribute workloads evenly; High Availability (HA) clusters are the ones aimed at redundancy/failover."
+    },
+    {
+      "id": "cloud-computing-03_029",
+      "question": "True or False: Industry-specific clouds typically lack support for regulatory compliance frameworks like GDPR.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Cloud Typology",
+      "difficulty": "medium",
+      "explanation": "Industry-specific clouds are often tailored precisely to enhance regulatory alignment and security for specific sectors."
+    },
+    {
+      "id": "cloud-computing-03_030",
+      "question": "Why is the Business Logic tier considered the 'brain' of an N-Tier architecture?",
+      "answer": "Because it handles the application's rules, computations, and processing, acting as the intermediary between the presentation (UI) and the data.",
+      "type": "short_answer",
+      "topic": "N-Tier Architecture",
+      "difficulty": "medium",
+      "explanation": "The presentation layer is just for display, and the data layer is for storage; the business logic layer performs the actual 'work'."
+    }
+  ]
+}

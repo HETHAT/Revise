@@ -1,0 +1,60 @@
+{
+  "source": "Cloud-Computing-05.pptx",
+  "items": [
+    {
+      "id": "cloud-computing-05_001",
+      "question": "Which of the following best describes the risk of 'Vendor Lock-in' as discussed in the limitations of cloud computing?",
+      "answer": "The difficulty and risk associated with switching from one cloud provider to another.",
+      "type": "mcq",
+      "topic": "Vendor Lock-in",
+      "difficulty": "easy",
+      "choices": [
+        "The difficulty and risk associated with switching from one cloud provider to another.",
+        "The requirement to buy physical hardware from only one vendor.",
+        "A security feature that locks a user's account after failed login attempts.",
+        "The process of encrypting data so only the vendor can see it."
+      ]
+    },
+    {
+      "id": "cloud-computing-05_002",
+      "question": "True or False: Ensuring compliance with data protection laws like GDPR is generally considered a significant challenge when moving to the cloud.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "GDPR Compliance",
+      "difficulty": "easy",
+      "explanation": "Because data is stored on third-party infrastructure that the organization does not directly control, following specific regional laws like GDPR becomes more complex."
+    },
+    {
+      "id": "cloud-computing-05_003",
+      "question": "What technological approach is suggested as a solution to address limitations like latency and the need for localized processing?",
+      "answer": "Edge Computing",
+      "type": "mcq",
+      "topic": "Edge Computing",
+      "difficulty": "easy",
+      "choices": [
+        "Edge Computing",
+        "Mainframe Computing",
+        "Legacy Migration",
+        "Centralized Processing"
+      ]
+    },
+    {
+      "id": "cloud-computing-05_004",
+      "question": "True or False: Edge Computing involves moving computing resources further away from end-users to centralized data centers to improve security.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Edge Computing",
+      "difficulty": "medium",
+      "explanation": "Edge computing actually involves placing processing power and data storage closer to the locations where it is needed (the 'edge'), such as near IoT devices and users, to improve performance and reduce latency."
+    },
+    {
+      "id": "cloud-computing-05_005",
+      "question": "True or False: Entrusting IT resources to third-party cloud providers often results in a loss of direct oversight over operational updates and visibility.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Control Loss",
+      "difficulty": "easy",
+      "explanation": "Moving to the cloud means giving up some control and visibility to the provider, which leads to less direct oversight of operations and updates."
+    }
+  ]
+}

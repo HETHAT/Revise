@@ -1,0 +1,315 @@
+{
+  "total_files": 9,
+  "total_items": 142,
+  "all_types": [
+    "calculation",
+    "fill_blank",
+    "mcq",
+    "short_answer",
+    "true_false"
+  ],
+  "all_difficulties": [
+    "easy",
+    "hard",
+    "medium"
+  ],
+  "all_topics": [
+    "Applied Storage",
+    "Cloud Architecture",
+    "Cloud Billing",
+    "Cloud Definition",
+    "Cloud Deployment",
+    "Cloud Economics",
+    "Cloud History",
+    "Cloud Models",
+    "Cloud Security",
+    "Cloud Service Examples",
+    "Cloud Services",
+    "Cloud Storage Policies",
+    "Cloud Strategy",
+    "Cloud Suitability",
+    "Cloud Typology",
+    "Cloud Typology / SOA",
+    "Cluster Computing",
+    "Cluster Deployment",
+    "Cluster Infrastructure",
+    "Cluster Roles",
+    "Cluster Types",
+    "Containers vs VMs",
+    "Control Loss",
+    "Dashboard Access",
+    "Data Protection",
+    "Datacenter Cooling",
+    "Deployment Lifecycle",
+    "Docker Engine",
+    "Docker Engine Requirements",
+    "Docker Installation",
+    "Docker Requirements",
+    "Docker Usage",
+    "Edge Computing",
+    "Environment Logic",
+    "File Virtualization",
+    "GDPR Compliance",
+    "Hardware Concepts",
+    "Hardware Planning",
+    "Historical Background",
+    "Hypervisor Architecture",
+    "Hypervisor Classification",
+    "Hypervisors",
+    "Load Balancing",
+    "Management Tools",
+    "N-Tier Architecture",
+    "Network Security",
+    "Networking",
+    "Networking Modes",
+    "Networking Protocols",
+    "Networking Requirements",
+    "Node Management",
+    "OpenStack Components",
+    "Orchestration",
+    "Power Infrastructure",
+    "Rack Units",
+    "Remote Management",
+    "Resource Requirements",
+    "SOA",
+    "Server Definitions",
+    "Server Form Factors",
+    "Shared Responsibility Model",
+    "Storage Architecture",
+    "Storage Hardware",
+    "Storage Types",
+    "Tools",
+    "Troubleshooting",
+    "Vendor Lock-in",
+    "Virtualization",
+    "Virtualization Concepts",
+    "Virtualization Requirements",
+    "Virtualization Security"
+  ],
+  "sources": [
+    {
+      "source": "CC-Exam-corrected.pdf",
+      "filename": "cc-exam-corrected.json",
+      "item_count": 26,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "medium"
+      ],
+      "topics": [
+        "Applied Storage",
+        "Cloud Architecture",
+        "Cloud Billing",
+        "Cloud Deployment",
+        "Cloud Economics",
+        "Cloud History",
+        "Cloud Security",
+        "Cloud Service Examples",
+        "Cloud Storage Policies",
+        "Cloud Strategy",
+        "Cloud Suitability",
+        "Cluster Computing",
+        "Data Protection",
+        "Docker Requirements",
+        "Hardware Planning",
+        "Hypervisor Architecture",
+        "Hypervisor Classification",
+        "Management Tools",
+        "Network Security",
+        "Networking Protocols",
+        "OpenStack Components",
+        "Shared Responsibility Model",
+        "Storage Hardware",
+        "Troubleshooting",
+        "Virtualization Concepts",
+        "Virtualization Security"
+      ]
+    },
+    {
+      "source": "CC-HoL-01.pdf",
+      "filename": "cc-hol-01.json",
+      "item_count": 10,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Environment Logic",
+        "Networking Modes",
+        "Remote Management",
+        "Tools",
+        "Virtualization Requirements"
+      ]
+    },
+    {
+      "source": "CC-HoL-02.pdf",
+      "filename": "cc-hol-02.json",
+      "item_count": 8,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Containers vs VMs",
+        "Docker Engine",
+        "Docker Engine Requirements",
+        "Docker Installation",
+        "Docker Usage",
+        "Load Balancing",
+        "Networking",
+        "Orchestration"
+      ]
+    },
+    {
+      "source": "CC-HoL-03.pdf",
+      "filename": "cc-hol-03.json",
+      "item_count": 8,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "easy",
+        "medium"
+      ],
+      "topics": [
+        "Cluster Deployment",
+        "Cluster Infrastructure",
+        "Cluster Roles",
+        "Dashboard Access",
+        "Management Tools",
+        "Networking Requirements",
+        "Node Management",
+        "Resource Requirements"
+      ]
+    },
+    {
+      "source": "Cloud-Computing-01.pptx",
+      "filename": "cloud-computing-01.json",
+      "item_count": 15,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Cloud Architecture",
+        "Cloud Definition",
+        "Historical Background",
+        "Hypervisors",
+        "Virtualization"
+      ]
+    },
+    {
+      "source": "Cloud-Computing-02.pptx",
+      "filename": "cloud-computing-02.json",
+      "item_count": 20,
+      "types": [
+        "fill_blank",
+        "mcq",
+        "short_answer"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Cloud Models",
+        "Cloud Services"
+      ]
+    },
+    {
+      "source": "Cloud-Computing-03.pptx",
+      "filename": "cloud-computing-03.json",
+      "item_count": 30,
+      "types": [
+        "calculation",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Cloud Deployment",
+        "Cloud Typology",
+        "Cloud Typology / SOA",
+        "Cluster Types",
+        "Datacenter Cooling",
+        "Deployment Lifecycle",
+        "File Virtualization",
+        "Hardware Concepts",
+        "N-Tier Architecture",
+        "Power Infrastructure",
+        "Rack Units",
+        "SOA",
+        "Server Definitions",
+        "Server Form Factors",
+        "Virtualization"
+      ]
+    },
+    {
+      "source": "Cloud-Computing-04.pptx",
+      "filename": "cloud-computing-04.json",
+      "item_count": 20,
+      "types": [
+        "fill_blank",
+        "mcq",
+        "short_answer"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "OpenStack Components",
+        "Storage Architecture",
+        "Storage Types"
+      ]
+    },
+    {
+      "source": "Cloud-Computing-05.pptx",
+      "filename": "cloud-computing-05.json",
+      "item_count": 5,
+      "types": [
+        "mcq",
+        "true_false"
+      ],
+      "difficulties": [
+        "easy",
+        "medium"
+      ],
+      "topics": [
+        "Control Loss",
+        "Edge Computing",
+        "GDPR Compliance",
+        "Vendor Lock-in"
+      ]
+    }
+  ]
+}

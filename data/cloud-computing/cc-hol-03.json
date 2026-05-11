@@ -1,0 +1,89 @@
+{
+  "source": "CC-HoL-03.pdf",
+  "items": [
+    {
+      "id": "cc-hol-03_001",
+      "question": "Explain the distinct roles of a Master node versus a Worker node in a Kubernetes cluster infrastructure.",
+      "answer": "The Master node acts as the control plane that manages the cluster and its orchestration, while Worker nodes are responsible for providing the resources to run the actual containerized applications.",
+      "type": "short_answer",
+      "topic": "Cluster Roles",
+      "difficulty": "medium",
+      "explanation": "In the lab, master nodes (m1, m2) are configured to manage the cluster state, whereas worker nodes (w1, w2) are joined to the cluster specifically to execute workloads."
+    },
+    {
+      "id": "cc-hol-03_002",
+      "question": "What is the primary function of a 'cluster token' during the setup of a multi-node K3s environment?",
+      "answer": "The cluster token is a unique security string used to authenticate and authorize new nodes when they attempt to join the existing cluster.",
+      "type": "short_answer",
+      "topic": "Cluster Infrastructure",
+      "difficulty": "medium",
+      "explanation": "Phase 2 of the lab describes the primary master (m1) generating a token which must be shared with other students so their machines can securely join the unified cluster."
+    },
+    {
+      "id": "cc-hol-03_003",
+      "question": "Describe the purpose of the Kubernetes Dashboard in a cloud management context.",
+      "answer": "The Kubernetes Dashboard is a web-based graphical user interface (GUI) used to manage, troubleshoot, and monitor the status of the cluster and its deployed applications.",
+      "type": "short_answer",
+      "topic": "Management Tools",
+      "difficulty": "easy",
+      "explanation": "Phase 4 involves deploying this GUI to allow for visual verification of the cluster deployment and remote access for the instructor."
+    },
+    {
+      "id": "cc-hol-03_004",
+      "question": "Based on the lab requirements, how do the minimum hardware resources (RAM and CPU) differ between a Master node and a Worker node?",
+      "answer": "A Master node requires significantly more resources (4GB RAM, 2 CPU Cores) than a Worker node (512MB RAM, 1 CPU Core).",
+      "type": "mcq",
+      "topic": "Resource Requirements",
+      "difficulty": "medium",
+      "explanation": "The resource requirement table specifies that masters need more power to handle the control plane (4GB/2 Cores) compared to the minimal requirements for workers (512MB/1 Core).",
+      "choices": [
+        "Master and Worker nodes have identical resource requirements.",
+        "A Worker node requires more RAM than a Master node to run applications.",
+        "A Master node requires significantly more resources (4GB RAM, 2 CPU Cores) than a Worker node (512MB RAM, 1 CPU Core).",
+        "Master nodes do not require any dedicated CPU cores."
+      ]
+    },
+    {
+      "id": "cc-hol-03_005",
+      "question": "True or False: In a K3s cluster, a node can only be removed by manually powering off the virtual machine without any configuration changes on the Master node.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Node Management",
+      "difficulty": "medium",
+      "explanation": "The lab manual specifies that a node must be logically removed from the cluster using management commands on the master node before uninstalling the software and powering it off."
+    },
+    {
+      "id": "cc-hol-03_006",
+      "question": "Why is it necessary for all participating nodes to be connected to the same private isolated network (e.g., a mobile hotspot) for this lab?",
+      "answer": "To ensure that all virtual machines can communicate with each other across different physical host computers and that the instructor can access the dashboard remotely.",
+      "type": "short_answer",
+      "topic": "Networking Requirements",
+      "difficulty": "medium",
+      "explanation": "The objectives state that a private isolated network is crucial for accessibility and cluster communication, particularly during the remote verification phase."
+    },
+    {
+      "id": "cc-hol-03_007",
+      "question": "What is required for a user to log into the Kubernetes Dashboard via a web browser once it is deployed?",
+      "answer": "An access token specifically generated for the Dashboard.",
+      "type": "mcq",
+      "topic": "Dashboard Access",
+      "difficulty": "medium",
+      "explanation": "Phase 4 instructions state that the group must share the IP address and the specific 'access token' to enable remote login via the browser.",
+      "choices": [
+        "The cluster's private SSH key.",
+        "A standard Windows login password.",
+        "An access token specifically generated for the Dashboard.",
+        "The IP address of the worker node."
+      ]
+    },
+    {
+      "id": "cc-hol-03_008",
+      "question": "True or False: The 'primary master' (m1) is the only node capable of retrieving the cluster token used to expand the Kubernetes environment.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Cluster Deployment",
+      "difficulty": "medium",
+      "explanation": "In Phase 2, the student managing m1 (the first master/control plane) is responsible for retrieving and sharing the token that allows all other nodes to join."
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "source": "CC-Exam-corrected.pdf",
+  "items": [
+    {
+      "id": "cc-exam-corrected_001",
+      "question": "Explain why not all workloads or software are suitable for the cloud when deciding to migrate.",
+      "answer": "Legacy (old) applications may not migrate well, and some applications require low latency, tight security, or specific compliance that the cloud might not guarantee.",
+      "type": "short_answer",
+      "topic": "Cloud Suitability",
+      "difficulty": "medium",
+      "explanation": "According to the correction, legacy applications often face migration challenges, and specific requirements for latency or security are key factors that make some workloads unsuitable for cloud environments."
+    },
+    {
+      "id": "cc-exam-corrected_002",
+      "question": "True or False: An 'All-Flash Storage Server' is allowed to have a small number of high-capacity spinning hard drives for backup purposes.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Storage Hardware",
+      "difficulty": "medium",
+      "explanation": "The specific condition for this classification is that the server uses only solid-state drives (SSDs), with no spinning hard drives at all."
+    },
+    {
+      "id": "cc-exam-corrected_003",
+      "question": "True or False: A virus located inside a guest virtual machine (VM) can never infect the physical host machine due to hardware isolation.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Virtualization Security",
+      "difficulty": "medium",
+      "explanation": "While VMs are isolated, it is possible for a virus to affect the host in rare cases, such as misconfigured network bridges or via shared folders."
+    },
+    {
+      "id": "cc-exam-corrected_004",
+      "question": "Why is it preferred to use firewalls from different brands within a cloud datacenter rather than relying on a single brand?",
+      "answer": "Using different brands reduces shared vulnerabilities and enhances layered security, following the 'defense-in-depth' principle.",
+      "type": "short_answer",
+      "topic": "Network Security",
+      "difficulty": "medium",
+      "explanation": "The logic behind multi-brand firewalls is to prevent a single vendor vulnerability from compromising the entire infrastructure."
+    },
+    {
+      "id": "cc-exam-corrected_005",
+      "question": "In cloud storage policies, what does the term 'Glacier' specifically refer to?",
+      "answer": "AWS’s low-cost, long-term storage for infrequently accessed data",
+      "type": "mcq",
+      "topic": "Cloud Storage Policies",
+      "difficulty": "medium",
+      "explanation": "Glacier is the industry-standard example provided for 'cold' storage used for archiving data with high retrieval latency.",
+      "choices": [
+        "A high-speed caching layer for web servers",
+        "AWS’s low-cost, long-term storage for infrequently accessed data",
+        "A decentralized file system for blockchain",
+        "Google Cloud's primary object storage tier"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_006",
+      "question": "True or False: Docker containers are universal and can run on any operating system, including Windows and macOS, without the need for a specific kernel.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Docker Requirements",
+      "difficulty": "medium",
+      "explanation": "Docker containers require a host with the Docker Engine and a supported Linux kernel that implements specific features like cgroups and namespaces."
+    },
+    {
+      "id": "cc-exam-corrected_007",
+      "question": "What is the primary use for tools such as PuTTY and MobaXterm in cloud administration?",
+      "answer": "To remotely access and manage servers via terminal sessions",
+      "type": "mcq",
+      "topic": "Management Tools",
+      "difficulty": "medium",
+      "explanation": "These tools are identified as SSH clients used for secure command-line management of remote servers.",
+      "choices": [
+        "To monitor network traffic in real-time",
+        "To compile and deploy Java applications",
+        "To remotely access and manage servers via terminal sessions",
+        "To create graphical user interfaces for web apps"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_008",
+      "question": "Define the concept of 'nested virtualization'.",
+      "answer": "Nested virtualization means running a hypervisor inside a VM to create VMs within that guest system (VM inside a VM).",
+      "type": "short_answer",
+      "topic": "Virtualization Concepts",
+      "difficulty": "medium",
+      "explanation": "This allows for complex testing environments where a hypervisor itself is treated as a guest workload."
+    },
+    {
+      "id": "cc-exam-corrected_009",
+      "question": "What are the two primary features or use cases for deploying clusters in a cloud environment?",
+      "answer": "High Availability (HA) and Load Balancing",
+      "type": "mcq",
+      "topic": "Cluster Computing",
+      "difficulty": "medium",
+      "explanation": "Clusters are primarily used to ensure service continuity (HA) and to distribute traffic across nodes (Load Balancing/Scalability).",
+      "choices": [
+        "Data Encryption and Privacy",
+        "High Availability (HA) and Load Balancing",
+        "Cost Reduction and Vendor Lock-in",
+        "Hardware Virtualization and Hypervisors"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_010",
+      "question": "If you have two 42U racks, one 2U router, and two 3U storage servers (one storage server per rack), what is the maximum number of 2U rack servers you can deploy in the remaining space?",
+      "answer": "37 servers.",
+      "type": "short_answer",
+      "topic": "Hardware Planning",
+      "difficulty": "medium",
+      "explanation": "Calculation: Rack 1 (42U - 3U = 39U) holds 19 x 2U servers. Rack 2 (42U - 3U - 2U = 37U) holds 18 x 2U servers. Total: 19 + 18 = 37."
+    },
+    {
+      "id": "cc-exam-corrected_011",
+      "question": "Which of the following represents the correct chronological order of the cloud deployment lifecycle?",
+      "answer": "Pilot Phase → Deployment & Integration Phase → Load Driving Phase",
+      "type": "mcq",
+      "topic": "Cloud Deployment",
+      "difficulty": "medium",
+      "explanation": "The lifecycle moves from small-scale testing to full integration, followed by stress testing for reliability.",
+      "choices": [
+        "Load Driving Phase → Pilot Phase → Deployment & Integration Phase",
+        "Deployment & Integration Phase → Load Driving Phase → Pilot Phase",
+        "Pilot Phase → Deployment & Integration Phase → Load Driving Phase",
+        "Pilot Phase → Load Driving Phase → Deployment & Integration Phase"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_012",
+      "question": "Which technology is recommended to prevent backup servers from being compromised by ransomware encryption?",
+      "answer": "Immutable/WORM technology",
+      "type": "mcq",
+      "topic": "Data Protection",
+      "difficulty": "medium",
+      "explanation": "Immutable storage or WORM (Write Once Read Many) technology prevents data from being modified or deleted after it is written, neutralizing ransomware.",
+      "choices": [
+        "SaaS Cloud Storage",
+        "RAID 10 configuration",
+        "Immutable/WORM technology",
+        "Public IP reservation"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_013",
+      "question": "True or False: In a cloud environment, increasing the number of VMs to improve performance results in a trade-off with the price cost.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Cloud Economics",
+      "difficulty": "medium",
+      "explanation": "Cloud providers charge based on resource usage; more VMs mean higher CPU, RAM, disk, and network usage, leading to higher costs."
+    },
+    {
+      "id": "cc-exam-corrected_014",
+      "question": "True or False: Setting data on the public cloud involves a trade-off where you gain convenience but give up some control over privacy.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Cloud Security",
+      "difficulty": "medium",
+      "explanation": "Public clouds are shared environments where data is stored on infrastructure the user doesn't control, risking unauthorized access or compliance issues."
+    },
+    {
+      "id": "cc-exam-corrected_015",
+      "question": "Which hypervisor type is more at risk of a crash that could bring down all hosted VMs simultaneously?",
+      "answer": "Type 2",
+      "type": "mcq",
+      "topic": "Hypervisor Architecture",
+      "difficulty": "medium",
+      "explanation": "Type 2 hypervisors run on top of a host OS. If that OS crashes, the hypervisor and all VMs go down. Type 1 runs directly on hardware.",
+      "choices": [
+        "Type 1",
+        "Type 2",
+        "Bare-metal",
+        "KVM"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_016",
+      "question": "Match the management responsibility: In which model is the customer responsible for Managing 'Runtime, Middleware, and Operating System'?",
+      "answer": "IaaS",
+      "type": "mcq",
+      "topic": "Shared Responsibility Model",
+      "difficulty": "medium",
+      "explanation": "In IaaS, the provider only manages the infrastructure (A); the user manages apps/data (B) and the software stack (C). In PaaS and SaaS, the provider manages the stack.",
+      "choices": [
+        "SaaS",
+        "PaaS",
+        "IaaS",
+        "Managed Services"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_017",
+      "question": "Identify the correct classification for these services: Salesforce and Heroku.",
+      "answer": "Salesforce: SaaS; Heroku: PaaS",
+      "type": "mcq",
+      "topic": "Cloud Service Examples",
+      "difficulty": "medium",
+      "explanation": "Salesforce is a fully functional application (SaaS), while Heroku is a platform for developers to deploy code (PaaS).",
+      "choices": [
+        "Salesforce: IaaS; Heroku: SaaS",
+        "Salesforce: SaaS; Heroku: PaaS",
+        "Salesforce: PaaS; Heroku: IaaS",
+        "Both are IaaS"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_018",
+      "question": "Classify Oracle VirtualBox and Microsoft Hyper-V into their respective hypervisor types.",
+      "answer": "VirtualBox: Type 2; Hyper-V: Type 1",
+      "type": "mcq",
+      "topic": "Hypervisor Classification",
+      "difficulty": "medium",
+      "explanation": "Hyper-V and KVM are Type 1 (Bare-metal), while VirtualBox and VMware Player are Type 2 (Hosted).",
+      "choices": [
+        "VirtualBox: Type 1; Hyper-V: Type 2",
+        "VirtualBox: Type 2; Hyper-V: Type 1",
+        "Both are Type 1",
+        "Both are Type 2"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_019",
+      "question": "What core technology made the emergence of Cloud Computing possible?",
+      "answer": "Virtualization",
+      "type": "short_answer",
+      "topic": "Cloud History",
+      "difficulty": "medium",
+      "explanation": "The correction highlights Virtualization, VMs, or Hypervisors as the foundational technologies."
+    },
+    {
+      "id": "cc-exam-corrected_020",
+      "question": "Scenario: A user needs a free cloud storage solution prioritizing privacy. Which solution is recommended?",
+      "answer": "MEGA",
+      "type": "mcq",
+      "topic": "Applied Storage",
+      "difficulty": "medium",
+      "explanation": "MEGA is the recommendation for privacy-focused users due to its generous space and encryption.",
+      "choices": [
+        "Google Drive",
+        "OneDrive",
+        "MEGA",
+        "Dropbox"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_021",
+      "question": "Scenario: Normal users complain that webserver requests take too long. State two possible technical reasons.",
+      "answer": "Network delay and Compute delay",
+      "type": "short_answer",
+      "topic": "Troubleshooting",
+      "difficulty": "medium",
+      "explanation": "Delays are typically attributed to network latency or server processing (compute) bottlenecks."
+    },
+    {
+      "id": "cc-exam-corrected_022",
+      "question": "Scenario: A company operating a private cloud wants to extend operations using a public cloud. What architecture is this?",
+      "answer": "Hybrid Cloud",
+      "type": "mcq",
+      "topic": "Cloud Architecture",
+      "difficulty": "medium",
+      "explanation": "This specific combination is a Hybrid Cloud (or Inter-Cloud).",
+      "choices": [
+        "Multi-Cloud",
+        "Community Cloud",
+        "Hybrid Cloud",
+        "Distributed Cloud"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_023",
+      "question": "Scenario: A company wants to avoid 'vendor lock-in' without building its own infrastructure. What is the recommended strategy?",
+      "answer": "Multi-Cloud Strategy",
+      "type": "mcq",
+      "topic": "Cloud Strategy",
+      "difficulty": "medium",
+      "explanation": "Using different cloud providers simultaneously (Multi-Cloud) prevents dependency on a single vendor's ecosystem.",
+      "choices": [
+        "Single-Cloud Strategy",
+        "Multi-Cloud Strategy",
+        "On-Premises deployment",
+        "IaaS only"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_024",
+      "question": "Which OpenStack component would you use to investigate a compute overcharge and retrieve metering data?",
+      "answer": "Ceilometer",
+      "type": "mcq",
+      "topic": "OpenStack Components",
+      "difficulty": "medium",
+      "explanation": "Ceilometer is the component specifically responsible for monitoring and metering cloud usage.",
+      "choices": [
+        "Nova",
+        "Cinder",
+        "Swift",
+        "Ceilometer"
+      ]
+    },
+    {
+      "id": "cc-exam-corrected_025",
+      "question": "What essential component enables an IPv4 user to communicate with an IPv6 server?",
+      "answer": "IPv4-IPv6 gateway or translator",
+      "type": "short_answer",
+      "topic": "Networking Protocols",
+      "difficulty": "medium",
+      "explanation": "This component translates between the two protocols to allow interoperability."
+    },
+    {
+      "id": "cc-exam-corrected_026",
+      "question": "State two reasons why a user still sees charges for a VM that has been turned off.",
+      "answer": "Disk storage usage and attached reserved public IPs",
+      "type": "short_answer",
+      "topic": "Cloud Billing",
+      "difficulty": "medium",
+      "explanation": "Costs continue for reserved resources like disk size and static IPs even when the compute instance is powered down."
+    }
+  ]
+}

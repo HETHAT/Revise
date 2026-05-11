@@ -1,0 +1,83 @@
+{
+  "source": "CC-HoL-02.pdf",
+  "items": [
+    {
+      "id": "cc-hol-02_001",
+      "question": "Compare Docker containers and VirtualBox VMs in terms of resource efficiency and architecture.",
+      "answer": "Docker containers are more resource-efficient than VirtualBox VMs because they share the host system's kernel and do not require a full guest OS for each instance.",
+      "type": "short_answer",
+      "topic": "Containers vs VMs",
+      "difficulty": "medium",
+      "explanation": "Virtual machines emulate hardware and run an entirely independent guest OS, which consumes significant RAM and CPU. In contrast, containers use the host's kernel and isolate processes using namespaces and cgroups, making them much lighter."
+    },
+    {
+      "id": "cc-hol-02_002",
+      "question": "Which of the following is NOT a core component included in the standard installation of the Docker Engine (Community Edition)?",
+      "answer": "VirtualBox Hypervisor",
+      "type": "mcq",
+      "topic": "Docker Engine",
+      "difficulty": "easy",
+      "explanation": "The Docker Engine consists of the daemon (background service), the Command Line Interface (CLI), and supporting tools. It does not include VirtualBox, which is a separate hypervisor used for running full virtual machines.",
+      "choices": [
+        "The Docker daemon",
+        "The Docker CLI",
+        "VirtualBox Hypervisor",
+        "Supporting management tools"
+      ]
+    },
+    {
+      "id": "cc-hol-02_003",
+      "question": "True or False: To function correctly, Docker containers require a host system with a supported Linux kernel that implements features such as cgroups and namespaces.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Docker Engine Requirements",
+      "difficulty": "hard",
+      "explanation": "Cgroups (control groups) manage resource allocation, and namespaces provide the isolation between containers; both are fundamental Linux kernel requirements for the Docker Engine to operate."
+    },
+    {
+      "id": "cc-hol-02_004",
+      "question": "Explain why 'Port Binding' is essential when deploying multiple web server containers on a single host machine.",
+      "answer": "Port binding maps a container's internal port to a unique port on the host machine, preventing port conflicts and allowing each service to be accessed via the host's IP address.",
+      "type": "short_answer",
+      "topic": "Networking",
+      "difficulty": "medium",
+      "explanation": "Because multiple containers might all try to use the same internal port (like port 80 for Nginx), the administrator must bind them to different host ports (e.g., 8081, 8082) so they can all be addressed simultaneously through the host."
+    },
+    {
+      "id": "cc-hol-02_005",
+      "question": "Describe the primary purpose of using Docker Compose for managing a cloud application stack.",
+      "answer": "Docker Compose is used for orchestration, allowing an administrator to define and manage multi-container applications as a single unified service through a configuration file.",
+      "type": "short_answer",
+      "topic": "Orchestration",
+      "difficulty": "medium",
+      "explanation": "Instead of starting every container manually, Docker Compose uses a YAML file to automate the building and launching of the entire application environment, including load balancers and backend services."
+    },
+    {
+      "id": "cc-hol-02_006",
+      "question": "True or False: The 'hello-world' container is a diagnostic tool used primarily to verify that the Docker Engine is correctly installed and connected to a container registry.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Docker Installation",
+      "difficulty": "easy",
+      "explanation": "Running this official test container confirms that the Docker daemon is active and successfully downloaded and executed a container image from the registry."
+    },
+    {
+      "id": "cc-hol-02_007",
+      "question": "In a load-balanced architecture using Nginx, what is the conceptual role of 'upstream servers'?",
+      "answer": "Upstream servers represent the group of backend application containers that receive and process the web traffic distributed by the load balancer.",
+      "type": "short_answer",
+      "topic": "Load Balancing",
+      "difficulty": "hard",
+      "explanation": "The load balancer acts as a proxy, forwarding user requests to a group of servers (the upstream) to distribute the workload and ensure high performance."
+    },
+    {
+      "id": "cc-hol-02_008",
+      "question": "True or False: Adding a user to the 'docker' group in Linux is done to allow that user to run Docker commands without needing the 'sudo' prefix.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Docker Usage",
+      "difficulty": "easy",
+      "explanation": "Adding a user to the docker group is an optional step that improves usability by removing the requirement for root-level administrative privileges for every container interaction."
+    }
+  ]
+}

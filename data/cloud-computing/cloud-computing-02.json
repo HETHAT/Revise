@@ -1,0 +1,197 @@
+{
+  "source": "Cloud-Computing-02.pptx",
+  "items": [
+    {
+      "id": "cloud-computing-02_001",
+      "question": "Explain the 'Public Bus' analogy used to describe the Public Cloud model.",
+      "answer": "A public bus is shared by multiple users, operated by a third party, and available on demand, similar to how Public Cloud resources are shared and managed by providers like AWS or Google Cloud.",
+      "type": "short_answer",
+      "topic": "Cloud Models",
+      "difficulty": "easy",
+      "explanation": "The analogy highlights three key aspects: shared infrastructure, third-party management, and on-demand availability."
+    },
+    {
+      "id": "cloud-computing-02_002",
+      "question": "Why is a Private Cloud often compared to owning a 'Personal Car'?",
+      "answer": "Because it involves dedicated resources for a single user/organization, providing full control and better privacy, but at a higher cost for purchase and maintenance.",
+      "type": "short_answer",
+      "topic": "Cloud Models",
+      "difficulty": "easy",
+      "explanation": "Like a car, a private cloud offers customization and security at the expense of upfront investment and management responsibility."
+    },
+    {
+      "id": "cloud-computing-02_003",
+      "question": "What is the primary defining characteristic of a Community Cloud?",
+      "answer": "It is a cloud environment shared by several organizations that have similar needs, interests, or regulatory requirements, such as government or healthcare sectors.",
+      "type": "short_answer",
+      "topic": "Cloud Models",
+      "difficulty": "easy",
+      "explanation": "It balances cost-sharing with shared governance for a specific group with common goals."
+    },
+    {
+      "id": "cloud-computing-02_004",
+      "question": "A bank requires a cloud solution that ensures sensitive data is never exposed to third-party providers and offers full control over security. Which deployment model fits this scenario and why?",
+      "answer": "The Private Cloud model, because it is dedicated to a single organization and allows them to manage their own hardware, software, and security protocols.",
+      "type": "short_answer",
+      "topic": "Cloud Models",
+      "difficulty": "medium",
+      "explanation": "Private clouds are ideal for sensitive workloads and regulatory requirements where full control is mandatory."
+    },
+    {
+      "id": "cloud-computing-02_005",
+      "question": "Describe a business scenario where an organization would choose a Hybrid Cloud model over a strictly Public one.",
+      "answer": "An organization might use a private cloud to store highly sensitive customer data (control) while using a public cloud to handle seasonal traffic spikes for its web application (scalability).",
+      "type": "short_answer",
+      "topic": "Cloud Models",
+      "difficulty": "medium",
+      "explanation": "Hybrid models allow companies to keep core assets private while leveraging the cost-efficiency and scale of public resources."
+    },
+    {
+      "id": "cloud-computing-02_006",
+      "question": "In terms of hardware management, what is the main difference between On-Premises and IaaS?",
+      "answer": "In On-Premises, the organization owns and manages the physical hardware; in IaaS, the provider owns and manages the hardware while the user rents virtualized resources.",
+      "type": "short_answer",
+      "topic": "Cloud Services",
+      "difficulty": "medium",
+      "explanation": "IaaS removes the need for physical infrastructure investment, shifting management to virtualized instances."
+    },
+    {
+      "id": "cloud-computing-02_007",
+      "question": "Why is Platform as a Service (PaaS) described as a model that allows developers to 'focus on coding'?",
+      "answer": "PaaS provides the underlying runtime, middleware, and operating systems, so developers do not have to manage the server infrastructure or OS maintenance.",
+      "type": "short_answer",
+      "topic": "Cloud Services",
+      "difficulty": "medium",
+      "explanation": "By abstracting the infrastructure layer, PaaS speeds up the development lifecycle."
+    },
+    {
+      "id": "cloud-computing-02_008",
+      "question": "Compare Public and Private clouds regarding their scalability and cost-efficiency based on the transport analogy.",
+      "answer": "Public Clouds (Bus) have high scalability and low cost (pay-per-ride), whereas Private Clouds (Car) have low scalability and high cost due to the need for manual hardware expansion and maintenance.",
+      "type": "short_answer",
+      "topic": "Cloud Models",
+      "difficulty": "hard",
+      "explanation": "Public clouds offer elastic scaling at a lower price point, while private clouds require significant capital and time to scale."
+    },
+    {
+      "id": "cloud-computing-02_009",
+      "question": "Explain the risk of 'Vendor Lock-in' as it specifically applies to the PaaS model.",
+      "answer": "Switching providers can be difficult because applications are often built using specific tools, databases, and frameworks provided by that platform's ecosystem.",
+      "type": "short_answer",
+      "topic": "Cloud Services",
+      "difficulty": "hard",
+      "explanation": "The convenience of integrated tools in PaaS can make an organization dependent on a single provider's proprietary configurations."
+    },
+    {
+      "id": "cloud-computing-02_010",
+      "question": "How does the Software as a Service (SaaS) model simplify IT operations for an end-user organization?",
+      "answer": "It removes the need for local installation and manual updates, as the provider handles all maintenance, infrastructure management, and software upgrades.",
+      "type": "short_answer",
+      "topic": "Cloud Services",
+      "difficulty": "medium",
+      "explanation": "SaaS users simply access fully functional apps via a browser, lowering upfront costs and management overhead."
+    },
+    {
+      "id": "cloud-computing-02_011",
+      "question": "Why might a research laboratory prefer a Community Cloud over a Public Cloud?",
+      "answer": "Because it allows them to share costs and resources with other labs having similar security and performance needs while maintaining more control than a general public cloud.",
+      "type": "short_answer",
+      "topic": "Cloud Models",
+      "difficulty": "medium",
+      "explanation": "Community clouds are tailored for groups with specific shared goals that aren't addressed by broad public services."
+    },
+    {
+      "id": "cloud-computing-02_012",
+      "question": "Identify and list two common commercial examples for the SaaS service model.",
+      "answer": "Google Workspace (Docs, Gmail) and Salesforce.",
+      "type": "short_answer",
+      "topic": "Cloud Services",
+      "difficulty": "easy",
+      "explanation": "These are fully functional applications delivered directly over the internet to end-users."
+    },
+    {
+      "id": "cloud-computing-02_013",
+      "question": "Explain the 'Taxi/Uber' principle within the context of the Hybrid Cloud model.",
+      "answer": "It represents a mix of ownership (your own car) and on-demand access (calling a taxi), allowing a user to use private resources for standard needs and public ones when extra capacity is required.",
+      "type": "short_answer",
+      "topic": "Cloud Models",
+      "difficulty": "medium",
+      "explanation": "The analogy illustrates the flexibility of moving between dedicated and shared environments."
+    },
+    {
+      "id": "cloud-computing-02_014",
+      "question": "Contrast the user's management responsibility stack in IaaS versus SaaS.",
+      "answer": "In IaaS, the user is responsible for managing the OS, middleware, runtime, data, and apps; in SaaS, the provider manages everything, and the user is only responsible for using the application.",
+      "type": "short_answer",
+      "topic": "Cloud Services",
+      "difficulty": "hard",
+      "explanation": "IaaS offers the most control (and work), while SaaS offers the most convenience with zero infrastructure management."
+    },
+    {
+      "id": "cloud-computing-02_015",
+      "question": "_________ provides virtualized computing resources over the internet, allowing organizations to scale without owning physical hardware.",
+      "answer": "IaaS",
+      "type": "fill_blank",
+      "topic": "Cloud Services",
+      "difficulty": "easy",
+      "explanation": "Infrastructure as a Service focuses on the raw building blocks like servers and storage."
+    },
+    {
+      "id": "cloud-computing-02_016",
+      "question": "Heroku and Google App Engine are prominent examples of the _________ service model.",
+      "answer": "PaaS",
+      "type": "fill_blank",
+      "topic": "Cloud Services",
+      "difficulty": "medium",
+      "explanation": "These platforms provide the environment for developers to deploy code without managing servers."
+    },
+    {
+      "id": "cloud-computing-02_017",
+      "question": "In the transport analogy, 'Carpooling' is used to represent the _________ cloud model.",
+      "answer": "Community",
+      "type": "fill_blank",
+      "topic": "Cloud Models",
+      "difficulty": "easy",
+      "explanation": "It signifies a shared system among a specific group with common needs."
+    },
+    {
+      "id": "cloud-computing-02_018",
+      "question": "The _________ model is not strictly a cloud model, but refers to IT infrastructure hosted within an organization's own physical facilities.",
+      "answer": "On-Premises",
+      "type": "fill_blank",
+      "topic": "Cloud Services",
+      "difficulty": "medium",
+      "explanation": "On-premises is the traditional alternative to cloud computing."
+    },
+    {
+      "id": "cloud-computing-02_019",
+      "question": "Which cloud model is defined by resources provided over the internet, shared by multiple users, and offering the highest level of scalability but the lowest level of direct control?",
+      "answer": "Public Cloud",
+      "type": "mcq",
+      "topic": "Cloud Models",
+      "difficulty": "hard",
+      "explanation": "Public clouds like AWS trade control for massive scale and low entry costs.",
+      "choices": [
+        "Public Cloud",
+        "Private Cloud",
+        "Hybrid Cloud",
+        "Community Cloud"
+      ]
+    },
+    {
+      "id": "cloud-computing-02_020",
+      "question": "If a company wants to use a fully functional CRM software through their web browser without any local installation or server management, which service model should they subscribe to?",
+      "answer": "SaaS",
+      "type": "mcq",
+      "topic": "Cloud Services",
+      "difficulty": "medium",
+      "explanation": "SaaS (Software as a Service) delivers ready-to-use applications over the internet.",
+      "choices": [
+        "IaaS",
+        "PaaS",
+        "SaaS",
+        "On-Premises"
+      ]
+    }
+  ]
+}

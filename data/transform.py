@@ -70,7 +70,7 @@ def transform_file(input_path: Path, output_dir: Path) -> dict:
     slug = slugify(source)
 
     # Collect raw items from either "questions" or "exercices" (note the typo in originals)
-    raw_items = data.get("questions") or data.get("exercices") or []
+    raw_items = data.get("questions") or data.get("exercices") or data.get("items") or []
 
     items = [
         transform_item(raw, make_id(slug, i))

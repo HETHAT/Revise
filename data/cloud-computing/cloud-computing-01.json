@@ -1,0 +1,155 @@
+{
+  "source": "Cloud-Computing-01.pptx",
+  "items": [
+    {
+      "id": "cloud-computing-01_001",
+      "question": "Explain the core principle of 'On-Demand Access' in Cloud Computing.",
+      "answer": "On-demand access refers to the delivery of computing resources like storage, processing, and applications over the internet whenever a user needs them.",
+      "type": "short_answer",
+      "topic": "Cloud Definition",
+      "difficulty": "easy",
+      "explanation": "Cloud computing allows users to access services instantly via the internet without having to wait for physical hardware setup or procurement."
+    },
+    {
+      "id": "cloud-computing-01_002",
+      "question": "Why is Cloud Computing often described as a 'Pay-as-you-go' model?",
+      "answer": "It is described this way because users pay only for the resources they actually consume, such as infrastructure, platforms, and software, rather than owning physical infrastructure.",
+      "type": "short_answer",
+      "topic": "Cloud Definition",
+      "difficulty": "easy",
+      "explanation": "Cisco’s definition highlights that cloud computing offers convenient models for accessing offerings on a pay-as-you-go basis, eliminating the need to buy and maintain physical hardware."
+    },
+    {
+      "id": "cloud-computing-01_003",
+      "question": "Which decade is associated with the birth of Mainframes and Time-sharing?",
+      "answer": "1950s",
+      "type": "mcq",
+      "topic": "Historical Background",
+      "difficulty": "easy",
+      "choices": [
+        "1950s",
+        "1970s",
+        "1990s",
+        "2010s"
+      ]
+    },
+    {
+      "id": "cloud-computing-01_004",
+      "question": "True or False: Cloud Computing requires users to own the physical hardware they use.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Cloud Definition",
+      "difficulty": "easy",
+      "explanation": "Cloud computing allows users to access computing resources remotely over the internet without owning the physical hardware."
+    },
+    {
+      "id": "cloud-computing-01_005",
+      "question": "Explain the concept of 'Virtual Space' as it relates to Cloud Computing.",
+      "answer": "Cloud Computing creates a virtual space where resources like servers and applications exist online remotely in data centers rather than on a specific physical device.",
+      "type": "short_answer",
+      "topic": "Cloud Definition",
+      "difficulty": "medium",
+      "explanation": "For example, saving a file to Google Drive stores it in a virtual space accessible from anywhere, not just on the user's local hard drive."
+    },
+    {
+      "id": "cloud-computing-01_006",
+      "question": "Explain why 'Time-sharing' was a necessary precursor to modern Cloud Computing during the mainframe era.",
+      "answer": "Because computing was extremely expensive, time-sharing allowed multiple users to efficiently access the same CPU and storage in turns.",
+      "type": "short_answer",
+      "topic": "Historical Background",
+      "difficulty": "medium",
+      "explanation": "Time-sharing introduced the principle of shared resource utilization, which is a fundamental building block of modern cloud resource sharing."
+    },
+    {
+      "id": "cloud-computing-01_007",
+      "question": "What is the difference between a virtual machine (VM) and the physical hardware it runs on?",
+      "answer": "A VM is a software-based computer that runs independently, whereas the physical hardware is the shared underlying infrastructure managed by a host OS or hypervisor.",
+      "type": "short_answer",
+      "topic": "Virtualization",
+      "difficulty": "medium",
+      "explanation": "Virtualization allows multiple software-based machines (VMs) to exist and function on a single piece of physical hardware, improving resource utilization."
+    },
+    {
+      "id": "cloud-computing-01_008",
+      "question": "Explain the primary role of a hypervisor in a cloud environment.",
+      "answer": "A hypervisor is software that manages multiple virtual machines (VMs) on one physical server, enabling efficient resource sharing.",
+      "type": "short_answer",
+      "topic": "Hypervisors",
+      "difficulty": "medium",
+      "explanation": "By managing multiple guest systems on a single server, hypervisors paved the way for the efficiency and scalability found in cloud computing."
+    },
+    {
+      "id": "cloud-computing-01_009",
+      "question": "Why is the launch of Amazon EC2 in 2006 considered the beginning of the 'true cloud era'?",
+      "answer": "It offered scalable computing power online, allowing businesses to shift from buying their own servers to renting resources as needed.",
+      "type": "short_answer",
+      "topic": "Historical Background",
+      "difficulty": "medium",
+      "explanation": "AWS EC2 introduced Elastic Compute Cloud, which popularized the model of scalable, on-demand infrastructure that defines modern cloud computing."
+    },
+    {
+      "id": "cloud-computing-01_010",
+      "question": "Explain the significance of Salesforce.com's launch in 1999 for the evolution of Cloud Computing.",
+      "answer": "Salesforce.com launched Software as a Service (SaaS), which was one of the first successful examples of a cloud-like service delivered over the internet.",
+      "type": "short_answer",
+      "topic": "Historical Background",
+      "difficulty": "medium",
+      "explanation": "SaaS was a major milestone that demonstrated how fully functional software could be delivered to users without local installation, a key cloud service model."
+    },
+    {
+      "id": "cloud-computing-01_011",
+      "question": "Which company popularized virtualization in enterprise computing during the 1990s and 2000s?",
+      "answer": "VMware",
+      "type": "mcq",
+      "topic": "Historical Background",
+      "difficulty": "medium",
+      "choices": [
+        "IBM",
+        "VMware",
+        "Microsoft",
+        "Salesforce"
+      ]
+    },
+    {
+      "id": "cloud-computing-01_012",
+      "question": "True or False: Hypervisors allow multiple virtual machines (VMs) to run independently on a single physical machine.",
+      "answer": "True",
+      "type": "true_false",
+      "topic": "Hypervisors",
+      "difficulty": "medium",
+      "explanation": "Hypervisors are the core technology that enables a single physical server to host multiple isolated guest operating systems simultaneously."
+    },
+    {
+      "id": "cloud-computing-01_013",
+      "question": "Where does everything physically happen in a Cloud Computing environment?",
+      "answer": "In distant data centers",
+      "type": "mcq",
+      "topic": "Cloud Architecture",
+      "difficulty": "easy",
+      "choices": [
+        "On the user's laptop",
+        "In distant data centers",
+        "Inside the user's router",
+        "On a physical USB drive"
+      ]
+    },
+    {
+      "id": "cloud-computing-01_014",
+      "question": "Explain how Cloud Computing provides 'Scalability' to its users.",
+      "answer": "Scalability allows users to easily adjust their computing resources (like CPU or storage) up or down based on their immediate needs.",
+      "type": "short_answer",
+      "topic": "Cloud Definition",
+      "difficulty": "easy",
+      "explanation": "Because resources are virtualized and managed by the provider, the system can expand or contract to meet user demand without requiring the user to buy new physical hardware."
+    },
+    {
+      "id": "cloud-computing-01_015",
+      "question": "Explain the difference between a Type 1 and a Type 2 hypervisor regarding their relationship with physical hardware.",
+      "answer": "A Type 1 hypervisor (Bare-metal) runs directly on the hardware, whereas a Type 2 hypervisor (Hosted) runs on top of a host operating system.",
+      "type": "short_answer",
+      "topic": "Hypervisors",
+      "difficulty": "hard",
+      "explanation": "Type 1 hypervisors have direct access to hardware resources for better performance, while Type 2 hypervisors rely on an intermediate OS layer, making them more common for individual or developmental use."
+    }
+  ]
+}

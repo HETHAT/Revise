@@ -1,0 +1,105 @@
+{
+  "source": "CC-HoL-01.pdf",
+  "items": [
+    {
+      "id": "cc-hol-01_001",
+      "question": "Explain the primary purpose of the 'NAT' networking mode in VirtualBox.",
+      "answer": "NAT (Network Address Translation) mode allows a virtual machine to access the external internet through the host's connection while remaining invisible and protected from outside incoming connections.",
+      "type": "short_answer",
+      "topic": "Networking Modes",
+      "difficulty": "medium",
+      "explanation": "NAT acts as a middleman that translates the VM's private addresses to the host's public address, enabling internet access for the VM without needing a dedicated IP on the physical network."
+    },
+    {
+      "id": "cc-hol-01_002",
+      "question": "Explain the difference between 'Internal' and 'Bridged' networking modes in a virtualization environment.",
+      "answer": "Internal networking isolates VMs into a private network where they can only talk to each other, whereas Bridged networking connects the VM directly to the host's physical network as if it were a separate physical machine.",
+      "type": "short_answer",
+      "topic": "Networking Modes",
+      "difficulty": "hard",
+      "explanation": "Bridged mode allows a VM to receive its own IP address from the physical router, making it accessible to other devices on the LAN, while Internal mode provides complete isolation from the host and the internet."
+    },
+    {
+      "id": "cc-hol-01_003",
+      "question": "What is an OVA file and why is it used when moving virtual machines between different computers?",
+      "answer": "An OVA file is a compressed package containing a virtual machine's disk image and configuration settings, used to export and import entire VMs easily across different systems.",
+      "type": "short_answer",
+      "topic": "Environment Logic",
+      "difficulty": "medium",
+      "explanation": "Using OVA files allows students or engineers to share pre-configured lab environments, ensuring that everyone starts with the same OS and software setup."
+    },
+    {
+      "id": "cc-hol-01_004",
+      "question": "Describe the logical role of the SSH protocol in managing virtual machines.",
+      "answer": "SSH (Secure Shell) is used to establish a secure, encrypted terminal session to a remote virtual machine, allowing an administrator to manage it via the command line without needing direct access to the VM's graphical console.",
+      "type": "short_answer",
+      "topic": "Remote Management",
+      "difficulty": "medium",
+      "explanation": "SSH is the industry standard for remote administration, enabling management of servers (or VMs) over a network connection."
+    },
+    {
+      "id": "cc-hol-01_005",
+      "question": "Why is it necessary to verify that CPU virtualization (VT-x or AMD-V) is enabled in the BIOS/UEFI before starting the lab?",
+      "answer": "Hardware-assisted virtualization must be enabled so that the hypervisor (VirtualBox) can directly use the physical CPU's features to run guest operating systems efficiently and securely.",
+      "type": "short_answer",
+      "topic": "Virtualization Requirements",
+      "difficulty": "medium",
+      "explanation": "Without these CPU features enabled, VMs may fail to start or suffer from extremely poor performance because the software must emulate hardware functions that the CPU could otherwise handle natively."
+    },
+    {
+      "id": "cc-hol-01_006",
+      "question": "What is the primary function of Oracle VirtualBox in the context of this lab?",
+      "answer": "VirtualBox acts as a hypervisor that allows a user to create and run multiple independent virtual computers (guest VMs) on a single physical host machine.",
+      "type": "short_answer",
+      "topic": "Tools",
+      "difficulty": "easy",
+      "explanation": "VirtualBox provides the platform for 'Initiation to Virtualization' by abstracting physical hardware into virtual resources for multiple guest OS instances."
+    },
+    {
+      "id": "cc-hol-01_007",
+      "question": "Which of the following tools are commonly used as SSH clients to remotely access and manage servers via terminal sessions?",
+      "answer": "PuTTY and MobaXterm",
+      "type": "mcq",
+      "topic": "Tools",
+      "difficulty": "easy",
+      "choices": [
+        "VirtualBox and VMware",
+        "PuTTY and MobaXterm",
+        "Nginx and Docker",
+        "Lubuntu and Ubuntu"
+      ]
+    },
+    {
+      "id": "cc-hol-01_008",
+      "question": "When importing a VM via an OVA file, which of the following resources can typically be adjusted to fit the host computer's capabilities?",
+      "answer": "RAM and CPU Cores",
+      "type": "mcq",
+      "topic": "Environment Logic",
+      "difficulty": "easy",
+      "choices": [
+        "RAM and CPU Cores",
+        "The Host's operating system version",
+        "The physical size of the monitor",
+        "The brand of the router"
+      ]
+    },
+    {
+      "id": "cc-hol-01_009",
+      "question": "True or False: In 'Internal' networking mode, a virtual machine can automatically download updates from the internet.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Networking Modes",
+      "difficulty": "medium",
+      "explanation": "Internal networking is strictly for communication between VMs on the same host; it does not provide access to the host's network or the external internet unless a gateway VM is specifically configured."
+    },
+    {
+      "id": "cc-hol-01_010",
+      "question": "True or False: CPU virtualization is a software-only feature that does not require any specific settings in the physical computer's BIOS.",
+      "answer": "False",
+      "type": "true_false",
+      "topic": "Virtualization Requirements",
+      "difficulty": "easy",
+      "explanation": "CPU virtualization features (VT-x/AMD-V) are hardware-level capabilities that must be enabled in the computer's BIOS or UEFI settings for hypervisors like VirtualBox to function correctly."
+    }
+  ]
+}

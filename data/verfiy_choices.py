@@ -48,5 +48,5 @@ def verify_json_choices(directory_path):
 
 if __name__ == "__main__":
     # Use '.' for the current directory or provide a specific path
-    target_dir = "./ai" 
+    target_dir = "./cloud-computing" 
     verify_json_choices(target_dir)
