@@ -1,0 +1,205 @@
+{
+  "source": "Mock Exam (Generated)",
+  "items": [
+    {
+      "question": "What color is represented by the hexadecimal value #0FF?",
+      "code_snippet": "",
+      "answer": "Cyan",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "easy",
+      "choices": ["Cyan", "Magenta", "Yellow", "White"],
+      "explanation": "In shorthand hex, #0FF is #00FFFF, which combines full Green and Blue to create Cyan."
+    },
+    {
+      "question": "In the context of Android, what does NDK stand for?",
+      "code_snippet": "",
+      "answer": "Native Development Kit",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": ["Network Development Kit", "Native Development Kit", "Node Deployment Kernel", "Native Data Kit"],
+      "explanation": "The NDK allows developers to implement parts of their app using native-code languages such as C and C++."
+    },
+    {
+      "question": "Which layer of the Android architecture contains the Activity Manager and Notification Manager?",
+      "code_snippet": "",
+      "answer": "Java API Framework",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": ["Linux Kernel", "Native Libraries", "Java API Framework", "Applications"],
+      "explanation": "The Java API Framework (Level 3) provides the high-level services used to build apps, including managers for activities and notifications."
+    },
+    {
+      "question": "Which Kotlin keyword is used to declare a variable that can be reassigned after its initial definition?",
+      "code_snippet": "",
+      "answer": "var",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "easy",
+      "choices": ["val", "const", "var", "let"],
+      "explanation": "In Kotlin, 'var' is used for mutable variables, while 'val' is for read-only (immutable) variables."
+    },
+    {
+      "question": "To make an activity the main entry point shown in the app launcher, which intent filter category must be used?",
+      "code_snippet": "",
+      "answer": "android.intent.category.LAUNCHER",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": ["android.intent.category.DEFAULT", "android.intent.category.MAIN", "android.intent.category.LAUNCHER", "android.intent.category.BROWSABLE"],
+      "explanation": "The LAUNCHER category tells the system to place the activity's icon in the device's app launcher."
+    },
+    {
+      "question": "What is the primary function of the 'findViewById()' method in Android?",
+      "code_snippet": "",
+      "answer": "To find a view that was identified by the android:id attribute in the XML",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "easy",
+      "choices": ["To create a new view object from scratch", "To find a view that was identified by the android:id attribute in the XML", "To change the layout orientation of a view", "To link the app to the Google Play Store"],
+      "explanation": "findViewById() searches the inflated view hierarchy for a component with the specified resource ID."
+    },
+    {
+      "question": "Which attribute in a LinearLayout determines the direction in which child views are arranged?",
+      "code_snippet": "",
+      "answer": "android:orientation",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "easy",
+      "choices": ["android:gravity", "android:layout_gravity", "android:orientation", "android:direction"],
+      "explanation": "The orientation attribute can be set to 'vertical' or 'horizontal' to arrange components in a row or column."
+    },
+    {
+      "question": "In ConstraintLayout, what does '0dp' (match_constraints) signify for a view's width or height?",
+      "code_snippet": "",
+      "answer": "The dimension will expand to fill the space defined by the constraints",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": ["The view will be invisible", "The dimension will wrap the content tightly", "The dimension will expand to fill the space defined by the constraints", "The dimension will be exactly 160 pixels"],
+      "explanation": "In ConstraintLayout, 0dp indicates that the size is determined by the constraints rather than fixed values or content size."
+    },
+    {
+      "question": "A device has a resolution of 1080 x 1920 and a 5.5\" screen. What is its approximate density bucket?",
+      "code_snippet": "",
+      "answer": "xxhdpi",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "hard",
+      "choices": ["hdpi", "xhdpi", "xxhdpi", "xxxhdpi"],
+      "explanation": "With a resolution of 1080x1920 on a 5.5\" screen, the PPI is ~401, which places it closest to the xxhdpi bucket (~480 dpi) or high-end xhdpi."
+    },
+    {
+      "question": "Which resource qualifier is used to provide alternative layouts for tablets with a minimum width of 600dp?",
+      "code_snippet": "",
+      "answer": "sw600dp",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": ["w600dp", "h600dp", "sw600dp", "tablet-600"],
+      "explanation": "The 'sw<N>dp' qualifier stands for 'smallest width' and is used to target devices like tablets."
+    },
+    {
+      "question": "Which higher-order function in Kotlin transforms a collection by applying a transformation to each element?",
+      "code_snippet": "",
+      "answer": "map",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": ["filter", "map", "reduce", "forEach"],
+      "explanation": "The 'map' function produces a new collection with the results of applying the given transformation to each original element."
+    },
+    {
+      "question": "Which lifecycle method is called immediately before the activity becomes interactive with the user?",
+      "code_snippet": "",
+      "answer": "onResume()",
+      "type": "mcq",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": ["onStart()", "onResume()", "onRestart()", "onCreated()"],
+      "explanation": "onResume() is called when the activity enters the foreground and the user can start interacting with it."
+    },
+    {
+      "question": "Write the XML snippet for a Button with ID 'btn_submit' that has its width set to fill the parent and height set to its content.",
+      "code_snippet": "",
+      "answer": "<Button android:id=\"@+id/btn_submit\" android:layout_width=\"match_parent\" android:layout_height=\"wrap_content\" />",
+      "type": "coding",
+      "topic": "Mock Exam",
+      "difficulty": "easy",
+      "choices": [],
+      "explanation": "Standard attributes for ID, width (match_parent), and height (wrap_content) are used here."
+    },
+    {
+      "question": "Write a Kotlin code snippet to start an activity named 'SettingsActivity' and pass a string extra with the key 'mode' and value 'dark'.",
+      "code_snippet": "",
+      "answer": "val intent = Intent(this, SettingsActivity::class.java).apply { putExtra(\"mode\", \"dark\") }\nstartActivity(intent)",
+      "type": "coding",
+      "topic": "Mock Exam",
+      "difficulty": "hard",
+      "choices": [],
+      "explanation": "Explicit intents use the class reference and putExtra() to send data."
+    },
+    {
+      "question": "Create an XML Shape drawable for a solid Red circle.",
+      "code_snippet": "",
+      "answer": "<shape xmlns:android=\"http://schemas.android.com/apk/res/android\" android:shape=\"oval\">\n    <solid android:color=\"#FF0000\" />\n</shape>",
+      "type": "coding",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": [],
+      "explanation": "The 'oval' shape type with a 'solid' color tag defines a circle."
+    },
+    {
+      "question": "Write the Kotlin code to safely print the length of a nullable string 'name' using the 'let' function.",
+      "code_snippet": "",
+      "answer": "name?.let { println(it.length) }",
+      "type": "coding",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": [],
+      "explanation": "Using the safe call operator (?.) with 'let' ensures the block only runs if 'name' is not null."
+    },
+    {
+      "question": "Briefly explain the role of the 'Model' in the MVC architecture pattern.",
+      "code_snippet": "",
+      "answer": "The Model is responsible for managing the application's data and business logic, such as database operations or API calls.",
+      "type": "short_answer",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": [],
+      "explanation": "In MVC, the Model handles the data and rules, separated from the UI and input handling."
+    },
+    {
+      "question": "What is the key difference between 'dp' and 'sp' units in Android?",
+      "code_snippet": "",
+      "answer": "Both are density-independent, but 'sp' (scalable pixels) additionally scales according to the user's system-wide font size accessibility preference.",
+      "type": "short_answer",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": [],
+      "explanation": "sp is specifically for text to ensure it respects user accessibility settings for font size."
+    },
+    {
+      "question": "Describe the difference between onPause() and onStop() lifecycle states.",
+      "code_snippet": "",
+      "answer": "onPause() is called when the activity is still partially visible but not interactive, while onStop() is called when the activity is no longer visible to the user.",
+      "type": "short_answer",
+      "topic": "Mock Exam",
+      "difficulty": "hard",
+      "choices": [],
+      "explanation": "Transparency or overlays might cause onPause() without onStop(); leaving the app entirely triggers both."
+    },
+    {
+      "question": "What is the purpose of the 'android:exported' attribute in the AndroidManifest.xml?",
+      "code_snippet": "",
+      "answer": "It determines whether a component (like an Activity) can be launched by components from other applications.",
+      "type": "short_answer",
+      "topic": "Mock Exam",
+      "difficulty": "medium",
+      "choices": [],
+      "explanation": "Setting exported to 'true' allows external apps to interact with the component."
+    }
+  ]
+}

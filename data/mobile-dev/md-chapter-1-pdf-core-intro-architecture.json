@@ -1,0 +1,221 @@
+{
+  "source": "MD Chapter 1.pdf (Core Intro & Architecture)",
+  "items": [
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_001",
+      "question": "Which density bucket serves as the baseline for Android with a density of 160 dpi?",
+      "answer": "MDPI",
+      "type": "mcq",
+      "topic": "Screen Density",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "Google defined 160 dpi as the 'medium' (mdpi) baseline for Android because early devices featured screens around this density.",
+      "choices": [
+        "LDPI",
+        "MDPI",
+        "HDPI",
+        "XHDPI"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_002",
+      "question": "What is the approximate DPI of a device with a 4.7\" screen size and a 750 x 1334 resolution?",
+      "answer": "326",
+      "type": "mcq",
+      "topic": "Screen Density",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Using the Pythagorean theorem, the diagonal resolution is approximately 1530 pixels. Dividing this by the screen size (1530 / 4.7) results in roughly 326 DPI,.",
+      "choices": [
+        "160",
+        "240",
+        "326",
+        "401"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_003",
+      "question": "According to density bucket scaling, which bucket represents a 3.0x scaling factor (where 100dp = 300px)?",
+      "answer": "XXHDPI",
+      "type": "mcq",
+      "topic": "Screen Density",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "XXHDPI (extra extra high) density is calculated at a 3x ratio relative to the mdpi baseline.",
+      "choices": [
+        "HDPI",
+        "XHDPI",
+        "XXHDPI",
+        "XXXHDPI"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_004",
+      "question": "A developer wants to calculate the 'dp' width for an element that is 200 physical pixels wide on a 320 DPI screen. What is the value in 'dp'?",
+      "answer": "100 dp",
+      "type": "mcq",
+      "topic": "Screen Density",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The formula is DP = (width in pixel) * (160 / DPI). Thus, 200 * (160 / 320) = 100 dp.",
+      "choices": [
+        "100 dp",
+        "200 dp",
+        "400 dp",
+        "80 dp"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_005",
+      "question": "Why is 160 DPI considered an 'Established Baseline' by Google?",
+      "answer": "It serves as a clean base for integer-ratio density buckets, allowing assets to scale without heavy distortion.",
+      "type": "mcq",
+      "topic": "Screen Density",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "The 160 dpi baseline allows for clean integer scaling (e.g., 2.0x, 3.0x, 4.0x) for various density buckets.",
+      "choices": [
+        "It was the resolution of the first iPhone.",
+        "It represents the maximum density a human eye can perceive.",
+        "It serves as a clean base for integer-ratio density buckets, allowing assets to scale without heavy distortion.",
+        "It is the average density of all Android tablets produced before 2015."
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_006",
+      "question": "True or False: Scalable pixels (sp) should be used for defining the width and height of Layout components to ensure they scale with user preferences.",
+      "answer": "false",
+      "type": "true_false",
+      "topic": "Screen Density",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "sp should be used for fonts, not layout dimensions. sp preserves user font settings for accessibility, whereas dp is used for the size of UI elements.",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_007",
+      "question": "In the context of DPI calculation, what does the Pythagorean theorem help determine?",
+      "answer": "The diagonal resolution in pixels.",
+      "type": "short_answer",
+      "topic": "Screen Density",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "The Pythagorean theorem is used to calculate the diagonal resolution (dp) based on the horizontal and vertical pixel counts of the screen,."
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_008",
+      "question": "Which density bucket corresponds to a density of approximately 640 dpi?",
+      "answer": "XXXHDPI",
+      "type": "mcq",
+      "topic": "Screen Density",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "XXXHDPI (extra extra extra high) is categorized at ~640 dpi.",
+      "choices": [
+        "HDPI",
+        "XHDPI",
+        "XXHDPI",
+        "XXXHDPI"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_009",
+      "question": "Explain the difference between 'dp' and 'sp' regarding user accessibility settings.",
+      "answer": "While both are density-independent, 'sp' (scalable pixels) specifically preserves a user's font size preferences, scaling text for users who require larger fonts for accessibility.",
+      "type": "short_answer",
+      "topic": "Screen Density",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "sp is essentially dp for fonts but includes a scaling factor based on the system's font size setting."
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_010",
+      "question": "Which XML namespace is typically used for standard Android attributes like 'android:id' or 'android:layout_width'?",
+      "answer": "xmlns:android",
+      "type": "mcq",
+      "topic": "XML Basics",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The 'xmlns:android' namespace is used for standard Android attributes,.",
+      "choices": [
+        "xmlns:android",
+        "xmlns:app",
+        "xmlns:tools",
+        "xmlns:layout"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_011",
+      "question": "What is the primary purpose of an XML namespace in Android layout files?",
+      "answer": "To avoid naming conflicts by distinguishing elements/attributes from different sources.",
+      "type": "mcq",
+      "topic": "XML Basics",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Namespaces provide a mechanism to distinguish attributes (like standard vs custom) that might otherwise share the same name.",
+      "choices": [
+        "To define the background color of the layout.",
+        "To avoid naming conflicts by distinguishing elements/attributes from different sources.",
+        "To link the XML file to a specific Kotlin class.",
+        "To determine the screen density bucket of the device."
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_012",
+      "question": "True or False: XML focuses more on the display and presentation of content rather than organizing and structuring data.",
+      "answer": "false",
+      "type": "true_false",
+      "topic": "XML Basics",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Unlike HTML, XML focuses on organizing and structuring data in a readable and hierarchical format rather than just displaying it,.",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_013",
+      "question": "In Android's MVC architecture, which component is represented by the XML layout files?",
+      "answer": "View",
+      "type": "mcq",
+      "topic": "MVC Pattern",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The View defines the UI using XML.",
+      "choices": [
+        "Model",
+        "View",
+        "Controller",
+        "Database"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_014",
+      "question": "Briefly describe the relationship between the View and the Controller in the MVC pattern.",
+      "answer": "The View (XML) defines the UI, and the Controller (Activity/Fragment) manages the interaction between the UI and the underlying data/logic (Model).",
+      "type": "short_answer",
+      "topic": "MVC Pattern",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The Controller acts as the middleman, referencing the View (e.g., via setContentView) to handle user interactions,."
+    },
+    {
+      "id": "md-chapter-1-pdf-core-intro-architecture_015",
+      "question": "True or False: An XML attribute is a key-value pair used inside an element to provide additional configuration, such as 'android:text'.",
+      "answer": "true",
+      "type": "true_false",
+      "topic": "XML Basics",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "Attributes help define properties like size, color, and text for UI components.",
+      "choices": [
+        "true",
+        "false"
+      ]
+    }
+  ]
+}

@@ -13,6 +13,13 @@ export function renderQuestion(q, isPractice, onAnswer) {
   questionText.className = 'question-text';
   questionText.textContent = q.question;
   container.appendChild(questionText);
+  
+  if (q.code_snippet && q.code_snippet.trim() !== '') {
+    const snippetEl = document.createElement('pre');
+    snippetEl.className = 'bg-surface text-light font-mono text-sm p-4 rounded-lg overflow-x-auto whitespace-pre-wrap mb-4';
+    snippetEl.textContent = q.code_snippet;
+    container.appendChild(snippetEl);
+  }
 
   const revealArea = createRevealArea(q);
 

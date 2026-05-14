@@ -1,0 +1,245 @@
+{
+  "source": "MD Chapter 1.pdf (Views & Resources)",
+  "items": [
+    {
+      "id": "md-chapter-1-pdf-views-resources_001",
+      "question": "Which attribute is used to force all characters in a TextView to be displayed in uppercase?",
+      "answer": "android:textAllCaps",
+      "type": "mcq",
+      "topic": "Common UI Views properties",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The android:textAllCaps attribute, when set to true, forces the text to be displayed in uppercase letters regardless of how it is written in the source string.",
+      "choices": [
+        "android:textStyle=\"uppercase\"",
+        "android:textAllCaps",
+        "android:capitalize",
+        "android:fontStyle=\"allCaps\""
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_002",
+      "question": "What is the correct syntax to reference a string named 'welcome_msg' defined in the strings.xml file?",
+      "answer": "@string/welcome_msg",
+      "type": "mcq",
+      "topic": "Values folder",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "In Android XML layouts, resources from the values folder are accessed using the '@' symbol followed by the resource type and name.",
+      "choices": [
+        "#string/welcome_msg",
+        "string.welcome_msg",
+        "@string/welcome_msg",
+        "R.string.welcome_msg"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_003",
+      "question": "A developer wants an ImageView to scale an image uniformly while preserving its aspect ratio so that it completely fills the view, even if it means cropping parts of the image. Which scaleType should be used?",
+      "answer": "centerCrop",
+      "type": "mcq",
+      "topic": "Common UI Views properties",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "CENTER_CROP scales the image uniformly while preserving aspect ratio so it completely fills the view, possibly cropping excess parts.",
+      "choices": [
+        "fitCenter",
+        "centerInside",
+        "centerCrop",
+        "matrix"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_004",
+      "question": "Predict the visual behavior of the following TextView if the text is longer than the screen width:",
+      "answer": "The text will be restricted to one line and end with '...'",
+      "type": "mcq",
+      "topic": "Common UI Views properties",
+      "difficulty": "medium",
+      "code_snippet": "<TextView\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"wrap_content\"\n    android:maxLines=\"1\"\n    android:ellipsize=\"end\"\n    android:text=\"This is a very long text that will definitely exceed the screen width.\" />",
+      "explanation": "Combining android:maxLines=\"1\" and android:ellipsize=\"end\" ensures the text stays on one line and displays three dots at the end if truncated.",
+      "choices": [
+        "The text will wrap to a second line",
+        "The text will be cut off abruptly at the edge",
+        "The text will be restricted to one line and end with '...'",
+        "The text will scroll horizontally like a marquee"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_005",
+      "question": "Identify the error in the following XML snippet for a password input field:",
+      "answer": "Using 'android:text' instead of 'android:hint' for placeholder text",
+      "type": "debug",
+      "topic": "Common UI Views properties",
+      "difficulty": "medium",
+      "code_snippet": "<EditText\n    android:id=\"@+id/pass_field\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"wrap_content\"\n    android:text=\"Enter Password\"\n    android:inputType=\"password\" />",
+      "explanation": "In an EditText, android:hint should be used for placeholder text that disappears when the user types. Using android:text would make 'Enter Password' the actual editable content."
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_006",
+      "question": "Correct the following XML code to properly use a dimension resource for the text size.",
+      "answer": "<TextView android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:textSize=\"@dimen/text_large\" />",
+      "type": "coding",
+      "topic": "Values folder",
+      "difficulty": "medium",
+      "code_snippet": "<TextView\n    android:layout_width=\"wrap_content\"\n    android:layout_height=\"wrap_content\"\n    android:textSize=\"24\" />",
+      "explanation": "Text size should include units (sp) or reference a resource from dimens.xml (e.g., @dimen/name). Hardcoding '24' without units is invalid."
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_007",
+      "question": "Which attribute allows an ImageView to resize itself to maintain its image's aspect ratio when its height or width is set to wrap_content?",
+      "answer": "android:adjustViewBounds",
+      "type": "mcq",
+      "topic": "Common UI Views properties",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "android:adjustViewBounds=\"true\" ensures the aspect ratio is maintained when resizing the ImageView, provided one dimension is set to wrap_content.",
+      "choices": [
+        "android:scaleType=\"fitXY\"",
+        "android:adjustViewBounds",
+        "android:keepAspectRatio",
+        "android:cropToPadding"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_008",
+      "question": "What happens if a developer sets 'android:visibility' to 'invisible' for a Button?",
+      "answer": "The button is not visible but still takes up space in the layout",
+      "type": "mcq",
+      "topic": "Common UI Views properties",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "View.INVISIBLE means the view is not visible but still occupies the same space it would if it were visible.",
+      "choices": [
+        "The button is completely removed from the layout",
+        "The button is not visible but still takes up space in the layout",
+        "The button becomes semi-transparent",
+        "The button is visible but cannot be clicked"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_009",
+      "question": "Find and fix the syntax error in this Button declaration:",
+      "answer": "Missing 'android:' prefix for layout_width and layout_height",
+      "type": "debug",
+      "topic": "Common UI Views properties",
+      "difficulty": "easy",
+      "code_snippet": "<Button\n    android:id=\"@+id/btn_submit\"\n    layout_width=\"match_parent\"\n    layout_height=\"wrap_content\"\n    android:text=\"Submit\" />",
+      "explanation": "Standard Android attributes like width and height must be prefixed with the 'android:' namespace."
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_010",
+      "question": "Write the XML code for a CheckBox that is checked by default and displays the text 'Accept Terms'.",
+      "answer": "<CheckBox android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:text=\"Accept Terms\" android:checked=\"true\" />",
+      "type": "coding",
+      "topic": "Common UI Views properties",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The android:text attribute sets the label, and android:checked=\"true\" sets the initial state."
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_011",
+      "question": "In the context of accessibility, what is the primary purpose of the 'android:contentDescription' attribute for an ImageView?",
+      "answer": "To provide a text description for screen readers",
+      "type": "mcq",
+      "topic": "Common UI Views properties",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "android:contentDescription is essential for accessibility as it provides a verbal description of the image for users with visual impairments using screen readers.",
+      "choices": [
+        "To define the title of the image",
+        "To provide a text description for screen readers",
+        "To show a caption below the image",
+        "To set the metadata of the image file"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_012",
+      "question": "Fix the error in this ImageView intended to display a background pattern that repeats.",
+      "answer": "The 'tileMode' attribute is for <bitmap> resources, not ImageView. Use a bitmap drawable as src.",
+      "type": "debug",
+      "topic": "Common UI Views properties",
+      "difficulty": "hard",
+      "code_snippet": "<ImageView\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:src=\"@drawable/pattern\"\n    android:tileMode=\"repeat\" />",
+      "explanation": "Repeating patterns are defined within a <bitmap> XML resource using android:tileMode=\"repeat\". An ImageView itself does not have a tileMode attribute; it simply displays the drawable provided to it [480, 222-224 (referenced context from Ch2)]."
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_013",
+      "question": "Which file in the values folder is specifically designed to store hexadecimal color values to encourage UI consistency?",
+      "answer": "colors.xml",
+      "type": "mcq",
+      "topic": "Values folder",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The colors.xml file is used to centralize and reuse color definitions across the app.",
+      "choices": [
+        "hex.xml",
+        "themes.xml",
+        "colors.xml",
+        "styles.xml"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_014",
+      "question": "Identify why using 'sp' is preferred over 'dp' for the 'android:textSize' property of a TextView.",
+      "answer": "sp scales based on user font size preferences for accessibility",
+      "type": "mcq",
+      "topic": "Common UI Views properties",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "While both are density-independent, 'sp' (scalable pixels) also factors in the system-wide font size scale chosen by the user for accessibility.",
+      "choices": [
+        "sp is more precise on high-density screens",
+        "sp is required for custom fonts",
+        "sp scales based on user font size preferences for accessibility",
+        "dp only works for layout dimensions, not text"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_015",
+      "question": "Write an XML snippet for an EditText that only accepts email addresses and displays 'Email' as a hint.",
+      "answer": "<EditText android:layout_width=\"match_parent\" android:layout_height=\"wrap_content\" android:hint=\"Email\" android:inputType=\"textEmailAddress\" />",
+      "type": "coding",
+      "topic": "Common UI Views properties",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "The android:inputType=\"textEmailAddress\" attribute configures the keyboard for email entry, and android:hint provides the placeholder."
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_016",
+      "question": "What is the result of using 'android:scaleType=\"centerInside\"' on an image that is smaller than the ImageView boundaries?",
+      "answer": "The image stays at its original size and is centered",
+      "type": "mcq",
+      "topic": "Common UI Views properties",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "CENTER_INSIDE scales the image down to fit if it's larger than the view, but if it's smaller, it remains at its original size and is centered without scaling up.",
+      "choices": [
+        "The image is stretched to fill the boundaries",
+        "The image stays at its original size and is centered",
+        "The image is cropped to fit the center",
+        "The image aspect ratio is ignored to fill the width"
+      ]
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_017",
+      "question": "Debug this ScrollView usage:",
+      "answer": "A ScrollView can only have one direct child view.",
+      "type": "debug",
+      "topic": "Common UI Views properties",
+      "difficulty": "hard",
+      "code_snippet": "<ScrollView\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\">\n    <Button\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"Button 1\" />\n    <Button\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"Button 2\" />\n</ScrollView>",
+      "explanation": "A ScrollView is a container that can hold only one direct child. Multiple views must be wrapped inside a single layout (like LinearLayout) which is then placed inside the ScrollView."
+    },
+    {
+      "id": "md-chapter-1-pdf-views-resources_018",
+      "question": "Code a vertical 'Space' view with a height of 50dp to be used between two buttons.",
+      "answer": "<Space android:layout_width=\"match_parent\" android:layout_height=\"50dp\" />",
+      "type": "coding",
+      "topic": "Common UI Views properties",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The Space view is an invisible component used to add gaps. Setting the height defines the vertical distance."
+    }
+  ]
+}

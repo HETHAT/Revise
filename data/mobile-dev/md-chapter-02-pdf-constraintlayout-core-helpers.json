@@ -1,0 +1,291 @@
+{
+  "source": "MD Chapter 02.pdf (ConstraintLayout Core & Helpers)",
+  "items": [
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_001",
+      "question": "What is the minimum number of constraints required for a child view in ConstraintLayout to function correctly at runtime?",
+      "answer": "Two (one horizontal and one vertical)",
+      "type": "mcq",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "According to the sources, child views must have at least one horizontal and one vertical constraint to work correctly.",
+      "choices": [
+        "One (any direction)",
+        "Two (one horizontal and one vertical)",
+        "Four (top, bottom, left, right)",
+        "None (it defaults to center)"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_002",
+      "question": "Which ConstraintLayout helper is used specifically to manage the visibility of multiple views simultaneously using a single reference ID?",
+      "answer": "Group",
+      "type": "mcq",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "Group is a helper used to control the visibility and elevation of multiple referenced views at once.",
+      "choices": [
+        "Layer",
+        "Barrier",
+        "Group",
+        "Flow"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_003",
+      "question": "What is the default styling for a chain in ConstraintLayout?",
+      "answer": "Spread",
+      "type": "mcq",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The sources state that 'Spread' is the default style where views are evenly distributed after accounting for margins.",
+      "choices": [
+        "Packed",
+        "Spread",
+        "Spread Inside",
+        "Weighted"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_004",
+      "question": "Which attribute is required to define the distance from the center view in circular positioning?",
+      "answer": "app:layout_constraintCircleRadius",
+      "type": "mcq",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The radius attribute defines the distance between the center of the base view and the center of the constrained view.",
+      "choices": [
+        "app:layout_constraintCircleAngle",
+        "app:layout_constraintCircleRadius",
+        "app:layout_constraintCircle",
+        "android:layout_margin"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_005",
+      "question": "How does a Barrier differ from a Guideline in ConstraintLayout?",
+      "answer": "A Barrier moves dynamically based on the size of its referenced views, while a Guideline is static.",
+      "type": "mcq",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Guidelines are static lines once defined, whereas Barriers adjust their position based on the dimensions of the views they reference.",
+      "choices": [
+        "A Guideline is only horizontal, while a Barrier is only vertical.",
+        "A Barrier moves dynamically based on the size of its referenced views, while a Guideline is static.",
+        "Guidelines can be seen by the user, but Barriers are invisible.",
+        "There is no difference; they are different names for the same tool."
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_006",
+      "question": "When using `app:layout_constraintDimensionRatio`, what must be true about the view's dimensions?",
+      "answer": "At least one dimension must be set to 0dp (match_constraints).",
+      "type": "mcq",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Dimension ratio requires at least one dimension to be 0dp so that it can be calculated relative to the other based on the ratio.",
+      "choices": [
+        "Both dimensions must be wrap_content.",
+        "Both dimensions must be set to fixed dp values.",
+        "At least one dimension must be set to 0dp (match_constraints).",
+        "The view must be part of a chain."
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_007",
+      "question": "Which Flow wrap mode causes views to be laid out in a grid-like table where elements in the same column are aligned?",
+      "answer": "aligned",
+      "type": "mcq",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "The 'aligned' wrap mode in Flow positions views in a structured grid format where items are aligned by columns.",
+      "choices": [
+        "chain",
+        "none",
+        "packed",
+        "aligned"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_008",
+      "question": "What happens if you set a view's width to `0dp` in ConstraintLayout but do not provide both start and end constraints?",
+      "answer": "The view will have a width of 0 and likely be invisible.",
+      "type": "mcq",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Setting a dimension to 0dp (match_constraints) tells the view to fill the space between its constraints; without both side constraints, there is no space to fill.",
+      "choices": [
+        "It will default to match_parent.",
+        "It will wrap its content automatically.",
+        "The view will have a width of 0 and likely be invisible.",
+        "It will throw a compilation error."
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_009",
+      "question": "In the Grid helper, which attribute is used to define that a specific view should occupy more than one row or column?",
+      "answer": "app:grid_spans",
+      "type": "mcq",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The grid_spans attribute offers the capability to span a widget across multiple rows and columns within the Grid helper.",
+      "choices": [
+        "app:grid_skips",
+        "app:grid_rowWeights",
+        "app:grid_spans",
+        "app:grid_orientation"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_010",
+      "question": "If you need to rotate and scale a group of buttons as a single unit using code, which helper is the best choice?",
+      "answer": "Layer",
+      "type": "mcq",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "Unlike Group, the Layer helper supports transformations such as rotation, scale, and translation for the referenced views.",
+      "choices": [
+        "Group",
+        "Flow",
+        "Layer",
+        "Grid"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_011",
+      "question": "A chain is considered 'Weighted' when its views are set to which dimension value?",
+      "answer": "0dp (match_constraints)",
+      "type": "mcq",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Weighted chains require views to be set to 0dp so that the remaining space can be distributed according to the weight attributes.",
+      "choices": [
+        "wrap_content",
+        "match_parent",
+        "0dp (match_constraints)",
+        "Fixed dp values"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_012",
+      "question": "Write the XML for a Button that is centered horizontally in the parent and constrained to the top of the parent.",
+      "answer": "<Button \n    android:id=\"@+id/btn_center\" \n    android:layout_width=\"wrap_content\" \n    android:layout_height=\"wrap_content\" \n    app:layout_constraintStart_toStartOf=\"parent\" \n    app:layout_constraintEnd_toEndOf=\"parent\" \n    app:layout_constraintTop_toTopOf=\"parent\" />",
+      "type": "coding",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "Centering horizontally is achieved by constraining both the start and end of the view to the start and end of the parent."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_013",
+      "question": "Create an invisible horizontal Guideline that is positioned 30% from the top of the screen.",
+      "answer": "<androidx.constraintlayout.widget.Guideline \n    android:id=\"@+id/guideline_h\" \n    android:layout_width=\"wrap_content\" \n    android:layout_height=\"wrap_content\" \n    android:orientation=\"horizontal\" \n    app:layout_constraintGuide_percent=\"0.3\" />",
+      "type": "coding",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "A horizontal guideline uses the orientation attribute and layout_constraintGuide_percent for percentage-based placement."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_014",
+      "question": "Define a Barrier that stays to the right of two TextViews (`tvName` and `tvTitle`).",
+      "answer": "<androidx.constraintlayout.widget.Barrier \n    android:id=\"@+id/barrier_right\" \n    android:layout_width=\"wrap_content\" \n    android:layout_height=\"wrap_content\" \n    app:barrierDirection=\"right\" \n    app:constraint_referenced_ids=\"tvName, tvTitle\" />",
+      "type": "coding",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The barrierDirection=\"right\" ensures the barrier stays to the right of the longest referenced view in the IDs list."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_015",
+      "question": "Write the XML to place a view (`btn_satellite`) 100dp away from `blackCircle` at a 45-degree angle.",
+      "answer": "<View \n    android:id=\"@+id/btn_satellite\" \n    android:layout_width=\"50dp\" \n    android:layout_height=\"50dp\" \n    app:layout_constraintCircle=\"@id/blackCircle\" \n    app:layout_constraintCircleRadius=\"100dp\" \n    app:layout_constraintCircleAngle=\"45\" />",
+      "type": "coding",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Circular positioning uses constraintCircle for the target ID, Radius for distance, and Angle for the degree."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_016",
+      "question": "Code a horizontal Flow helper that references `btn1`, `btn2`, and `btn3`, ensuring that if they exceed the screen width, they wrap using the 'chain' mode.",
+      "answer": "<androidx.constraintlayout.helper.widget.Flow \n    android:layout_width=\"match_parent\" \n    android:layout_height=\"wrap_content\" \n    app:constraint_referenced_ids=\"btn1, btn2, btn3\" \n    app:flow_wrapMode=\"chain\" />",
+      "type": "coding",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "The flow_wrapMode=\"chain\" allows elements to wrap onto new lines while maintaining chain behavior."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_017",
+      "question": "Write a code snippet for an ImageView that fills 70% of the screen width and maintains a 4:3 aspect ratio.",
+      "answer": "<ImageView \n    android:layout_width=\"0dp\" \n    android:layout_height=\"0dp\" \n    app:layout_constraintWidth_percent=\"0.7\" \n    app:layout_constraintDimensionRatio=\"4:3\" \n    app:layout_constraintStart_toStartOf=\"parent\" \n    app:layout_constraintEnd_toEndOf=\"parent\" \n    app:layout_constraintTop_toTopOf=\"parent\" />",
+      "type": "coding",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "To use width percentage and ratio together, both dimensions should be 0dp so constraints can determine the size."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_018",
+      "question": "Identify the error: A Button is floating at the top-left (0,0) of the screen despite having `app:layout_constraintStart_toStartOf=\"parent\"` and `app:layout_constraintEnd_toEndOf=\"parent\"`.",
+      "answer": "The Button is missing a vertical constraint.",
+      "type": "debug",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "easy",
+      "code_snippet": "<Button \n    android:layout_width=\"wrap_content\" \n    android:layout_height=\"wrap_content\" \n    app:layout_constraintStart_toStartOf=\"parent\" \n    app:layout_constraintEnd_toEndOf=\"parent\" />",
+      "explanation": "Every view in ConstraintLayout must have at least one horizontal and one vertical constraint; without a vertical one, it defaults to the top."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_019",
+      "question": "Debug this bias setting: The Button remains perfectly centered horizontally despite the bias being set to 0.1.",
+      "answer": "The width is set to 'match_parent'.",
+      "type": "debug",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "medium",
+      "code_snippet": "<Button \n    android:layout_width=\"match_parent\" \n    android:layout_height=\"wrap_content\" \n    app:layout_constraintHorizontal_bias=\"0.1\" \n    app:layout_constraintStart_toStartOf=\"parent\" \n    app:layout_constraintEnd_toEndOf=\"parent\" />",
+      "explanation": "Bias only works when there is 'available space' to move the view. If the width is match_parent, the view fills the entire space and cannot be shifted."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_020",
+      "question": "Why is this chain not working? (The buttons are not linked correctly).",
+      "answer": "The chain is missing bi-directional constraints; Button 2 must point back to Button 1.",
+      "type": "debug",
+      "topic": "ConstraintLayout Core",
+      "difficulty": "medium",
+      "code_snippet": "<!-- Button 1 -->\n<Button \n    android:id=\"@+id/b1\" \n    app:layout_constraintEnd_toStartOf=\"@id/b2\" />\n<!-- Button 2 -->\n<Button \n    android:id=\"@+id/b2\" \n    app:layout_constraintEnd_toEndOf=\"parent\" />",
+      "explanation": "A chain is defined by bi-directional position constraints between views. Here, b2 needs a start_toEndOf=\"@id/b1\" constraint to complete the chain."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_021",
+      "question": "Identify why the following Barrier is causing UI overlap: A description TextView is constrained to the right of a Barrier, but the Barrier is set to 'left'.",
+      "answer": "The barrierDirection should be 'right' (or 'end') to prevent overlap with views placed to its right.",
+      "type": "debug",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "medium",
+      "code_snippet": "<androidx.constraintlayout.widget.Barrier \n    android:id=\"@+id/barrier\" \n    app:barrierDirection=\"left\" \n    app:constraint_referenced_ids=\"tv1, tv2\" />",
+      "explanation": "If the goal is to align content to the right of two views, the barrier must be placed on the right edge of those views."
+    },
+    {
+      "id": "md-chapter-02-pdf-constraintlayout-core-helpers_022",
+      "question": "A developer wants to hide three buttons during a loading state but the buttons are still visible even after calling `group.setVisibility(View.GONE)` in code. Find the error in the XML.",
+      "answer": "The Group helper is missing the 'app:constraint_referenced_ids' attribute.",
+      "type": "debug",
+      "topic": "ConstraintLayout Helpers",
+      "difficulty": "hard",
+      "code_snippet": "<androidx.constraintlayout.widget.Group \n    android:id=\"@+id/group\" \n    android:layout_width=\"wrap_content\" \n    android:layout_height=\"wrap_content\" />\n<Button android:id=\"@+id/b1\" ... />",
+      "explanation": "A Group only controls views that are explicitly listed in its referenced IDs attribute."
+    }
+  ]
+}

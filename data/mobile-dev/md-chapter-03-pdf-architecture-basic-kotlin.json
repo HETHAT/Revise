@@ -1,0 +1,221 @@
+{
+  "source": "MD Chapter 03.pdf (Architecture & Basic Kotlin)",
+  "items": [
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_001",
+      "question": "Which layer of the Android architecture is responsible for low-level system operations such as memory management and device drivers (e.g., WIFI and Camera drivers)?",
+      "answer": "Linux Kernel",
+      "type": "mcq",
+      "topic": "Android Layered Architecture",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The Linux Kernel is the foundation of Android, managing low-level operations and essential device drivers.",
+      "choices": [
+        "Applications",
+        "Java API Framework",
+        "Native Libraries",
+        "Linux Kernel"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_002",
+      "question": "What is the key difference between the Dalvik Virtual Machine (DVM) and the Android Runtime (ART)?",
+      "answer": "ART compiles apps once during installation, while Dalvik compiles them every time they run.",
+      "type": "mcq",
+      "topic": "Android Layered Architecture",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "ART replaced DVM in Android 5.0 and introduced ahead-of-time compilation during installation for better performance.",
+      "choices": [
+        "Dalvik is used for Kotlin, while ART is used for Java.",
+        "ART compiles apps once during installation, while Dalvik compiles them every time they run.",
+        "Dalvik supports 64-bit systems, while ART only supports 32-bit.",
+        "ART is used in Android versions before 5.0."
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_003",
+      "question": "Which Android Framework component is used to manage the application lifecycle and navigation fallback?",
+      "answer": "Activity Manager",
+      "type": "mcq",
+      "topic": "Android Layered Architecture",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "The Activity Manager handles the lifecycle of applications and the common navigation stack.",
+      "choices": [
+        "Resource Manager",
+        "Content Providers",
+        "Activity Manager",
+        "Package Manager"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_004",
+      "question": "True or False: The Android Runtime (ART) became the default runtime starting with Android 5.0 (Lollipop).",
+      "answer": "true",
+      "type": "true_false",
+      "topic": "Android Layered Architecture",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "ART was introduced as the default to replace DVM starting from Android 5.0.",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_005",
+      "question": "Which Native Library is responsible for local database storage in Android?",
+      "answer": "SQLite",
+      "type": "mcq",
+      "topic": "Android Layered Architecture",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "SQLite is the native C/C++ library provided for managing local databases.",
+      "choices": [
+        "WebKit",
+        "OpenGL ES",
+        "SQLite",
+        "Media Framework"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_006",
+      "question": "In Kotlin, which keyword is used to declare a read-only (immutable) variable?",
+      "answer": "val",
+      "type": "mcq",
+      "topic": "Kotlin Core basics",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The 'val' keyword is used for immutable variables that cannot be reassigned once created.",
+      "choices": [
+        "var",
+        "const",
+        "val",
+        "let"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_007",
+      "question": "What does it mean for Kotlin to be a 'statically typed' language?",
+      "answer": "The type of every variable is known at compile time.",
+      "type": "mcq",
+      "topic": "Kotlin Core basics",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Static typing means the compiler checks and knows the type of variables before the program execution.",
+      "choices": [
+        "Variables can change types during runtime.",
+        "Types are only determined when the app runs.",
+        "The type of every variable is known at compile time.",
+        "Variables do not need types."
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_008",
+      "question": "True or False: Kotlin is fully interoperable with Java, meaning they can work together in the same project.",
+      "answer": "true",
+      "type": "true_false",
+      "topic": "Kotlin Core basics",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "One of Kotlin's key features is its seamless interoperability with existing Java code.",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_009",
+      "question": "Spot the error in the following Kotlin code regarding null safety:",
+      "answer": "A non-nullable String cannot be assigned a null value.",
+      "type": "debug",
+      "topic": "Kotlin Core basics",
+      "difficulty": "medium",
+      "code_snippet": "var name: String = \"Alice\"\nname = null",
+      "explanation": "In Kotlin, types are non-nullable by default. To allow null, you must use a question mark (e.g., String?)."
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_010",
+      "question": "Identify the compilation error in the following loop:",
+      "answer": "The variable 'limit' is declared as 'val' and cannot be reassigned.",
+      "type": "debug",
+      "topic": "Kotlin Core basics",
+      "difficulty": "hard",
+      "code_snippet": "val limit = 5\nfor (i in 1..limit) {\n    limit = limit + i\n    println(i)\n}",
+      "explanation": "Since 'limit' is an immutable variable (val), attempting to modify its value inside the loop results in a compile-time error."
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_011",
+      "question": "How does the 'if' statement in Kotlin differ from Java?",
+      "answer": "In Kotlin, 'if' is an expression that can return a value.",
+      "type": "mcq",
+      "topic": "Control Flow",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "In Kotlin, 'if' can be used to assign a value to a variable, similar to the ternary operator in other languages.",
+      "choices": [
+        "Kotlin does not support 'else if'.",
+        "In Kotlin, 'if' is an expression that can return a value.",
+        "Kotlin requires parentheses only for the 'else' block.",
+        "There is no difference."
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_012",
+      "question": "Which log level has the lowest priority in the Android Log class?",
+      "answer": "Log.v (Verbose)",
+      "type": "mcq",
+      "topic": "Control Flow",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "Log.v (Verbose) is the lowest priority, while Log.e (Error) is the highest.",
+      "choices": [
+        "Log.d (Debug)",
+        "Log.e (Error)",
+        "Log.v (Verbose)",
+        "Log.w (Warning)"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_013",
+      "question": "Predict the output of the following range loop:",
+      "answer": "1234",
+      "type": "mcq",
+      "topic": "Control Flow",
+      "difficulty": "medium",
+      "code_snippet": "for (i in 1 until 5) {\n    print(i)\n}",
+      "explanation": "The 'until' keyword creates a range that excludes the end value.",
+      "choices": [
+        "12345",
+        "1234",
+        "01234",
+        "54321"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_014",
+      "question": "True or False: The 'when' expression in Kotlin can only be used with discrete integer values like a traditional switch statement.",
+      "answer": "false",
+      "type": "true_false",
+      "topic": "Control Flow",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Kotlin's 'when' is powerful and can check ranges, types, and multiple conditions.",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "id": "md-chapter-03-pdf-architecture-basic-kotlin_015",
+      "question": "Find the logical error in this range countdown:",
+      "answer": "The loop will not execute because '..' only works for ascending ranges.",
+      "type": "debug",
+      "topic": "Control Flow",
+      "difficulty": "hard",
+      "code_snippet": "for (i in 5..1) {\n    println(i)\n}",
+      "explanation": "To count down, Kotlin requires the 'downTo' keyword. The '..' operator expects the first number to be smaller than the second."
+    }
+  ]
+}

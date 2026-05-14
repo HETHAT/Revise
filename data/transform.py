@@ -43,7 +43,9 @@ def transform_item(raw: dict, item_id: str) -> dict:
         "type": raw.get("type", ""),
         "topic": raw.get("topic", ""),
         "difficulty": raw.get("difficulty", ""),
+        "code_snippet": raw.get("code_snippet", ""),
     }
+    
 
     # Unify justification / solution_outline -> explanation
     explanation = raw.get("justification") or raw.get("solution_outline") or raw.get("explanation")

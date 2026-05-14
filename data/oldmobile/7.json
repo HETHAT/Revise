@@ -1,0 +1,182 @@
+{
+  "source": "MD Chapter 03.pdf (Advanced Kotlin: Functions & OOP)",
+  "items": [
+    {
+      "question": "When a lambda has only one parameter, what is the implicit name Kotlin provides for it so you don't have to declare it explicitly?",
+      "code_snippet": "",
+      "answer": "it",
+      "type": "mcq",
+      "topic": "Functions and Lambdas",
+      "difficulty": "easy",
+      "choices": ["this", "it", "self", "args"],
+      "explanation": "In Kotlin, if a lambda has only one parameter, it is automatically named 'it' by the compiler."
+    },
+    {
+      "question": "Which keyword is used to create a Singleton—a class that has only one instance in the entire application?",
+      "code_snippet": "",
+      "answer": "object",
+      "type": "mcq",
+      "topic": "OOP in Kotlin",
+      "difficulty": "easy",
+      "choices": ["class", "singleton", "static", "object"],
+      "explanation": "The 'object' keyword in Kotlin is used to declare a singleton."
+    },
+    {
+      "question": "How are parameters and return types defined in a standard Kotlin function declaration?",
+      "code_snippet": "",
+      "answer": "fun name(param: Type): ReturnType",
+      "type": "mcq",
+      "topic": "Functions and Lambdas",
+      "difficulty": "easy",
+      "choices": ["function name(param: Type): Type", "fun name(Type param): Type", "fun name(param: Type): ReturnType", "fun name(param Type) -> ReturnType"],
+      "explanation": "Kotlin functions use the 'fun' keyword, followed by parameters in 'name: Type' format and the return type after a colon."
+    },
+    {
+      "question": "Write a lambda expression named 'square' that takes an Int as a parameter and returns its square value.",
+      "code_snippet": "val square: (Int) -> Int = { ... }",
+      "answer": "val square: (Int) -> Int = { it * it }",
+      "type": "coding",
+      "topic": "Functions and Lambdas",
+      "difficulty": "easy",
+      "explanation": "Using the implicit 'it' parameter, the lambda can be concisely written as { it * it }."
+    },
+    {
+      "question": "What is the primary difference between the 'apply' and 'also' scope functions regarding their return values?",
+      "code_snippet": "",
+      "answer": "Both return the context object itself.",
+      "type": "mcq",
+      "topic": "Scope Functions",
+      "difficulty": "medium",
+      "choices": [
+        "apply returns the object, also returns the lambda result.",
+        "apply returns the lambda result, also returns the object.",
+        "Both return the context object itself.",
+        "Both return the result of the last expression."
+      ],
+      "explanation": "Both 'apply' and 'also' return the context object (the receiver), whereas 'let', 'run', and 'with' return the result of the lambda."
+    },
+    {
+      "question": "Which scope function is typically used for null-safety checks to execute a block only if the object is not null, using 'it' as the reference?",
+      "code_snippet": "",
+      "answer": "let",
+      "type": "mcq",
+      "topic": "Scope Functions",
+      "difficulty": "medium",
+      "choices": ["with", "apply", "let", "run"],
+      "explanation": "The 'let' function is frequently used with the safe call operator (?.) to perform operations on non-null objects using 'it'."
+    },
+    {
+      "question": "In the 'reduce' higher-order function, what value is used as the initial value for the accumulator ('acc')?",
+      "code_snippet": "",
+      "answer": "The first element of the collection",
+      "type": "mcq",
+      "topic": "Functions and Lambdas",
+      "difficulty": "medium",
+      "choices": ["0", "1", "The first element of the collection", "A null value"],
+      "explanation": "In Kotlin, 'reduce' uses the first element of the list as the initial value of the accumulator."
+    },
+    {
+      "question": "What is the specific purpose of the 'init' block within a Kotlin class?",
+      "code_snippet": "",
+      "answer": "To execute initialization logic immediately after the primary constructor.",
+      "type": "mcq",
+      "topic": "OOP in Kotlin",
+      "difficulty": "medium",
+      "choices": [
+        "To define the primary constructor.",
+        "To execute initialization logic immediately after the primary constructor.",
+        "To declare all variables used in the class.",
+        "To calculate getters and setters."
+      ],
+      "explanation": "The 'init' block is called during object creation to run code alongside the primary constructor."
+    },
+    {
+      "question": "Identify and fix the compilation error in the following lambda expression for filtering a list of integers.",
+      "code_snippet": "val numbers = listOf(1, 2, 3, 4)\nval evens = numbers.filter { x -> x % 2 == 0 }",
+      "answer": "The code is actually correct, but if 'it' was intended without declaration, it should be: numbers.filter { it % 2 == 0 }",
+      "type": "debug",
+      "topic": "Functions and Lambdas",
+      "difficulty": "medium",
+      "explanation": "The provided snippet is syntactically valid because 'x' is explicitly named. A common error is trying to use 'x' without the 'x ->' declaration, in which case 'it' must be used instead."
+    },
+    {
+      "question": "Identify the error in this secondary constructor definition.",
+      "code_snippet": "class User(val id: Int) {\n    var name: String = \"\"\n    constructor(id: Int, name: String) {\n        this.name = name\n    }\n}",
+      "answer": "The secondary constructor must delegate to the primary constructor using 'this(id)'.",
+      "type": "debug",
+      "topic": "OOP in Kotlin",
+      "difficulty": "medium",
+      "explanation": "If a class has a primary constructor, every secondary constructor must delegate to it."
+    },
+    {
+      "question": "Use higher-order functions to take a list of numbers, filter out those less than 10, and then double each remaining number.",
+      "code_snippet": "val nums = listOf(5, 12, 8, 20)\nval result = ...",
+      "answer": "val result = nums.filter { it >= 10 }.map { it * 2 }",
+      "type": "coding",
+      "topic": "Functions and Lambdas",
+      "difficulty": "medium",
+      "explanation": "The 'filter' function selects elements based on the condition, and 'map' transforms each element."
+    },
+    {
+      "question": "Write a Kotlin class named 'Student' with properties 'name' and 'age'. Add a computed property 'isSenior' that returns true if the age is 20 or older.",
+      "code_snippet": "",
+      "answer": "class Student(val name: String, val age: Int) {\n    val isSenior: Boolean\n        get() = age >= 20\n}",
+      "type": "coding",
+      "topic": "OOP in Kotlin",
+      "difficulty": "medium",
+      "explanation": "Computed properties use a custom 'get()' to calculate their value dynamically."
+    },
+    {
+      "question": "When defining a custom setter for a property, what special keyword must be used to update the property's value without causing a recursive call?",
+      "code_snippet": "",
+      "answer": "field",
+      "type": "mcq",
+      "topic": "OOP in Kotlin",
+      "difficulty": "hard",
+      "choices": ["this", "value", "field", "backing"],
+      "explanation": "The 'field' identifier refers to the actual backing variable of the property."
+    },
+    {
+      "question": "In a 'when' expression used with a 'sealed class', what is the advantage regarding the 'else' branch?",
+      "code_snippet": "",
+      "answer": "The 'else' branch is not required if all subclasses are covered.",
+      "type": "mcq",
+      "topic": "OOP in Kotlin",
+      "difficulty": "hard",
+      "choices": [
+        "The 'else' branch becomes mandatory.",
+        "The 'else' branch is only required for data classes.",
+        "The 'else' branch is not required if all subclasses are covered.",
+        "Sealed classes cannot be used with 'when'."
+      ],
+      "explanation": "Because sealed classes represent a restricted hierarchy, the compiler can verify that all possible types are handled, making 'else' redundant."
+    },
+    {
+      "question": "Explain the output/result of the following code and identify the likely logical error.",
+      "code_snippet": "val name: String? = \"Android\"\nval len = name?.let { \n    it.uppercase()\n    it.length\n    println(\"Done\")\n}",
+      "answer": "The variable 'len' will hold 'Unit' because println is the last expression.",
+      "type": "debug",
+      "topic": "Scope Functions",
+      "difficulty": "hard",
+      "explanation": "The scope functions 'let', 'run', and 'with' return only the result of the last expression in the block. Here, 'println' returns 'Unit', so the previous calculations are ignored as return values."
+    },
+    {
+      "question": "Identify why this function call results in a compilation error.",
+      "code_snippet": "fun register(name: String, email: String = \"N/A\", age: Int) { ... }\n\nregister(\"Ali\", 25)",
+      "answer": "The arguments are out of order and 'age' is missing its identifier or the 'email' string is skipped.",
+      "type": "debug",
+      "topic": "Functions and Lambdas",
+      "difficulty": "hard",
+      "explanation": "Kotlin parameters must be passed in order unless named arguments are used. Here, 25 is passed where the String 'email' is expected, and 'age' is not provided."
+    },
+    {
+      "question": "Write a one-line algorithm that takes a list of strings and returns a single string containing all items that have more than 3 characters, converted to lowercase, and separated by semicolons.",
+      "code_snippet": "val items = listOf(\"App\", \"Kotlin\", \"UI\", \"Java\")",
+      "answer": "items.filter { it.length > 3 }.map { it.lowercase() }.joinToString(\"; \")",
+      "type": "coding",
+      "topic": "Functions and Lambdas",
+      "difficulty": "hard",
+      "explanation": "Chaining 'filter', 'map', and 'joinToString' allows for complex data processing in a single readable line."
+    }
+  ]
+}

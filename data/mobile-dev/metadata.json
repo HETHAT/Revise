@@ -1,0 +1,267 @@
+{
+  "total_files": 11,
+  "total_items": 217,
+  "all_types": [
+    "coding",
+    "debug",
+    "fill_blank",
+    "mcq",
+    "short_answer",
+    "trace",
+    "true_false"
+  ],
+  "all_difficulties": [
+    "easy",
+    "hard",
+    "medium"
+  ],
+  "all_topics": [
+    "Activity Lifecycle States",
+    "Android Layered Architecture",
+    "Android Process Priority hierarchy",
+    "Common UI Views properties",
+    "ConstraintLayout Core",
+    "ConstraintLayout Helpers",
+    "Control Flow",
+    "Drawable Resources",
+    "Explicit and Implicit Intents",
+    "FrameLayout",
+    "Functions and Lambdas",
+    "Gradle: Build automation, Dependency management",
+    "GridLayout",
+    "InstanceState and Bundle",
+    "Intent Filters and Manifest declarations",
+    "Kotlin Core basics",
+    "LinearLayout",
+    "MVC Pattern",
+    "Mock Exam",
+    "OOP in Kotlin",
+    "Passing Data between components",
+    "Past Exam",
+    "RelativeLayout",
+    "Resource Qualifiers",
+    "Scope Functions",
+    "Screen Density",
+    "TableLayout",
+    "Values folder",
+    "View Inflation: XML Parsing, LayoutInflater",
+    "XML Basics"
+  ],
+  "sources": [
+    {
+      "source": "MD Chapter 02.pdf (ConstraintLayout Core & Helpers)",
+      "filename": "md-chapter-02-pdf-constraintlayout-core-helpers.json",
+      "item_count": 22,
+      "types": [
+        "coding",
+        "debug",
+        "mcq"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "ConstraintLayout Core",
+        "ConstraintLayout Helpers"
+      ]
+    },
+    {
+      "source": "MD Chapter 02.pdf (Drawables & Qualifiers)",
+      "filename": "md-chapter-02-pdf-drawables-qualifiers.json",
+      "item_count": 16,
+      "types": [
+        "coding",
+        "debug",
+        "mcq"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Drawable Resources",
+        "Resource Qualifiers"
+      ]
+    },
+    {
+      "source": "MD Chapter 02.pdf (Standard ViewGroups)",
+      "filename": "md-chapter-02-pdf-standard-viewgroups.json",
+      "item_count": 22,
+      "types": [
+        "coding",
+        "debug",
+        "mcq"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "FrameLayout",
+        "GridLayout",
+        "LinearLayout",
+        "RelativeLayout",
+        "TableLayout"
+      ]
+    },
+    {
+      "source": "MD Chapter 03.pdf (Advanced Kotlin: Functions & OOP)",
+      "filename": "md-chapter-03-pdf-advanced-kotlin-functions-oop.json",
+      "item_count": 17,
+      "types": [
+        "coding",
+        "debug",
+        "mcq"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Functions and Lambdas",
+        "OOP in Kotlin",
+        "Scope Functions"
+      ]
+    },
+    {
+      "source": "MD Chapter 03.pdf (Architecture & Basic Kotlin)",
+      "filename": "md-chapter-03-pdf-architecture-basic-kotlin.json",
+      "item_count": 15,
+      "types": [
+        "debug",
+        "mcq",
+        "true_false"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Android Layered Architecture",
+        "Control Flow",
+        "Kotlin Core basics"
+      ]
+    },
+    {
+      "source": "MD Chapter 04.pdf",
+      "filename": "md-chapter-04.json",
+      "item_count": 15,
+      "types": [
+        "coding",
+        "mcq",
+        "trace"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Activity Lifecycle States",
+        "Android Process Priority hierarchy",
+        "InstanceState and Bundle",
+        "View Inflation: XML Parsing, LayoutInflater"
+      ]
+    },
+    {
+      "source": "MD Chapter 05.pdf",
+      "filename": "md-chapter-05.json",
+      "item_count": 18,
+      "types": [
+        "coding",
+        "debug",
+        "mcq"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Explicit and Implicit Intents",
+        "Gradle: Build automation, Dependency management",
+        "Intent Filters and Manifest declarations",
+        "Passing Data between components"
+      ]
+    },
+    {
+      "source": "MD Chapter 1.pdf (Core Intro & Architecture)",
+      "filename": "md-chapter-1-pdf-core-intro-architecture.json",
+      "item_count": 15,
+      "types": [
+        "mcq",
+        "short_answer",
+        "true_false"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "MVC Pattern",
+        "Screen Density",
+        "XML Basics"
+      ]
+    },
+    {
+      "source": "MD Chapter 1.pdf (Views & Resources)",
+      "filename": "md-chapter-1-pdf-views-resources.json",
+      "item_count": 18,
+      "types": [
+        "coding",
+        "debug",
+        "mcq"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Common UI Views properties",
+        "Values folder"
+      ]
+    },
+    {
+      "source": "MobileExam2025.pdf",
+      "filename": "mobileexam2025.json",
+      "item_count": 39,
+      "types": [
+        "fill_blank",
+        "mcq",
+        "short_answer"
+      ],
+      "difficulties": [
+        "medium"
+      ],
+      "topics": [
+        "Past Exam"
+      ]
+    },
+    {
+      "source": "Mock Exam (Generated)",
+      "filename": "mock-exam-generated.json",
+      "item_count": 20,
+      "types": [
+        "coding",
+        "mcq",
+        "short_answer"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ],
+      "topics": [
+        "Mock Exam"
+      ]
+    }
+  ]
+}

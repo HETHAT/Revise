@@ -1,0 +1,303 @@
+{
+  "source": "MD Chapter 02.pdf (Standard ViewGroups)",
+  "items": [
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_001",
+      "question": "What is the default orientation of a LinearLayout if the attribute is not explicitly defined?",
+      "answer": "horizontal",
+      "type": "mcq",
+      "topic": "LinearLayout",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "In Android, the default orientation for a LinearLayout is horizontal.",
+      "choices": [
+        "vertical",
+        "horizontal",
+        "grid",
+        "stack"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_002",
+      "question": "In a horizontal LinearLayout, two buttons have layout_weight values of 1 and 3 respectively. If both have layout_width='0dp', what percentage of the width does the second button occupy?",
+      "answer": "75%",
+      "type": "mcq",
+      "topic": "LinearLayout",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The total weight is 1 + 3 = 4. The second button receives 3/4 of the available space, which is 75%.",
+      "choices": [
+        "25%",
+        "33.3%",
+        "50%",
+        "75%"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_003",
+      "question": "Which attribute is used to position the content (like text or an icon) inside a specific View?",
+      "answer": "android:gravity",
+      "type": "mcq",
+      "topic": "LinearLayout",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "Gravity defines how the content is positioned inside a view, whereas layout_gravity defines how the view itself is positioned relative to its parent.",
+      "choices": [
+        "android:layout_gravity",
+        "android:gravity",
+        "android:orientation",
+        "android:alignment"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_004",
+      "question": "How does FrameLayout handle multiple child views by default?",
+      "answer": "They are stacked on top of each other",
+      "type": "mcq",
+      "topic": "FrameLayout",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "FrameLayout is used to display a single child or stack multiple children on top of each other, with the last defined view appearing on top.",
+      "choices": [
+        "They are arranged side-by-side",
+        "They are arranged vertically",
+        "They are stacked on top of each other",
+        "They are distributed evenly"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_005",
+      "question": "Which RelativeLayout attribute is used to place a view directly below another view?",
+      "answer": "android:layout_below",
+      "type": "mcq",
+      "topic": "RelativeLayout",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The android:layout_below attribute positions a view relative to the bottom edge of another view.",
+      "choices": [
+        "android:layout_under",
+        "android:layout_alignParentBottom",
+        "android:layout_below",
+        "android:layout_toBottomOf"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_006",
+      "question": "Predict the behavior of this GridLayout: orientation='vertical', rowCount='2', columnCount='3'. If you add 4 views, how will they be arranged?",
+      "answer": "2 rows, 2 columns filled vertically",
+      "type": "mcq",
+      "topic": "GridLayout",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "In vertical orientation, the grid fills the first column (rows 0 and 1) before moving to the next column. 4 views would fill column 0 and column 1.",
+      "choices": [
+        "2 rows, 2 columns filled horizontally",
+        "2 rows, 2 columns filled vertically",
+        "1 row, 4 columns",
+        "4 rows, 1 column"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_007",
+      "question": "In TableLayout, which attribute allows a specific column to expand and consume all remaining horizontal space?",
+      "answer": "android:stretchColumns",
+      "type": "mcq",
+      "topic": "TableLayout",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The android:stretchColumns attribute in TableLayout identifies which columns should stretch to fill available space.",
+      "choices": [
+        "android:layout_weight",
+        "android:stretchColumns",
+        "android:expandColumns",
+        "android:layout_span"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_008",
+      "question": "What are the default dimensions of a TableRow?",
+      "answer": "match_parent width, wrap_content height",
+      "type": "mcq",
+      "topic": "TableLayout",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "A TableRow is always match_parent in width and wrap_content in height.",
+      "choices": [
+        "wrap_content width, wrap_content height",
+        "match_parent width, match_parent height",
+        "match_parent width, wrap_content height",
+        "0dp width, wrap_content height"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_009",
+      "question": "To use layout_weight correctly in a vertical LinearLayout, what should the android:layout_height be set to for the weighted views?",
+      "answer": "0dp",
+      "type": "mcq",
+      "topic": "LinearLayout",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "For vertical orientation, layout_weight affects height, so layout_height should be set to 0dp to allow the weight to calculate the space.",
+      "choices": [
+        "match_parent",
+        "wrap_content",
+        "0dp",
+        "match_height"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_010",
+      "question": "Which RelativeLayout attribute aligns the right edge of view A with the right edge of view B?",
+      "answer": "android:layout_alignRight",
+      "type": "mcq",
+      "topic": "RelativeLayout",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "layout_alignRight aligns the edges of two views, whereas layout_toRightOf places one view next to the other.",
+      "choices": [
+        "android:layout_toRightOf",
+        "android:layout_alignRight",
+        "android:layout_alignParentRight",
+        "android:layout_centerInParent"
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_011",
+      "question": "In TableLayout, if you want to hide the second column of a table, which attribute should you use?",
+      "answer": "android:collapseColumns=\"1\"",
+      "type": "mcq",
+      "topic": "TableLayout",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "The android:collapseColumns attribute uses zero-based indexing to hide columns.",
+      "choices": [
+        "android:visibility=\"gone\"",
+        "android:stretchColumns=\"0\"",
+        "android:collapseColumns=\"1\"",
+        "android:layout_span=\"0\""
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_012",
+      "question": "In a GridLayout, how do you make a single view occupy the space of three columns?",
+      "answer": "android:layout_columnSpan=\"3\"",
+      "type": "mcq",
+      "topic": "GridLayout",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "layout_columnSpan allows a view to span across multiple columns in a grid.",
+      "choices": [
+        "android:columnCount=\"3\"",
+        "android:layout_columnWeight=\"3\"",
+        "android:layout_columnSpan=\"3\"",
+        "android:layout_rowSpan=\"3\""
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_013",
+      "question": "Which attribute is used in a FrameLayout to position a child view at the bottom-right corner?",
+      "answer": "android:layout_gravity=\"bottom|end\"",
+      "type": "mcq",
+      "topic": "FrameLayout",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "In FrameLayout, child views are positioned using android:layout_gravity.",
+      "choices": [
+        "android:gravity=\"bottom|right\"",
+        "android:layout_gravity=\"bottom|end\"",
+        "android:layout_alignParentBottom=\"true\"",
+        "android:orientation=\"vertical\""
+      ]
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_014",
+      "question": "Identify the error in this vertical LinearLayout designed to show three equal-sized buttons.",
+      "answer": "layout_height must be '0dp' when using weights in a vertical LinearLayout.",
+      "type": "debug",
+      "topic": "LinearLayout",
+      "difficulty": "medium",
+      "code_snippet": "<LinearLayout\n    android:orientation=\"vertical\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\">\n    <Button\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"match_parent\"\n        android:layout_weight=\"1\" />\n    <Button\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"match_parent\"\n        android:layout_weight=\"1\" />\n    <Button\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"match_parent\"\n        android:layout_weight=\"1\" />\n</LinearLayout>",
+      "explanation": "When using layout_weight, the dimension it controls (height in vertical orientation) should be 0dp. Using match_parent will lead to incorrect rendering as it consumes the space before weights are applied."
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_015",
+      "question": "Why is the second button not visible in this horizontal layout?",
+      "answer": "The first button's width is set to 'match_parent', pushing the second button off-screen.",
+      "type": "debug",
+      "topic": "LinearLayout",
+      "difficulty": "easy",
+      "code_snippet": "<LinearLayout\n    android:orientation=\"horizontal\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"wrap_content\">\n    <Button\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"One\" />\n    <Button\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"Two\" />\n</LinearLayout>",
+      "explanation": "Since the orientation is horizontal, the first button set to match_parent width will take the entire width of the screen, leaving no space for the second button."
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_016",
+      "question": "The developer intended to place 'btn_save' to the right of 'input_field', but it appears at the top-left corner of the screen. Why?",
+      "answer": "The EditText is missing an ID, so the RelativeLayout cannot resolve 'input_field'.",
+      "type": "debug",
+      "topic": "RelativeLayout",
+      "difficulty": "medium",
+      "code_snippet": "<RelativeLayout\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\">\n    <EditText\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\" />\n    <Button\n        android:id=\"@+id/btn_save\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_toEndOf=\"@id/input_field\" />\n</RelativeLayout>",
+      "explanation": "RelativeLayout relies on IDs to define relationships. Without an android:id on the EditText, the layout_toEndOf reference fails, causing the button to default to the parent's top-left."
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_017",
+      "question": "A TableLayout has 3 columns. The developer wants to stretch only the middle column. Fix the error.",
+      "answer": "Change stretchColumns to '1'.",
+      "type": "debug",
+      "topic": "TableLayout",
+      "difficulty": "medium",
+      "code_snippet": "<TableLayout\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:stretchColumns=\"2\">",
+      "explanation": "Column indexing in TableLayout starts at 0. Therefore, the middle column of three is index 1. Index 2 refers to the third column."
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_018",
+      "question": "In a FrameLayout, why is the Button invisible?",
+      "answer": "The ImageView is declared after the Button, so it is drawn on top and covers it completely.",
+      "type": "debug",
+      "topic": "FrameLayout",
+      "difficulty": "hard",
+      "code_snippet": "<FrameLayout\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\">\n    <Button\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"match_parent\"\n        android:text=\"I am under\" />\n    <ImageView\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"match_parent\"\n        android:src=\"@drawable/solid_background\" />\n</FrameLayout>",
+      "explanation": "FrameLayout stacks views in the order they are defined. Because both have match_parent dimensions, the last item (ImageView) completely obscures the previous one (Button)."
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_019",
+      "question": "Write the XML for a vertical LinearLayout containing a TextView at the top and a Button at the very bottom of the screen.",
+      "answer": "<LinearLayout android:orientation=\"vertical\" android:layout_width=\"match_parent\" android:layout_height=\"match_parent\">\n    <TextView android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:text=\"Top\" />\n    <Space android:layout_width=\"match_parent\" android:layout_height=\"0dp\" android:layout_weight=\"1\" />\n    <Button android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:text=\"Bottom\" />\n</LinearLayout>",
+      "type": "coding",
+      "topic": "LinearLayout",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Using a weighted Space or setting the weight on the TextView/Button can achieve this, but a weighted spacer is a common pattern to push views to the edges [184 (concept of spacing)]."
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_020",
+      "question": "Code a RelativeLayout where an ImageView is centered in the parent and a TextView is placed 16dp directly above the image.",
+      "answer": "<RelativeLayout android:layout_width=\"match_parent\" android:layout_height=\"match_parent\">\n    <ImageView android:id=\"@+id/img\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:layout_centerInParent=\"true\" />\n    <TextView android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:layout_above=\"@id/img\" android:layout_centerHorizontal=\"true\" android:layout_marginBottom=\"16dp\" android:text=\"Above\" />\n</RelativeLayout>",
+      "type": "coding",
+      "topic": "RelativeLayout",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "This requires combining alignment to parent (centerInParent) and alignment to sibling (layout_above) with margins."
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_021",
+      "question": "Create a TableLayout with one row containing two columns. The first column should span 2 spaces and the second column should be collapsed.",
+      "answer": "<TableLayout android:layout_width=\"match_parent\" android:layout_height=\"wrap_content\" android:collapseColumns=\"1\">\n    <TableRow>\n        <TextView android:layout_span=\"2\" android:text=\"Spanned\" />\n        <TextView android:text=\"Hidden\" />\n    </TableRow>\n</TableLayout>",
+      "type": "coding",
+      "topic": "TableLayout",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "This uses android:layout_span on the child and android:collapseColumns on the parent."
+    },
+    {
+      "id": "md-chapter-02-pdf-standard-viewgroups_022",
+      "question": "Write the XML for a FrameLayout containing an ImageView that takes up the whole screen and a small centered Button on top of it.",
+      "answer": "<FrameLayout android:layout_width=\"match_parent\" android:layout_height=\"match_parent\">\n    <ImageView android:layout_width=\"match_parent\" android:layout_height=\"match_parent\" android:scaleType=\"centerCrop\" />\n    <Button android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:layout_gravity=\"center\" android:text=\"Play\" />\n</FrameLayout>",
+      "type": "coding",
+      "topic": "FrameLayout",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "The ImageView fills the parent first, then the Button is placed on top and centered using layout_gravity."
+    }
+  ]
+}

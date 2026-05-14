@@ -1,0 +1,221 @@
+{
+  "source": "MD Chapter 05.pdf",
+  "items": [
+    {
+      "question": "Which Gradle file in an Android Studio project is used to specify app-specific dependencies, SDK versions (compileSdk, minSdk, targetSdk), and build types?",
+      "code_snippet": "",
+      "answer": "build.gradle.kts (Module: app)",
+      "type": "mcq",
+      "topic": "Gradle: Build automation, Dependency management",
+      "difficulty": "easy",
+      "choices": [
+        "settings.gradle.kts",
+        "build.gradle.kts (Project)",
+        "build.gradle.kts (Module: app)",
+        "gradle.properties"
+      ],
+      "explanation": "The module-level build.gradle file (often labeled 'Module: app') is where dependencies and specific Android configuration settings are defined."
+    },
+    {
+      "question": "What is the primary conceptual difference between an Explicit Intent and an Implicit Intent?",
+      "code_snippet": "",
+      "answer": "Explicit Intents name a specific target component, while Implicit Intents specify a general action to be performed.",
+      "type": "mcq",
+      "topic": "Explicit and Implicit Intents",
+      "difficulty": "easy",
+      "choices": [
+        "Explicit Intents are only for system apps, while Implicit are for third-party apps.",
+        "Explicit Intents name a specific target component, while Implicit Intents specify a general action to be performed.",
+        "Implicit Intents are faster to execute than Explicit Intents.",
+        "Explicit Intents do not require any declarations in the AndroidManifest.xml."
+      ],
+      "explanation": "Explicit intents designate the target component by its name, whereas implicit intents specify an action that allows the system to find a suitable app."
+    },
+    {
+      "question": "Which higher-level feature of Gradle allows it to automatically fetch and integrate external libraries like 'commons-text' into your project?",
+      "code_snippet": "",
+      "answer": "Dependency Management",
+      "type": "mcq",
+      "topic": "Gradle: Build automation, Dependency management",
+      "difficulty": "medium",
+      "choices": [
+        "Build Configuration",
+        "Multi-Module Support",
+        "Dependency Management",
+        "Performance Optimization"
+      ],
+      "explanation": "Gradle's dependency management system integrates external libraries by automatically fetching them from repositories like Maven Central."
+    },
+    {
+      "question": "Write the Kotlin code to launch an activity named 'SecondActivity' using an explicit intent.",
+      "code_snippet": "",
+      "answer": "val intent = Intent(this, SecondActivity::class.java)\nstartActivity(intent)",
+      "type": "coding",
+      "topic": "Explicit and Implicit Intents",
+      "difficulty": "easy",
+      "explanation": "To start a specific internal activity, you create an Intent object with the context and the target class, then call startActivity."
+    },
+    {
+      "question": "Why is it considered a best practice to call `resolveActivity()` before calling `startActivity()` with an implicit intent?",
+      "code_snippet": "",
+      "answer": "To prevent the app from crashing if no activity on the device can handle the intent.",
+      "type": "mcq",
+      "topic": "Explicit and Implicit Intents",
+      "difficulty": "medium",
+      "choices": [
+        "To speed up the performance of the intent launch.",
+        "To ensure the intent has the correct permissions to run.",
+        "To prevent the app from crashing if no activity on the device can handle the intent.",
+        "To allow the user to select their favorite app automatically."
+      ],
+      "explanation": "If `startActivity()` is called for an implicit intent that cannot be resolved by any app on the device, the application will crash."
+    },
+    {
+      "question": "Identify the error in this `AndroidManifest.xml` snippet that prevents 'ShareActivity' from being launched by other apps via an implicit intent.",
+      "code_snippet": "<activity\n    android:name=\".ShareActivity\"\n    android:exported=\"false\">\n    <intent-filter>\n        <action android:name=\"android.intent.action.SEND\" />\n        <category android:name=\"android.intent.category.DEFAULT\" />\n        <data android:mimeType=\"text/plain\" />\n    </intent-filter>\n</activity>",
+      "answer": "The 'android:exported' attribute is set to 'false'.",
+      "type": "debug",
+      "topic": "Intent Filters and Manifest declarations",
+      "difficulty": "medium",
+      "explanation": "The `android:exported` attribute must be set to 'true' for a component to be launchable by components from outside your app."
+    },
+    {
+      "question": "Write the Kotlin code to open a website (e.g., 'https://www.google.com') using an implicit intent.",
+      "code_snippet": "",
+      "answer": "val intent = Intent(Intent.ACTION_VIEW)\nintent.data = Uri.parse(\"https://www.google.com\")\nstartActivity(intent)",
+      "type": "coding",
+      "topic": "Explicit and Implicit Intents",
+      "difficulty": "medium",
+      "explanation": "Using ACTION_VIEW with a URL data URI allows the Android system to find and open a web browser app."
+    },
+    {
+      "question": "In the target activity, which method is used to retrieve a String value passed via `putExtra(\"key\", \"value\")`?",
+      "code_snippet": "",
+      "answer": "intent.getStringExtra(\"key\")",
+      "type": "mcq",
+      "topic": "Passing Data between components",
+      "difficulty": "easy",
+      "choices": [
+        "intent.getString(\"key\")",
+        "intent.getStringExtra(\"key\")",
+        "intent.getExtra(\"key\")",
+        "intent.retrieveString(\"key\")"
+      ],
+      "explanation": "The `getStringExtra` method is used on the intent object in the target activity to retrieve string data."
+    },
+    {
+      "question": "Spot the syntax error in this `build.gradle` dependency declaration.",
+      "code_snippet": "dependencies {\n    implementation group: 'org.apache.commons', name: 'commons-text'\n}",
+      "answer": "Missing the version number for the dependency.",
+      "type": "debug",
+      "topic": "Gradle: Build automation, Dependency management",
+      "difficulty": "hard",
+      "explanation": "Gradle dependencies require a group, name, and a specific version (e.g., '1.13.0') to be successfully integrated."
+    },
+    {
+      "question": "Which `<intent-filter>` component describes the type of data the activity is capable of handling, such as a specific URL scheme or a MIME type?",
+      "code_snippet": "",
+      "answer": "<data>",
+      "type": "mcq",
+      "topic": "Intent Filters and Manifest declarations",
+      "difficulty": "medium",
+      "choices": [
+        "<action>",
+        "<category>",
+        "<data>",
+        "<type>"
+      ],
+      "explanation": "The `<data>` tag is used within an intent filter to specify data details like schemes, hosts, and MIME types."
+    },
+    {
+      "question": "Implement a code snippet for 'Activity A' to start 'Activity B' while passing a 'user_id' (Integer) and 'session_token' (String).",
+      "code_snippet": "",
+      "answer": "val intent = Intent(this, ActivityB::class.java)\nintent.putExtra(\"user_id\", 123)\nintent.putExtra(\"session_token\", \"abc-xyz\")\nstartActivity(intent)",
+      "type": "coding",
+      "topic": "Passing Data between components",
+      "difficulty": "medium",
+      "explanation": "The `putExtra` method is overloaded to handle various types like Int and String, allowing multiple pieces of data to be passed simultaneously."
+    },
+    {
+      "question": "Which Intent action is specifically used to share data (like text or an image) to another app via a chooser?",
+      "code_snippet": "",
+      "answer": "Intent.ACTION_SEND",
+      "type": "mcq",
+      "topic": "Explicit and Implicit Intents",
+      "difficulty": "easy",
+      "choices": [
+        "Intent.ACTION_VIEW",
+        "Intent.ACTION_SEND",
+        "Intent.ACTION_MAIN",
+        "Intent.ACTION_DIAL"
+      ],
+      "explanation": "ACTION_SEND is the standard action for sharing data with other apps on the device."
+    },
+    {
+      "question": "A developer wants an activity to be the main entry point of the app shown in the launcher. What is missing or incorrect in this declaration?",
+      "code_snippet": "<activity android:name=\".MainActivity\" android:exported=\"true\">\n    <intent-filter>\n        <action android:name=\"android.intent.action.VIEW\" />\n        <category android:name=\"android.intent.category.DEFAULT\" />\n    </intent-filter>\n</activity>",
+      "answer": "The action should be 'MAIN' and the category should be 'LAUNCHER'.",
+      "type": "debug",
+      "topic": "Intent Filters and Manifest declarations",
+      "difficulty": "medium",
+      "explanation": "For an activity to appear in the app launcher, it must have the 'android.intent.action.MAIN' action and the 'android.intent.category.LAUNCHER' category."
+    },
+    {
+      "question": "Write the code for an implicit intent that shares the text 'Check out this app!' and provides a title for the app chooser.",
+      "code_snippet": "",
+      "answer": "val sendIntent = Intent(Intent.ACTION_SEND)\nsendIntent.type = \"text/plain\"\nsendIntent.putExtra(Intent.EXTRA_TEXT, \"Check out this app!\")\nval shareIntent = Intent.createChooser(sendIntent, \"Share via\")\nstartActivity(shareIntent)",
+      "type": "coding",
+      "topic": "Explicit and Implicit Intents",
+      "difficulty": "hard",
+      "explanation": "Using `Intent.createChooser` ensures the user is prompted with a list of apps that can handle the SEND action, even if a default is already set."
+    },
+    {
+      "question": "In the context of manual compilation, what happens if the 'classpath' (-cp) is not correctly specified when running a Kotlin app that uses external JARs?",
+      "code_snippet": "",
+      "answer": "The JVM will fail to find the external classes, resulting in errors.",
+      "type": "mcq",
+      "topic": "Gradle: Build automation, Dependency management",
+      "difficulty": "hard",
+      "choices": [
+        "Gradle will automatically download the missing JARs at runtime.",
+        "The JVM will fail to find the external classes, resulting in errors.",
+        "The application will run but will be significantly slower.",
+        "The compiler will ignore the external dependencies and continue."
+      ],
+      "explanation": "When running manually, you must explicitly include all required external libraries in the classpath so the system can locate the code."
+    },
+    {
+      "question": "Correct the missing parts of this Intent Filter meant to open the app when a user clicks a 'https://www.example.com' link.",
+      "code_snippet": "<intent-filter>\n    <action android:name=\"android.intent.action.VIEW\" />\n    <category android:name=\"android.intent.category.DEFAULT\" />\n    <category android:name=\"android.intent.category.BROWSABLE\" />\n    <!-- MISSING DATA TAG -->\n</intent-filter>",
+      "answer": "<data android:scheme=\"https\" android:host=\"www.example.com\" />",
+      "type": "debug",
+      "topic": "Intent Filters and Manifest declarations",
+      "difficulty": "hard",
+      "explanation": "The `<data>` tag with scheme and host is required to limit the intent filter to only handle specific URLs."
+    },
+    {
+      "question": "Write the Kotlin code to define a 'send' function that uses a block of 'apply' to set the type, extra email, and extra subject for an ACTION_SEND intent.",
+      "code_snippet": "",
+      "answer": "val intent = Intent(Intent.ACTION_SEND).apply {\n    type = \"text/plain\"\n    putExtra(Intent.EXTRA_EMAIL, arrayOf(\"example@mail.com\"))\n    putExtra(Intent.EXTRA_SUBJECT, \"Meeting\")\n}\nstartActivity(intent)",
+      "type": "coding",
+      "topic": "Explicit and Implicit Intents",
+      "difficulty": "hard",
+      "explanation": "Scope functions like 'apply' provide a clean way to configure multiple properties and extras on an Intent object."
+    },
+    {
+      "question": "Which Gradle file is used to list all modules included in the project?",
+      "code_snippet": "",
+      "answer": "settings.gradle.kts",
+      "type": "mcq",
+      "topic": "Gradle: Build automation, Dependency management",
+      "difficulty": "medium",
+      "choices": [
+        "build.gradle.kts (Project)",
+        "build.gradle.kts (Module: app)",
+        "settings.gradle.kts",
+        "local.properties"
+      ],
+      "explanation": "The `settings.gradle` (or `settings.gradle.kts`) file manages the overall project structure by defining which modules are included in the build."
+    }
+  ]
+}

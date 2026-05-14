@@ -1,0 +1,203 @@
+{
+  "source": "MD Chapter 04.pdf",
+  "items": [
+    {
+      "id": "md-chapter-04_001",
+      "question": "Which activity lifecycle callback is the best place to initialize UI components and bind data to lists?",
+      "answer": "onCreate()",
+      "type": "mcq",
+      "topic": "Activity Lifecycle States",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "onCreate() is called when the activity is first created and is specifically used to initialize UI components like views and data binding.",
+      "choices": [
+        "onStart()",
+        "onCreate()",
+        "onResume()",
+        "onRestart()"
+      ]
+    },
+    {
+      "id": "md-chapter-04_002",
+      "question": "In the Android Process Priority hierarchy, which process type has the highest priority and is the last to be killed?",
+      "answer": "Foreground Process",
+      "type": "mcq",
+      "topic": "Android Process Priority hierarchy",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "Foreground processes have the highest priority as they are what the user is currently interacting with.",
+      "choices": [
+        "Visible Process",
+        "Service Process",
+        "Foreground Process",
+        "Cached Process"
+      ]
+    },
+    {
+      "id": "md-chapter-04_003",
+      "question": "What is the correct sequence of lifecycle callbacks when a user is in an app and presses the 'Home' button?",
+      "answer": "onPause() -> onStop()",
+      "type": "trace",
+      "topic": "Activity Lifecycle States",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "When an activity is no longer visible (like when the Home button is pressed), it first leaves the foreground (onPause) and then becomes invisible (onStop)."
+    },
+    {
+      "id": "md-chapter-04_004",
+      "question": "Trace the exact sequence of lifecycle callbacks that occur on a single Activity during a screen rotation.",
+      "answer": "onPause() -> onStop() -> onSaveInstanceState() -> onDestroy() -> onCreate() -> onStart() -> onRestoreInstanceState() -> onResume()",
+      "type": "trace",
+      "topic": "Activity Lifecycle States",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "During rotation, the activity is destroyed and recreated. The system calls onPause and onStop, saves state via onSaveInstanceState, destroys the instance, then starts the new instance with onCreate, onStart, restoring state, and finally onResume."
+    },
+    {
+      "id": "md-chapter-04_005",
+      "question": "Which specific mechanism does Android use during the 'Inflation' process to create instances of View objects from XML tags?",
+      "answer": "Reflection",
+      "type": "mcq",
+      "topic": "View Inflation: XML Parsing, LayoutInflater",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "Android uses reflection to create actual instances of View objects (like TextView or Button) based on the names found in the XML file.",
+      "choices": [
+        "Serialization",
+        "Reflection",
+        "Deparsing",
+        "Data Binding"
+      ]
+    },
+    {
+      "id": "md-chapter-04_006",
+      "question": "A user is on Activity A and clicks a button to start Activity B. Trace the lifecycle callbacks for Activity A as Activity B comes to the foreground.",
+      "answer": "onPause() -> onStop()",
+      "type": "trace",
+      "topic": "Activity Lifecycle States",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "When another activity comes into the foreground, the current activity is paused and then stopped once it is no longer visible."
+    },
+    {
+      "id": "md-chapter-04_007",
+      "question": "Implement the code to save a String value named 'username' into the outState Bundle before an activity is destroyed.",
+      "answer": "outState.putString(\"username\", \"user_value\")",
+      "type": "coding",
+      "topic": "InstanceState and Bundle",
+      "difficulty": "medium",
+      "code_snippet": "override fun onSaveInstanceState(outState: Bundle) {\n    super.onSaveInstanceState(outState)\n    // Your code here\n}",
+      "explanation": "The putString() method is used to store string key-value pairs in the Bundle during onSaveInstanceState."
+    },
+    {
+      "id": "md-chapter-04_008",
+      "question": "When is the onRestoreInstanceState() callback triggered by the system?",
+      "answer": "After onStart() when an activity is being recreated",
+      "type": "mcq",
+      "topic": "InstanceState and Bundle",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "In the recreation flow, onRestoreInstanceState() is called after onStart() to restore the previously saved UI state.",
+      "choices": [
+        "Immediately after onCreate()",
+        "Before onStop()",
+        "After onStart() when an activity is being recreated",
+        "Before onDestroy()"
+      ]
+    },
+    {
+      "id": "md-chapter-04_009",
+      "question": "Write the Kotlin code to manually inflate a layout file named 'item_layout' into a View object and find a Button with ID 'btn_submit' inside it.",
+      "answer": "val inflater = LayoutInflater.from(this)\nval view = inflater.inflate(R.layout.item_layout, null)\nval button = view.findViewById<Button>(R.id.btn_submit)",
+      "type": "coding",
+      "topic": "View Inflation: XML Parsing, LayoutInflater",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "Manual inflation involves obtaining a LayoutInflater, calling inflate() with the layout resource, and then using findViewById() on the resulting view."
+    },
+    {
+      "id": "md-chapter-04_010",
+      "question": "Which of the following is NOT a valid type of data that can be stored directly in an Android Bundle?",
+      "answer": "Custom Logic Functions",
+      "type": "mcq",
+      "topic": "InstanceState and Bundle",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Bundles can store primitives, arrays, and objects that implement Parcelable or Serializable, but they cannot store functions or executable logic.",
+      "choices": [
+        "Parcelable objects",
+        "Serializable objects",
+        "Custom Logic Functions",
+        "String ArrayLists"
+      ]
+    },
+    {
+      "id": "md-chapter-04_011",
+      "question": "Trace the lifecycle: A user is using an app, receives a phone call (partially covering the screen), and then hangs up to return to the app.",
+      "answer": "onPause() -> onResume()",
+      "type": "trace",
+      "topic": "Activity Lifecycle States",
+      "difficulty": "hard",
+      "code_snippet": "",
+      "explanation": "If an activity is partially visible but not interactive (like during a phone call overlay), it enters onPause(). When the user returns and it becomes interactive again, it enters onResume()."
+    },
+    {
+      "id": "md-chapter-04_012",
+      "question": "What happens during the 'Deparsing' process in the context of Android data handling?",
+      "answer": "Converting a structured object back into a human-readable format like XML or JSON",
+      "type": "mcq",
+      "topic": "View Inflation: XML Parsing, LayoutInflater",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Deparsing (or unparsing) is the process of converting structured data (like an object) back into raw formats like XML or JSON.",
+      "choices": [
+        "Breaking down XML into meaningful components",
+        "Converting a structured object back into a human-readable format like XML or JSON",
+        "Creating View instances using reflection",
+        "Assigning attributes to View properties"
+      ]
+    },
+    {
+      "id": "md-chapter-04_013",
+      "question": "If an activity is in the 'Stopped' state and the user navigates back to it, which lifecycle method is called first?",
+      "answer": "onRestart()",
+      "type": "mcq",
+      "topic": "Activity Lifecycle States",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "onRestart() is specifically called when an activity is coming back from the stopped state before it becomes visible again (onStart).",
+      "choices": [
+        "onCreate()",
+        "onStart()",
+        "onResume()",
+        "onRestart()"
+      ]
+    },
+    {
+      "id": "md-chapter-04_014",
+      "question": "Complete the coding snippet to restore an Integer value named 'score' within the onCreate() method, handling the case where savedInstanceState might be null.",
+      "answer": "savedInstanceState?.getInt(\"score\") ?: 0",
+      "type": "coding",
+      "topic": "InstanceState and Bundle",
+      "difficulty": "hard",
+      "code_snippet": "override fun onCreate(savedInstanceState: Bundle?) {\n    super.onCreate(savedInstanceState)\n    setContentView(R.layout.activity_main)\n    val currentScore = // Your code here\n}",
+      "explanation": "When restoring in onCreate, you must check if the Bundle is null (using the safe call operator) and provide a default value."
+    },
+    {
+      "id": "md-chapter-04_015",
+      "question": "Which lifecycle method is the very last one called before an activity is completely removed from memory?",
+      "answer": "onDestroy()",
+      "type": "mcq",
+      "topic": "Activity Lifecycle States",
+      "difficulty": "easy",
+      "code_snippet": "",
+      "explanation": "onDestroy() is the final callback received before the activity is destroyed by the system or finished by the user.",
+      "choices": [
+        "onStop()",
+        "onPause()",
+        "onDestroy()",
+        "onFinish()"
+      ]
+    }
+  ]
+}

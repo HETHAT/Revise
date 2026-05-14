@@ -1,0 +1,176 @@
+{
+  "source": "MD Chapter 02.pdf (Drawables & Qualifiers)",
+  "items": [
+    {
+      "question": "Which folder is used to store string resources specifically for the Arabic language?",
+      "code_snippet": "",
+      "answer": "values-ar/",
+      "type": "mcq",
+      "topic": "Resource Qualifiers",
+      "difficulty": "easy",
+      "choices": ["layout-ar/", "values-ar/", "strings-ar/", "drawable-ar/"],
+      "explanation": "Resource qualifiers for language use the ISO 639-1 code (e.g., 'ar' for Arabic) appended to the 'values' folder name."
+    },
+    {
+      "question": "What is the correct file extension for a Nine-patch image in Android?",
+      "code_snippet": "",
+      "answer": ".9.png",
+      "type": "mcq",
+      "topic": "Drawable Resources",
+      "difficulty": "easy",
+      "choices": [".patch.png", ".9.jpg", ".9.png", ".nine.png"],
+      "explanation": "A Nine-patch file must be named with the '.9.png' extension to tell the Android system it contains stretchable and padding areas."
+    },
+    {
+      "question": "Which density bucket is considered the baseline (1x) with 160 DPI?",
+      "code_snippet": "",
+      "answer": "mdpi",
+      "type": "mcq",
+      "topic": "Resource Qualifiers",
+      "difficulty": "easy",
+      "choices": ["ldpi", "mdpi", "hdpi", "xhdpi"],
+      "explanation": "MDPI (medium density) is the baseline bucket at 160 DPI, where 1dp equals 1px."
+    },
+    {
+      "question": "Write the XML for a Shape drawable that defines a solid purple (#FF6200EE) rectangle with rounded corners of 16dp.",
+      "code_snippet": "",
+      "answer": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<shape xmlns:android=\"http://schemas.android.com/apk/res/android\" android:shape=\"rectangle\">\n    <solid android:color=\"#FF6200EE\"/>\n    <corners android:radius=\"16dp\"/>\n</shape>",
+      "type": "coding",
+      "topic": "Drawable Resources",
+      "difficulty": "easy",
+      "choices": [],
+      "explanation": "A basic rounded rectangle uses the <solid> tag for color and <corners> with android:radius for the rounding."
+    },
+    {
+      "question": "Where should you place a 'colors.xml' file so that the app uses black backgrounds automatically when the user enables Dark Mode?",
+      "code_snippet": "",
+      "answer": "res/values-night/",
+      "type": "mcq",
+      "topic": "Resource Qualifiers",
+      "difficulty": "easy",
+      "choices": ["res/values-dark/", "res/values-black/", "res/values-night/", "res/drawable-night/"],
+      "explanation": "The 'night' qualifier is used to provide alternative resources for dark mode themes."
+    },
+    {
+      "question": "According to the qualifier priority order, which of these is the correct folder name for a French Canadian tablet in landscape mode?",
+      "code_snippet": "",
+      "answer": "values-fr-rCA-sw600dp-land",
+      "type": "mcq",
+      "topic": "Resource Qualifiers",
+      "difficulty": "medium",
+      "choices": [
+        "values-land-fr-rCA-sw600dp",
+        "values-fr-rCA-land-sw600dp",
+        "values-fr-rCA-sw600dp-land",
+        "values-sw600dp-fr-rCA-land"
+      ],
+      "explanation": "Qualifiers must follow a strict order: Language/Region comes before Smallest Width, which comes before Orientation."
+    },
+    {
+      "question": "In a Layer List drawable, if you have three items, which one is drawn on top of the others?",
+      "code_snippet": "",
+      "answer": "The item with the largest index (defined last)",
+      "type": "mcq",
+      "topic": "Drawable Resources",
+      "difficulty": "medium",
+      "choices": [
+        "The first item defined",
+        "The item with the largest index (defined last)",
+        "The item with ID 'top'",
+        "The item with the largest dimension"
+      ],
+      "explanation": "Layer lists are drawn in the order they appear in the XML; the last element defined is drawn on top of the previous ones."
+    },
+    {
+      "question": "Predict the behavior of an ImageView using a Bitmap drawable with the 'tileMode' set to 'repeat'.",
+      "code_snippet": "<bitmap xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    android:src=\"@drawable/pattern\"\n    android:tileMode=\"repeat\" />",
+      "answer": "The image repeats horizontally and vertically to fill the view",
+      "type": "mcq",
+      "topic": "Drawable Resources",
+      "difficulty": "medium",
+      "choices": [
+        "The image stretches to fill the view",
+        "The image repeats horizontally and vertically to fill the view",
+        "The image is centered and cropped",
+        "The image mirrors itself at the edges"
+      ],
+      "explanation": "The 'repeat' tileMode causes the bitmap to duplicate in both directions until the entire view area is covered."
+    },
+    {
+      "question": "Code a Selector (State List) named 'button_press_style.xml' that shows a red shape when pressed and a blue shape by default.",
+      "code_snippet": "",
+      "answer": "<selector xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <item android:state_pressed=\"true\">\n        <shape android:shape=\"rectangle\"><solid android:color=\"#FF0000\"/></shape>\n    </item>\n    <item>\n        <shape android:shape=\"rectangle\"><solid android:color=\"#0000FF\"/></shape>\n    </item>\n</selector>",
+      "type": "coding",
+      "topic": "Drawable Resources",
+      "difficulty": "medium",
+      "choices": [],
+      "explanation": "A selector checks items from top to bottom. The first item matching the state (pressed) is used; the last item without a state is the default."
+    },
+    {
+      "question": "Identify the error in the following selector logic for a button:",
+      "code_snippet": "<selector xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <item android:drawable=\"@drawable/normal_btn\" />\n    <item android:state_pressed=\"true\" android:drawable=\"@drawable/pressed_btn\" />\n</selector>",
+      "answer": "The default state is listed first, so the pressed state will never be reached.",
+      "type": "debug",
+      "topic": "Drawable Resources",
+      "difficulty": "medium",
+      "explanation": "Android evaluates state lists sequentially. Since the first item has no specific state requirement, it matches every condition, preventing the 'state_pressed' item below it from ever being evaluated."
+    },
+    {
+      "question": "A developer created the folder 'drawable-land-xhdpi'. Why might the Android Studio linter show a warning about the folder name?",
+      "code_snippet": "",
+      "answer": "The qualifiers are in the wrong order; orientation should follow density.",
+      "type": "debug",
+      "topic": "Resource Qualifiers",
+      "difficulty": "medium",
+      "explanation": "According to the official qualifier order, Orientation (land) must come before Density (xhdpi) in some versions, though standard practice often places Density later. Based on the source sequence: Orientation is index 8 and Density is index 10."
+    },
+    {
+      "question": "Which attribute in a <bitmap> XML resource helps improve the appearance of an image when it is scaled down or transformed?",
+      "code_snippet": "",
+      "answer": "android:antialias",
+      "type": "mcq",
+      "topic": "Drawable Resources",
+      "difficulty": "hard",
+      "choices": ["android:dither", "android:filter", "android:antialias", "android:mipMap"],
+      "explanation": "Antialiasing is used to smooth the edges of an image, especially useful when the image is scaled or rotated."
+    },
+    {
+      "question": "Find the error in this Nine-patch configuration description:",
+      "code_snippet": "",
+      "answer": "Claiming that the 'Padding box' is required for the image to stretch.",
+      "type": "debug",
+      "topic": "Drawable Resources",
+      "difficulty": "hard",
+      "explanation": "In a Nine-patch file, the top and left 1px lines define the stretchable areas, while the right and bottom lines define the optional padding box. Strecthing is independent of the padding box."
+    },
+    {
+      "question": "Write a Layer List XML that creates a button background where a gray rectangle (the shadow) is placed at the bottom, and a white rectangle is placed on top of it shifted 4dp up and 4dp to the left.",
+      "code_snippet": "",
+      "answer": "<layer-list xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <item>\n        <shape android:shape=\"rectangle\"><solid android:color=\"#808080\"/></shape>\n    </item>\n    <item android:bottom=\"4dp\" android:right=\"4dp\">\n        <shape android:shape=\"rectangle\"><solid android:color=\"#FFFFFF\"/></shape>\n    </item>\n</layer-list>",
+      "type": "coding",
+      "topic": "Drawable Resources",
+      "difficulty": "hard",
+      "choices": [],
+      "explanation": "By applying offsets (bottom/right) to the top layer, you reveal the bottom layer as a shadow."
+    },
+    {
+      "question": "If a device is in Night Mode, has a French locale, and is in Landscape, which folder has the highest priority?",
+      "code_snippet": "",
+      "answer": "values-fr-land-night",
+      "type": "mcq",
+      "topic": "Resource Qualifiers",
+      "difficulty": "hard",
+      "choices": ["values-fr-night", "values-land-night", "values-fr-land-night", "values-fr-land"],
+      "explanation": "The system looks for the folder that matches the most qualifiers in the correct order."
+    },
+    {
+      "question": "Correct the following Shape XML to create a horizontal linear gradient starting with Blue at the top and Red at the bottom.",
+      "code_snippet": "<shape android:shape=\"rectangle\">\n    <gradient \n        android:startColor=\"#0000FF\" \n        android:endColor=\"#FF0000\" \n        android:angle=\"0\" />\n</shape>",
+      "answer": "Change the angle to '270'.",
+      "type": "debug",
+      "topic": "Drawable Resources",
+      "difficulty": "hard",
+      "explanation": "In Android gradients, an angle of 0 is left-to-right. For a top-to-bottom vertical gradient, the angle should be 270 degrees."
+    }
+  ]
+}

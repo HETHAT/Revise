@@ -1,0 +1,617 @@
+{
+  "source": "MobileExam2025.pdf",
+  "items": [
+    {
+      "id": "mobileexam2025_001",
+      "question": "What color does the hexadecimal value #F0F represent?",
+      "answer": "Magenta",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "In hexadecimal color codes, #F0F (shorthand for #FF00FF) represents a mix of full Red and full Blue with no Green, which results in Magenta.",
+      "choices": [
+        "Magenta",
+        "Purple",
+        "Cyan",
+        "Yellow"
+      ]
+    },
+    {
+      "id": "mobileexam2025_002",
+      "question": "What does SDK stand for in the context of Android development?",
+      "answer": "Software Development Kit",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "SDK stands for Software Development Kit, which provides the tools and libraries required to develop applications for a specific platform.",
+      "choices": [
+        "Software Development Kit",
+        "Source Development Kernel",
+        "System Deployment Key",
+        "Software Data Kit"
+      ]
+    },
+    {
+      "id": "mobileexam2025_003",
+      "question": "Which of the following layers is at the bottom of the Android software stack?",
+      "answer": "Linux Kernel",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The Linux Kernel is the base layer of the Android architecture, providing hardware abstraction and low-level system services.",
+      "choices": [
+        "Linux Kernel",
+        "Android Runtime",
+        "Application Framework",
+        "Libraries"
+      ]
+    },
+    {
+      "id": "mobileexam2025_004",
+      "question": "Which tool is used to build Android apps and manage dependencies in Kotlin projects?",
+      "answer": "Gradle",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Gradle is the official build automation tool used for Android projects to manage compilation and dependencies.",
+      "choices": [
+        "Linux Kernel",
+        "Android Studio",
+        "Maven",
+        "Gradle"
+      ]
+    },
+    {
+      "id": "mobileexam2025_005",
+      "question": "What does the \"?\" symbol after a type mean in Kotlin? (e.g., String?)",
+      "answer": "It marks the type as optional.",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "In Kotlin, a question mark indicates that a type is nullable (optional), meaning it can hold a null value.",
+      "choices": [
+        "It automatically initializes the variable.",
+        "It indicates the variable is a list.",
+        "It marks the type as optional.",
+        "It marks the variable as final."
+      ]
+    },
+    {
+      "id": "mobileexam2025_006",
+      "question": "In Android development using Kotlin, which function is used to start a new Activity?",
+      "answer": "startActivity()",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The startActivity() method is the standard way to launch a new activity using an Intent.",
+      "choices": [
+        "openActivity()",
+        "launchActivity()",
+        "beginActivity()",
+        "startActivity()"
+      ]
+    },
+    {
+      "id": "mobileexam2025_007",
+      "question": "What is the purpose of the setContentView() function in an Android Activity?",
+      "answer": "It sets the layout resource file to be used as the UI for the activity.",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "setContentView() is used to bind an XML layout resource to the activity to define its user interface.",
+      "choices": [
+        "It starts a new activity.",
+        "It connects the database to the app.",
+        "It loads the Kotlin file for the UI.",
+        "It sets the layout resource file to be used as the UI for the activity."
+      ]
+    },
+    {
+      "id": "mobileexam2025_008",
+      "question": "Where is setContentView() typically called in an Android Activity?",
+      "answer": "Inside the onCreate() method",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "setContentView() is typically called during the initial creation phase of the activity lifecycle in onCreate().",
+      "choices": [
+        "Inside the onDestroy() method",
+        "Inside the main() function",
+        "Inside the onStart() method",
+        "Inside the onCreate() method"
+      ]
+    },
+    {
+      "id": "mobileexam2025_009",
+      "question": "What does \"inflating a layout\" mean in Android development?",
+      "answer": "Converting an XML layout file into corresponding View objects in memory",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Inflation is the process of parsing XML layout files and creating actual View objects in the application's memory.",
+      "choices": [
+        "Compressing a layout file",
+        "Converting an XML layout file into corresponding View objects in memory",
+        "Drawing UI using Java code only",
+        "Linking an activity with its manifest entry"
+      ]
+    },
+    {
+      "id": "mobileexam2025_010",
+      "question": "What is the primary purpose of the AndroidManifest.xml file in an Android project?",
+      "answer": "To declare app components and permissions",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The manifest file acts as the configuration hub for the app, declaring all components like activities and required permissions.",
+      "choices": [
+        "To manage user interfaces",
+        "To store user data",
+        "To write Kotlin code for the app",
+        "To declare app components and permissions"
+      ]
+    },
+    {
+      "id": "mobileexam2025_011",
+      "question": "Which of the following components must be declared in the AndroidManifest.xml?",
+      "answer": "All of the choices",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "All major app components, including Activities, Services, and Broadcast Receivers, must be declared in the manifest.",
+      "choices": [
+        "Services",
+        "Broadcast Receivers",
+        "Activities",
+        "All of the choices"
+      ]
+    },
+    {
+      "id": "mobileexam2025_012",
+      "question": "Where is the AndroidManifest.xml file located in an Android project structure?",
+      "answer": "app/src/main/",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The manifest is located in the main source set directory: app/src/main/.",
+      "choices": [
+        "res/layout/",
+        "src/java/",
+        "build/",
+        "app/src/main/"
+      ]
+    },
+    {
+      "id": "mobileexam2025_013",
+      "question": "What happens if an Activity is not declared in the AndroidManifest.xml file?",
+      "answer": "The app will crash when trying to open that activity",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "If an activity is not declared in the manifest, the Android system will not recognize it, causing a crash if an attempt is made to start it.",
+      "choices": [
+        "The app will crash when trying to open that activity",
+        "It will still run normally",
+        "The activity will be hidden from the user",
+        "It will be declared automatically"
+      ]
+    },
+    {
+      "id": "mobileexam2025_014",
+      "question": "Which of the following best describes what the android:exported=\"true\" attribute does in AndroidManifest.xml?",
+      "answer": "Controls whether other apps can interact with a component",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The exported attribute determines if a component (like an activity) can be launched by other applications.",
+      "choices": [
+        "Makes the component visible in the Play Store",
+        "Allows the component to be accessed only by the system",
+        "Automatically grants all runtime permissions",
+        "Controls whether other apps can interact with a component"
+      ]
+    },
+    {
+      "id": "mobileexam2025_015",
+      "question": "What is the function of minSdkVersion in build.gradle or AndroidManifest.xml?",
+      "answer": "It sets the minimum Android API level the app can run on",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "minSdkVersion specifies the lowest Android OS version that is compatible with the application.",
+      "choices": [
+        "It tells Android Studio which version to install",
+        "It sets the minimum Android API level the app can run on",
+        "It restricts background activity",
+        "It defines the minimum screen size supported"
+      ]
+    },
+    {
+      "id": "mobileexam2025_016",
+      "question": "Which of the following virtual machines was originally used by Android to run applications?",
+      "answer": "DVM - Dalvik Virtual Machine",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The Dalvik Virtual Machine (DVM) was the original runtime environment for Android apps before being replaced by ART.",
+      "choices": [
+        "CVM - C Virtual Machine",
+        "KVM - Kotlin Virtual Machine",
+        "DVM - Dalvik Virtual Machine",
+        "JVM - Java Virtual Machine"
+      ]
+    },
+    {
+      "id": "mobileexam2025_017",
+      "question": "What is the primary use of XML in Android development?",
+      "answer": "Defining the user interface and app resources",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "XML is primarily used in Android to declaratively define UI layouts and various app resources like strings and colors.",
+      "choices": [
+        "Writing Java code for app logic",
+        "Encrypting user data",
+        "Defining the user interface and app resources",
+        "Managing memory allocation"
+      ]
+    },
+    {
+      "id": "mobileexam2025_018",
+      "question": "What is the main purpose of an XML namespace?",
+      "answer": "To avoid naming conflicts by differentiating elements or attributes with the same name",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Namespaces are used to prevent conflicts between tags and attributes that might share the same name but come from different definitions.",
+      "choices": [
+        "To encrypt XML data",
+        "To avoid naming conflicts by differentiating elements or attributes with the same name",
+        "To validate XML data",
+        "To define the document's encoding format"
+      ]
+    },
+    {
+      "id": "mobileexam2025_019",
+      "question": "What is the type of the parameter passed to the onClick method when it is set to a Button?",
+      "answer": "View",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The standard onClick(View v) callback receives the View object that was clicked.",
+      "choices": [
+        "View",
+        "Button",
+        "Optional",
+        "Context"
+      ]
+    },
+    {
+      "id": "mobileexam2025_020",
+      "question": "In a LinearLayout, what happens when you set android:layout_weight to a child view?",
+      "answer": "The child view takes up the specified percentage of the layout's width or height",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "layout_weight defines how remaining space in a LinearLayout is distributed among its children proportionally.",
+      "choices": [
+        "It makes the view invisible",
+        "The child view takes up the specified percentage of the layout's width or height",
+        "The view takes up equal space with other child views",
+        "It adds padding to the child view"
+      ]
+    },
+    {
+      "id": "mobileexam2025_021",
+      "question": "Which of the following is true about the gravity and layout_gravity attributes in Android?",
+      "answer": "gravity is used to align the content inside the view, while layout_gravity positions the view within its parent layout.",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Gravity affects the alignment of contents within a view, whereas layout_gravity affects the alignment of the view itself relative to its container.",
+      "choices": [
+        "gravity is used to align the content inside the view, while layout_gravity positions the view within its parent layout.",
+        "Both gravity and layout_gravity serve the same purpose.",
+        "gravity is used to position the view itself, while layout_gravity aligns the content inside the view.",
+        "Neither gravity nor layout_gravity can be used together."
+      ]
+    },
+    {
+      "id": "mobileexam2025_022",
+      "question": "In a LinearLayout with horizontal orientation, if one child has layout_weight=\"1\" and another has layout_weight=\"2\", how will the space be distributed?",
+      "answer": "The first view will take up 1/3 of the available space, and the second will take 2/3",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Weights are additive. 1 + 2 = 3 total units, so the children receive 1/3 and 2/3 of the space respectively.",
+      "choices": [
+        "The second view will take up all the space",
+        "The first view will take all the space",
+        "The first view will take up 1/3 of the available space, and the second will take 2/3",
+        "Both views will take up equal space"
+      ]
+    },
+    {
+      "id": "mobileexam2025_023",
+      "question": "Which unit adjusts automatically based on both screen density and user's font size preference?",
+      "answer": "sp",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Scalable pixels (sp) are like density-independent pixels (dp) but also scale according to system-wide font size accessibility settings.",
+      "choices": [
+        "dp",
+        "sp",
+        "px",
+        "pt"
+      ]
+    },
+    {
+      "id": "mobileexam2025_024",
+      "question": "Why is dp preferred over px in Android layouts?",
+      "answer": "dp scales uniformly across all screen densities",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Using dp ensures that UI elements maintain a consistent physical size across devices with different screen densities.",
+      "choices": [
+        "dp consumes less memory",
+        "dp scales uniformly across all screen densities",
+        "dp is larger on low-density screens",
+        "dp makes animations smoother"
+      ]
+    },
+    {
+      "id": "mobileexam2025_025",
+      "question": "A tablet has a screen resolution of 2560 × 1600 pixels and a diagonal size of 10.1 inches. What is the approximate PPI (Pixels Per Inch) of the screen?",
+      "answer": "298 PPI",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Using the formula sqrt(2560² + 1600²) / 10.1 yields approximately 298.9, making 298 PPI the closest answer.",
+      "choices": [
+        "298 PPI",
+        "320 PPI",
+        "200 PPI",
+        "224 PPI"
+      ]
+    },
+    {
+      "id": "mobileexam2025_026",
+      "question": "Based on this PPI (approx 298), which Android density bucket does this device most likely fall into?",
+      "answer": "xhdpi",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "XHDPI has a reference density of 320 dpi, making it the closest bucket for a 298 PPI screen.",
+      "choices": [
+        "xxhdpi",
+        "xhdpi",
+        "xxxhdpi",
+        "hdpi"
+      ]
+    },
+    {
+      "id": "mobileexam2025_027",
+      "question": "Approximately how many pixels equal 1 dp on a device with a pixel density (PPI) of 380?",
+      "answer": "2.38 px",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The formula is pixels = dp * (PPI / 160). For 1dp at 380 PPI: 1 * (380 / 160) = 2.375, rounded to 2.38 px.",
+      "choices": [
+        "2.38 px",
+        "2.1 px",
+        "1.87 px",
+        "2.73 px"
+      ]
+    },
+    {
+      "id": "mobileexam2025_028",
+      "question": "What is the main purpose of using resource qualifiers in Android development?",
+      "answer": "To provide alternative resources that match specific device configurations",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Qualifiers allow the system to select the best resource (layout, image, string) based on the current device state like language or screen orientation.",
+      "choices": [
+        "To speed up app launch time by compressing resources",
+        "To provide alternative resources that match specific device configurations",
+        "To encrypt app resources and prevent unauthorized access",
+        "To allow developers to write custom Java code for each screen size"
+      ]
+    },
+    {
+      "id": "mobileexam2025_029",
+      "question": "Which attribute is used to change the position of a child view inside a FrameLayout?",
+      "answer": "android:layout_gravity",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "In FrameLayout, child views are positioned using layout_gravity relative to the container boundaries.",
+      "choices": [
+        "android:layout_gravity",
+        "android:gravity",
+        "android:orientation",
+        "android:layout_alignment"
+      ]
+    },
+    {
+      "id": "mobileexam2025_030",
+      "question": "Which of the following is an example use case of an implicit intent?",
+      "answer": "Requesting the system to perform an action using any available compatible app.",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Implicit intents allow an app to request an action (like opening a web link) without specifying which app handles it.",
+      "choices": [
+        "Requesting the system to perform an action using any available compatible app.",
+        "Navigating to a new fragment in the same activity",
+        "Launching a background service in your app",
+        "Starting a specific activity within your own app"
+      ]
+    },
+    {
+      "id": "mobileexam2025_031",
+      "question": "What is the primary purpose of a Bundle in Android?",
+      "answer": "To pass data between Android components, such as between activities",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "A Bundle is a key-value data structure used primarily for passing data across component boundaries or saving state.",
+      "choices": [
+        "To pass data between Android components, such as between activities",
+        "To store application resources like images and strings",
+        "To handle user interface layout files",
+        "To manage background services"
+      ]
+    },
+    {
+      "id": "mobileexam2025_032",
+      "question": "What is the purpose of the onSaveInstanceState() method in an Android activity?",
+      "answer": "To temporarily save UI state before the activity is destroyed and possibly recreated",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "onSaveInstanceState() is called to capture transient UI state (like text in an EditText) before a system-initiated destruction like screen rotation.",
+      "choices": [
+        "To save persistent data to disk for long-term storage",
+        "To temporarily save UI state before the activity is destroyed and possibly recreated",
+        "To load initial data from a database when the activity is created",
+        "To handle memory cleanup when the app is closed"
+      ]
+    },
+    {
+      "id": "mobileexam2025_033",
+      "question": "Which of the following is required to pass a custom class in a Bundle between Android components?",
+      "answer": "The class must implement Parcelable or Serializable",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "To be stored in a Bundle, complex custom objects must be converted into a serializable or parcelable format.",
+      "choices": [
+        "The class must implement Parcelable or Serializable",
+        "The class must be a Fragment or Activity",
+        "The class must be declared in the AndroidManifest.xml",
+        "The class must extend Application"
+      ]
+    },
+    {
+      "id": "mobileexam2025_034",
+      "question": "What is the purpose of the R class in Android?",
+      "answer": "It contains references to all resources in the res directory",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The auto-generated R class provides resource IDs that allow code to access layout, drawable, and value resources defined in XML.",
+      "choices": [
+        "It manages all Java/Kotlin packages in an app",
+        "It contains references to all resources in the res directory",
+        "It is used to manage view's id(s)",
+        "It handles runtime permissions"
+      ]
+    },
+    {
+      "id": "mobileexam2025_035",
+      "question": "What is the primary purpose of the let function in Kotlin?",
+      "answer": "To perform an operation on a nullable object safely",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The let scope function is commonly used with the safe call operator (?.) to execute code only if an object is not null.",
+      "choices": [
+        "To create an infinite loop",
+        "To declare a global variable",
+        "To perform an operation on a nullable object safely",
+        "To handle Android lifecycle callbacks"
+      ]
+    },
+    {
+      "id": "mobileexam2025_036",
+      "question": "In the MVC (Model-View-Controller) architecture pattern, what is the main responsibility of the Controller?",
+      "answer": "To handle user input and update the Model and View accordingly",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The Controller acts as the mediator, receiving input (events), updating the data model, and refreshing the view.",
+      "choices": [
+        "To manage system resources like memory and battery",
+        "To define how data is displayed to the user",
+        "To store and manage application data and business logic",
+        "To handle user input and update the Model and View accordingly"
+      ]
+    },
+    {
+      "id": "mobileexam2025_037",
+      "question": "What does the android:ems attribute specify in a TextView or EditText in Android?",
+      "answer": "The width of the view in terms of the width of the capital letter \"M\"",
+      "type": "mcq",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The ems attribute sets the width of the text component based on the width of a wide character 'M' in the current font.",
+      "choices": [
+        "The size of the text in scalable pixels",
+        "The maximum number of characters that can be entered",
+        "The width of the view in terms of the width of the capital letter \"M\"",
+        "The number of pixels the view should occupy"
+      ]
+    },
+    {
+      "id": "mobileexam2025_038",
+      "question": "Name the Android process types in order of decreasing priority (from most protected to least protected).",
+      "answer": "Foreground Process, Visible Process, Service Process, Cached Process.",
+      "type": "short_answer",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "Android prioritizes processes to manage memory; foreground processes are vital for user interaction, while cached processes are candidates for termination."
+    },
+    {
+      "id": "mobileexam2025_039",
+      "question": "Fill in the missing lifecycle methods in the Android activity lifecycle diagram.",
+      "answer": "The sequence includes: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy(), onRestart(), onSaveInstanceState(), and onRestoreInstanceState().",
+      "type": "fill_blank",
+      "topic": "Past Exam",
+      "difficulty": "medium",
+      "code_snippet": "",
+      "explanation": "The activity lifecycle consists of these standard callbacks used by the system to inform the app of state changes."
+    }
+  ]
+}
