@@ -52,15 +52,15 @@
     {
       "id": "md-chapter-03-pdf-architecture-basic-kotlin_004",
       "question": "True or False: The Android Runtime (ART) became the default runtime starting with Android 5.0 (Lollipop).",
-      "answer": "true",
+      "answer": "True",
       "type": "true_false",
       "topic": "Android Layered Architecture",
       "difficulty": "easy",
       "code_snippet": "",
       "explanation": "ART was introduced as the default to replace DVM starting from Android 5.0.",
       "choices": [
-        "true",
-        "false"
+"True",
+"False"
       ]
     },
     {
@@ -114,15 +114,15 @@
     {
       "id": "md-chapter-03-pdf-architecture-basic-kotlin_008",
       "question": "True or False: Kotlin is fully interoperable with Java, meaning they can work together in the same project.",
-      "answer": "true",
+      "answer": "True",
       "type": "true_false",
       "topic": "Kotlin Core basics",
       "difficulty": "easy",
       "code_snippet": "",
       "explanation": "One of Kotlin's key features is its seamless interoperability with existing Java code.",
       "choices": [
-        "true",
-        "false"
+"True",
+"False"
       ]
     },
     {
@@ -196,15 +196,15 @@
     {
       "id": "md-chapter-03-pdf-architecture-basic-kotlin_014",
       "question": "True or False: The 'when' expression in Kotlin can only be used with discrete integer values like a traditional switch statement.",
-      "answer": "false",
+      "answer": "False",
       "type": "true_false",
       "topic": "Control Flow",
       "difficulty": "medium",
       "code_snippet": "",
       "explanation": "Kotlin's 'when' is powerful and can check ranges, types, and multiple conditions.",
       "choices": [
-        "true",
-        "false"
+"True",
+"False"
       ]
     },
     {

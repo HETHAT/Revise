@@ -84,15 +84,15 @@
     {
       "id": "md-chapter-1-pdf-core-intro-architecture_006",
       "question": "True or False: Scalable pixels (sp) should be used for defining the width and height of Layout components to ensure they scale with user preferences.",
-      "answer": "false",
+      "answer": "False",
       "type": "true_false",
       "topic": "Screen Density",
       "difficulty": "medium",
       "code_snippet": "",
       "explanation": "sp should be used for fonts, not layout dimensions. sp preserves user font settings for accessibility, whereas dp is used for the size of UI elements.",
       "choices": [
-        "true",
-        "false"
+"True",
+"False"
       ]
     },
     {
@@ -166,15 +166,15 @@
     {
       "id": "md-chapter-1-pdf-core-intro-architecture_012",
       "question": "True or False: XML focuses more on the display and presentation of content rather than organizing and structuring data.",
-      "answer": "false",
+      "answer": "False",
       "type": "true_false",
       "topic": "XML Basics",
       "difficulty": "medium",
       "code_snippet": "",
       "explanation": "Unlike HTML, XML focuses on organizing and structuring data in a readable and hierarchical format rather than just displaying it,.",
       "choices": [
-        "true",
-        "false"
+"True",
+"False"
       ]
     },
     {
@@ -206,15 +206,15 @@
     {
       "id": "md-chapter-1-pdf-core-intro-architecture_015",
       "question": "True or False: An XML attribute is a key-value pair used inside an element to provide additional configuration, such as 'android:text'.",
-      "answer": "true",
+      "answer": "True",
       "type": "true_false",
       "topic": "XML Basics",
       "difficulty": "easy",
       "code_snippet": "",
       "explanation": "Attributes help define properties like size, color, and text for UI components.",
       "choices": [
-        "true",
-        "false"
+"True",
+"False"
       ]
     }
   ]
